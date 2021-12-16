@@ -13,12 +13,6 @@ for filename in os.listdir('particles'):
     for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):
         # print(ele.name)
         thisParticle = ''
-        if 'red' in ele.name:
-            thisParticle += '<div class="red-particle">\n'
-            thisParticle += '<h2>' + ele.name + '</h2>\n'
-        else:
-            thisParticle += '<div class="blue-particle">\n'
-            thisParticle += '<h2>' + ele.name + '</h2>\n'
             
         # print('<div>')
         # print('<h2>' + ele.name + '</h2>')
@@ -62,14 +56,23 @@ for filename in os.listdir('particles'):
                 thisParticle += str(initializer.get("color2")[2])
                 thisParticle += ");\"></div>\n"
                 thisParticle += '</div>\n'
+        if len(thisParticle) < 1:
+            continue
         thisParticle += '</div>\n'
                 
         if 'red' in ele.name:
+            thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle 
+            # this sucks but we used to do it at the creation of the string
+            # which made more sense but then we cant check if nothing usefuls been added
+            thisParticle = '<div class="red-particle">\n' + thisParticle
             if ele.name.replace('red', 'team') not in particles:
                 particles[ele.name.replace('red', 'team')] = {}
             particles[ele.name.replace('red', 'team')]['red'] = thisParticle
         else:
+            thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle
+            thisParticle = '<div class="blue-particle">\n' + thisParticle
             if 'blu_' in ele.name or ele.name.endswith('_blu'):
+                #awful hack because sometimes its 'blue' and sometimes its 'blue'
                 if ele.name.replace('blu', 'team') not in particles:
                     particles[ele.name.replace('blu', 'team')] = {}
                 particles[ele.name.replace('blu', 'team')]['blue'] = thisParticle
@@ -78,9 +81,10 @@ for filename in os.listdir('particles'):
                     particles[ele.name.replace('blue', 'team')] = {}
                 particles[ele.name.replace('blue', 'team')]['blue'] = thisParticle
     for key, value in particles.items():
-        print('<div class="both-class-colours">')
-        for key2, value2 in value.items():
-            print(value2)
-        print('</div>')
+        if len(value.items()) > 1: #exclude objects that dont have team colours
+            print('<div class="both-class-colours">')
+            print(value['red'])
+            print(value['blue'])
+            print('</div>')
     print('</div>')
     
