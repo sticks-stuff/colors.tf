@@ -1,0 +1,27 @@
+.colour-display {
+	aspect-ratio: 1;
+	width: 100px;
+	height: 100px;
+}
+
+.both-class-colours {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	.red-particle, .blue-particle {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h2 {
+			align-self: flex-start;
+		}
+		div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
