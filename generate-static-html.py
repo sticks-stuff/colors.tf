@@ -2,7 +2,9 @@ from typing import List
 import datamodel
 import os
 
-print('<link rel="stylesheet" href="style.css">')
+f = open("intro.html", "r")
+print(f.read())
+f.close()
 
 for filename in os.listdir('particles'):
     particle = datamodel.load('particles/' + filename)
@@ -88,3 +90,6 @@ for filename in os.listdir('particles'):
             print('</div>')
     print('</div>')
     
+f = open("outro.html", "r")
+print(f.read())
+f.close()
