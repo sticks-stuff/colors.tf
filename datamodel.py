@@ -83,7 +83,9 @@ def get_float(file):
 def get_vec(file,dim):
 	return list( unpack("{}f".format(dim),file.read(floatsize*dim)) )
 def get_color(file):
-	return Color(list(unpack("4B",file.read(4))))
+	color = Color(list(unpack("4B",file.read(4))))
+	setattr(color, 'offset', (file.tell() - 4))
+	return color
 	
 def get_str(file):
 	out = b''
@@ -1015,7 +1017,7 @@ def load(path = None, in_file = None, element_path = None):
 					start = in_file.tell()
 					name = dm._string_dict.read_string(in_file) if use_string_dict else get_str(in_file)
 					attr_type = _get_dmx_id_type(encoding,encoding_ver,get_byte(in_file))
-					#print("\t",name,"@",start,attr_type)
+					# print("\t",name,"@",start,attr_type)
 					if attr_type in _dmxtypes:
 						elem[name] = get_value(attr_type)
 					elif attr_type in _dmxtypes_array:

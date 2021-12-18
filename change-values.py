@@ -3,13 +3,22 @@ import os
 
 for filename in os.listdir('particles'):
     particle = datamodel.load('particles/' + filename)
+    print('\n')
     print(filename)
+    particleFile = open('particles/' + filename, "r+b")
     for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):
         print('\n')
         print(ele.name)
         for operator in ele.get('operators'):
             if(operator.name == "Color Fade"):
-                print("\ncolor_fade")
+                # white = datamodel.Color([25, 25, 25, 25])
+                # print(type(operator['color_fade']))
+                # data = list([0, 4, 8, 9])
+                # operator['color_fade'] = datamodel.make_array([ [0.0, 0.0, 0.5, 0.5] ] , datamodel.Color)
+                print(operator['color_fade'].offset)
+                particleFile.seek(operator['color_fade'].offset)
+                particleFile.write(bytes(255))
+                print(bytes(255))
                 print(operator.get("color_fade")[0], end = '')
                 print(", ", end = '')
                 print(operator.get("color_fade")[1], end = '')
@@ -29,3 +38,6 @@ for filename in os.listdir('particles'):
                 print(initializer.get("color2")[1], end = '')
                 print(", ", end = '')
                 print(initializer.get("color2")[2], end = '')
+    particleFile.close()
+    # particle.write('particles/' + filename, "binary", 2)
+    # particle.write('particles/' + filename, "binary", 2)
