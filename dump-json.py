@@ -17,12 +17,8 @@ for filename in os.listdir('particles'):
             if(operator.name == "Color Fade"):
                 if ele.name not in data[filename]:
                         data[filename][ele.name] = {}
-                print("color_fade")
-                print(operator['color_fade'].offset)
-                particleFile.seek(operator['color_fade'].offset)
-                # particleFile.write(bytes((255,255,255)))
-                
-                data[filename][ele.name]['color_fade'] = operator.get("color_fade")[0]
+                print("color_fade")                
+                data[filename][ele.name]['color_fade'] = operator.get("color_fade")
                 
                 print(operator.get("color_fade")[0], end = '')
                 print(", ", end = '')
@@ -35,9 +31,6 @@ for filename in os.listdir('particles'):
                 if ele.name not in data[filename]:
                     data[filename][ele.name] = {}
                 print("color1")
-                print(initializer['color1'].offset)
-                particleFile.seek(initializer['color1'].offset)
-                # particleFile.write(bytes((255,255,255)))
                 
                 data[filename][ele.name]['color1'] = initializer.get("color1")
 
@@ -48,10 +41,7 @@ for filename in os.listdir('particles'):
                 print(initializer.get("color1")[2])
                 
                 print("color2")
-                print(initializer['color2'].offset)
-                particleFile.seek(initializer['color2'].offset)
-                # particleFile.write(bytes((255,255,255)))
-                
+                                
                 data[filename][ele.name]['color2'] = initializer.get("color2")
 
                 print(initializer.get("color2")[0], end = '')
@@ -61,8 +51,6 @@ for filename in os.listdir('particles'):
                 print(initializer.get("color2")[2])
                 
     particleFile.close()
-    # particle.write('particles/' + filename, "binary", 2)
-    # particle.write('particles/' + filename, "binary", 2)
     
 with open('output.json', 'w') as outfile:
     json.dump(data, outfile)

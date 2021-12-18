@@ -17,7 +17,7 @@ for filename in data:
     particle = datamodel.load('particles/' + filename)
     print('\n')
     print(filename)
-    # particleFile = open('particles/' + filename, "r+b")
+    particleFile = open('particles/' + filename, "r+b")
 
     for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):
         if ele.name in data[filename]:
@@ -28,11 +28,10 @@ for filename in data:
                     if(operator.name == "Color Fade"):
                         
                         print("color_fade")
-                        # print(operator['color_fade'].offset)
-                        # particleFile.seek(operator['color_fade'].offset)
-                        # particleFile.write(bytes((255,255,255)))
-                        
-                        # data[filename][ele.name]['color_fade'] = operator.get("color_fade")[0]
+                        print(operator['color_fade'].offset)
+                        particleFile.seek(operator['color_fade'].offset)
+                        for i in data[filename][ele.name]['color_fade']:
+                            particleFile.write(bytes((int(i),)))
                         
                         print(operator.get("color_fade")[0], end = '')
                         print(", ", end = '')
@@ -45,9 +44,10 @@ for filename in data:
                     if(initializer.name == "Color Random"):
 
                         print("color1")
-                        # print(initializer['color1'].offset)
-                        # particleFile.seek(initializer['color1'].offset)
-                        # particleFile.write(bytes((255,255,255)))
+                        print(initializer['color1'].offset)
+                        particleFile.seek(initializer['color1'].offset)
+                        for i in data[filename][ele.name]['color1']:
+                            particleFile.write(bytes((int(i),)))
                         
                         print(initializer.get("color1")[0], end = '')
                         print(", ", end = '')
@@ -56,9 +56,10 @@ for filename in data:
                         print(initializer.get("color1")[2])
                         
                         print("color2")
-                        # print(initializer['color2'].offset)
-                        # particleFile.seek(initializer['color2'].offset)
-                        # particleFile.write(bytes((255,255,255)))
+                        print(initializer['color2'].offset)
+                        particleFile.seek(initializer['color2'].offset)
+                        for i in data[filename][ele.name]['color2']:
+                            particleFile.write(bytes((int(i),)))
                         
                         print(initializer.get("color2")[0], end = '')
                         print(", ", end = '')
@@ -66,6 +67,4 @@ for filename in data:
                         print(", ", end = '')
                         print(initializer.get("color2")[2])
                 
-    # particleFile.close()
-    # particle.write('particles/' + filename, "binary", 2)
-    # particle.write('particles/' + filename, "binary", 2)
+    particleFile.close()
