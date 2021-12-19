@@ -1,8 +1,23 @@
+	"$originalCritGlow" "[0 0 0]"
+	"$originalCritGlow2" .0
+	$bluMiniCrit 0
+	$bluCrit 0
+	$redMiniCrit 0
+	$redCrit 0
+
+	$onethirtyfive 135
+	$eighty 80
+	$sixtytwo 62
+	$five 5
+
+	$zero 0.0
+	$one 1.0
+	"Proxies"
+	{
 		"ModelGlowColor"
 		{
 			"resultVar" "$originalCritGlow"
 		}
-
 		// split 
         
 		Clamp
@@ -75,73 +90,37 @@
 		LessOrEqual
 		{
 			lessEqualVar $bluMiniCritGlow
-			greaterVar $selfillumtint
+			greaterVar $glowcolor
 			srcVar1 $bluMiniCrit
 			srcVar2 $zero
-			resultVar $selfillumtint
-		}
-		
-		LessOrEqual
-		{
-			lessEqualVar $bluMiniCritGlow
-			greaterVar $color2
-			srcVar1 $bluMiniCrit
-			srcVar2 $zero
-			resultVar $color2
+			resultVar $glowcolor
 		}
 		
 		LessOrEqual
 		{
 			lessEqualVar $bluCritGlow
-			greaterVar $selfillumtint
+			greaterVar $glowcolor
 			srcVar1 $bluCrit
 			srcVar2 $zero
-			resultVar $selfillumtint
-		}
-		
-		LessOrEqual
-		{
-			lessEqualVar $bluCritGlow
-			greaterVar $color2
-			srcVar1 $bluCrit
-			srcVar2 $zero
-			resultVar $color2
+			resultVar $glowcolor
 		}
 
 		LessOrEqual
 		{
 			lessEqualVar $redMiniCritGlow
-			greaterVar $selfillumtint
+			greaterVar $glowcolor
 			srcVar1 $redMiniCrit
 			srcVar2 $zero
-			resultVar $selfillumtint
-		}
-		
-		LessOrEqual
-		{
-			lessEqualVar $redMiniCritGlow
-			greaterVar $color2
-			srcVar1 $redMiniCrit
-			srcVar2 $zero
-			resultVar $color2
+			resultVar $glowcolor
 		}
 		
 		LessOrEqual
 		{
 			lessEqualVar $redCritGlow
-			greaterVar $selfillumtint
+			greaterVar $glowcolor
 			srcVar1 $redCrit
 			srcVar2 $zero
-			resultVar $selfillumtint
-		}
-		
-		LessOrEqual
-		{
-			lessEqualVar $redCritGlow
-			greaterVar $color2
-			srcVar1 $redCrit
-			srcVar2 $zero
-			resultVar $color2
+			resultVar $glowcolor
 		}
 
 		////////////// Reset 
@@ -149,16 +128,8 @@
 		LessOrEqual
 		{
 			lessEqualVar $one
-			greaterVar $color2
-			srcVar1 $originalCritGlow0
+			greaterVar $glowcolor
+			srcVar1 $originalCritGlow2
 			srcVar2 $one
-			resultVar $color2
-		}
-		LessOrEqual
-		{
-			lessEqualVar $one
-			greaterVar $selfillumtint
-			srcVar1 $originalCritGlow0
-			srcVar2 $one
-			resultVar $selfillumtint
+			resultVar $glowcolor
 		}
