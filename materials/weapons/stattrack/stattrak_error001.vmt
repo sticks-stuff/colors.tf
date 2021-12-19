@@ -1,0 +1,22 @@
+UnLitGeneric
+{
+	$basetexture 			"models\weapons\stattrack\stattrak_error001"
+	$alphatest				"1"
+	$envmap 				"env_cubemap"
+	$envmaptint				"[0.2 0.2 0.2]"
+	Proxies
+	{
+		AnimatedTexture
+		{
+			animatedtexturevar			$basetexture
+			animatedtextureframenumvar	$frame
+			animatedtextureframerate	1
+		}
+		StatTrakIllum
+		{
+			resultVar	$color
+			minVal		0.7
+			maxVal		1.2
+		}
+	}
+}

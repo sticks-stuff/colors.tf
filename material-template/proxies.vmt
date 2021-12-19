@@ -5,13 +5,13 @@
 
 		// split 
         
-        Clamp
-        {
-            srcVar1                      $zero
-            min                         "$originalCritGlow[2]"
-            max                         "$originalCritGlow[2]"
-            resultVar                    $originalCritGlow2
-        }
+		Clamp
+		{
+			srcVar1                      $zero
+			min                         "$originalCritGlow[2]"
+			max                         "$originalCritGlow[2]"
+			resultVar                    $originalCritGlow2
+		}
 
 		// if its 135 its a blue mini crit
 		Subtract
