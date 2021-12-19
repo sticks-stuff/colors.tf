@@ -4,4 +4,5 @@ for root, dirs, files in os.walk("materials"):
         if file.endswith(".vmt"):
             with open(os.path.join(root, file)) as f:
                 if 'ModelGlowColor' not in f.read():
-                    print(os.path.join(root, file))
+                    f.close()
+                    os.remove(os.path.join(root, file))
