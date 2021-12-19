@@ -1,0 +1,164 @@
+		"ModelGlowColor"
+		{
+			"resultVar" "$originalCritGlow"
+		}
+
+		// split 
+        
+        Clamp
+        {
+            srcVar1                      $zero
+            min                         "$originalCritGlow[2]"
+            max                         "$originalCritGlow[2]"
+            resultVar                    $originalCritGlow2
+        }
+
+		// if its 135 its a blue mini crit
+		Subtract
+		{
+			srcVar1						$originalCritGlow2
+			srcVar2						$onethirtyfive
+			resultVar					$bluMiniCrit
+		}
+
+		// if its 80 its a blue crit
+		Subtract
+		{
+			srcVar1						$originalCritGlow2
+			srcVar2						$eighty
+			resultVar					$bluCrit
+		}
+
+		// if its 62 its a red minicrit
+		Subtract
+		{
+			srcVar1						$originalCritGlow2
+			srcVar2						$sixtytwo
+			resultVar					$redMiniCrit
+		}
+
+		// if its 5 its a red crit
+		Subtract
+		{
+			srcVar1						$originalCritGlow2
+			srcVar2						$five
+			resultVar					$redCrit
+		}
+
+		Abs
+		{
+			srcVar1						$bluMiniCrit
+			resultVar					$bluMiniCrit
+		}
+		Abs
+		{
+			srcVar1						$bluCrit
+			resultVar					$bluCrit
+		}
+		Abs
+		{
+			srcVar1						$redMiniCrit
+			resultVar					$redMiniCrit
+		}
+		Abs
+		{
+			srcVar1						$redCrit
+			resultVar					$redCrit
+		}
+		Abs
+		{
+			srcVar1						$redCrit
+			resultVar					$redCrit
+		}
+
+		// this is essentially just a bunch of == operators for both color2 and selfillumtint
+		LessOrEqual
+		{
+			lessEqualVar $bluMiniCritGlow
+			greaterVar $selfillumtint
+			srcVar1 $bluMiniCrit
+			srcVar2 $zero
+			resultVar $selfillumtint
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $bluMiniCritGlow
+			greaterVar $color2
+			srcVar1 $bluMiniCrit
+			srcVar2 $zero
+			resultVar $color2
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $bluCritGlow
+			greaterVar $selfillumtint
+			srcVar1 $bluCrit
+			srcVar2 $zero
+			resultVar $selfillumtint
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $bluCritGlow
+			greaterVar $color2
+			srcVar1 $bluCrit
+			srcVar2 $zero
+			resultVar $color2
+		}
+
+		LessOrEqual
+		{
+			lessEqualVar $redMiniCritGlow
+			greaterVar $selfillumtint
+			srcVar1 $redMiniCrit
+			srcVar2 $zero
+			resultVar $selfillumtint
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $redMiniCritGlow
+			greaterVar $color2
+			srcVar1 $redMiniCrit
+			srcVar2 $zero
+			resultVar $color2
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $redCritGlow
+			greaterVar $selfillumtint
+			srcVar1 $redCrit
+			srcVar2 $zero
+			resultVar $selfillumtint
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $redCritGlow
+			greaterVar $color2
+			srcVar1 $redCrit
+			srcVar2 $zero
+			resultVar $color2
+		}
+
+		////////////// Reset 
+		
+		LessOrEqual
+		{
+			lessEqualVar $one
+			greaterVar $color2
+			srcVar1 $originalCritGlow0
+			srcVar2 $one
+			resultVar $color2
+		}
+		LessOrEqual
+		{
+			lessEqualVar $one
+			greaterVar $selfillumtint
+			srcVar1 $originalCritGlow0
+			srcVar2 $one
+			resultVar $selfillumtint
+		}

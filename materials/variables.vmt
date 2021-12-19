@@ -1,0 +1,18 @@
+	"$originalCritGlow" "[0 0 0]"
+	"$originalCritGlow2" .0
+	"$bluCritGlow" "[0 0 255]"
+	"$redCritGlow" "[255 0 0]"
+	"$redMiniCritGlow" "[255 120 120]"
+	"$bluMiniCritGlow" "[120 120 255]"
+	$bluMiniCrit 0
+	$bluCrit 0
+	$redMiniCrit 0
+	$redCrit 0
+
+	$onethirtyfive 135
+	$eighty 80
+	$sixtytwo 62
+	$five 5
+
+	$zero 0.0
+	$one 1.0
