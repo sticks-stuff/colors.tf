@@ -2,7 +2,7 @@ import os
 import re
 
 def patchVMTs(bluCritColor, redCritColor, redMiniCritColor, bluMiniCritColor):
-    f = open("material-template/template.vmt", "r")
+    f = open("template/materials/template.vmt", "r")
     template = f.readlines()
     f.close()
 
