@@ -1,23 +1,50 @@
+// return JSON data from any file path (asynchronous)
+function getJSON(path) {
+    return fetch(path).then(response => response.json());
+}
+
+var data;
+
+// load JSON data; then proceed
+getJSON('output.json').then(data => {
+    data = data;
+    console.log(data);
+})
+
 document.getElementById('red').addEventListener("change", watchColorPickerRed, false);
 document.getElementById('blue').addEventListener("change", watchColorPickerBlue, false);
 
 function watchColorPickerRed(event) {
+    watchColorPicker(event, "red")
+}
+
+function watchColorPickerBlue(event) {
+    watchColorPicker(event, "blue")
+}
+
+function watchColorPicker(event, team) {
 	color = hexToRgb(event.target.value);
 	
-	originalRedHSL = rgbToHsl(255, 0, 24)
+    if(team == "red") {
+        originalHSL = rgbToHsl(255, 0, 24); //god i love hard coding vars
+    } else {
+        originalHSL = rgbToHsl(0, 30, 255);
+    }
+
 	colorHSL = rgbToHsl(color[0], color[1], color[2])
 	var newColorDiff = [];
-	newColorDiff[0] = colorHSL[0] - originalRedHSL[0];
-	newColorDiff[1] = colorHSL[1] - originalRedHSL[1];
-	newColorDiff[2] = colorHSL[2] - originalRedHSL[2];
-	console.log({originalRedHSL})
+	newColorDiff[0] = colorHSL[0] - originalHSL[0];
+	newColorDiff[1] = colorHSL[1] - originalHSL[1];
+	newColorDiff[2] = colorHSL[2] - originalHSL[2];
+	console.log({originalHSL})
 	console.log({colorHSL})
 	console.log({newColorDiff})
-	Array.from(document.getElementsByClassName('red-particle')).forEach(element => {
+	Array.from(document.getElementsByClassName(`${team}-particle`)).forEach(element => {
 		Array.from(element.getElementsByClassName('colour-display')).forEach(element => {
-			originalColor = element.style.backgroundColor;
-			originalColor = originalColor.substring(4).slice(0, -1);
-			originalColor = originalColor.split(', ');
+			originalColor = element.attributes.ogcolour.value;
+			// originalColor = originalColor.slice(10, -1);
+            // console.log(originalColor)
+			originalColor = originalColor.split(' ');
 			originalColorHSL = rgbToHsl(originalColor[0], originalColor[1], originalColor[2]);
 			console.log({originalColorHSL})
 			originalColorHSL[0] += newColorDiff[0];
@@ -27,10 +54,6 @@ function watchColorPickerRed(event) {
 			element.style.backgroundColor = 'rgb(' + originalColor.join(', ') + ')';
 		});
 	});
-}
-
-function watchColorPickerBlue(event) {
-	console.log(event.target.value);
 }
 
 function hexToRgb(hex) {
@@ -115,4 +138,8 @@ function hexToRgb(hex) {
 function mod (n, m) {
     var remain = n % m;
     return Math.floor(remain >= 0 ? remain : remain + m);
+}
+
+function modifyJSON() {
+
 }
