@@ -10,19 +10,20 @@
 		<label for="red">red</label>
 		<input id="red" name="red" type="color" value="#ff0018">
 		<label for="blue">blue</label>
-		<input id="blue" name="blue" type="color" value="#051450">
+		<input id="blue" name="blue" type="color" value="#001eff">
+		<button onClick="modifyJSON()">modifyJSON</button>
 		<h1>original crit colours</h1>
 			<div class="both-class-colours">
 				<div class="red-particle">
 					<h2>red crits</h2>
 					<div>
-						<div class='colour-display' ogcolour='80 8 5' style="background-color: rgb(80, 8, 5);"></div>
+						<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='80 8 5' style="background-color: rgb(80, 8, 5);"></div>
 					</div>
 				</div>
 				<div class="blue-particle">
 					<h2>blue crits</h2>
 					<div>
-						<div class='colour-display' ogcolour='5 20 80' style="background-color: rgb(5, 20, 80);"></div>
+						<div class='colour-display' jsonpath='material,blue_crit,color' ogcolour='5 20 80' style="background-color: rgb(5, 20, 80);"></div>
 					</div>
 				</div>
 			</div>
@@ -30,13 +31,13 @@
 				<div class="red-particle">
 					<h2>red mini crits</h2>
 					<div>
-						<div class='colour-display' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
+						<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
 					</div>
 				</div>
 				<div class="blue-particle">
 					<h2>blue mini crits</h2>
 					<div>
-						<div class='colour-display' ogcolour='29 202 135' style="background-color: rgb(29, 202, 135);"></div>
+						<div class='colour-display' jsonpath='material,blue_minicrit,color' ogcolour='29 202 135' style="background-color: rgb(29, 202, 135);"></div>
 					</div>
 				</div>
 			</div>

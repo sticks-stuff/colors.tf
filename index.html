@@ -8,21 +8,22 @@
 	</head>
 	<body>
 		<label for="red">red</label>
-		<input id="red" name="red" type="color" value="#500805">
+		<input id="red" name="red" type="color" value="#ff0018">
 		<label for="blue">blue</label>
 		<input id="blue" name="blue" type="color" value="#051450">
+		<button onClick="modifyJSON()">modifyJSON</button>
 		<h1>original crit colours</h1>
 			<div class="both-class-colours">
 				<div class="red-particle">
 					<h2>red crits</h2>
 					<div>
-						<div class='colour-display' style="background-color: rgb(80, 8, 5);"></div>
+						<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='80 8 5' style="background-color: rgb(80, 8, 5);"></div>
 					</div>
 				</div>
 				<div class="blue-particle">
 					<h2>blue crits</h2>
 					<div>
-						<div class='colour-display' style="background-color: rgb(5, 20, 80);"></div>
+						<div class='colour-display' jsonpath='material,blue_crit,color' ogcolour='5 20 80' style="background-color: rgb(5, 20, 80);"></div>
 					</div>
 				</div>
 			</div>
@@ -30,13 +31,13 @@
 				<div class="red-particle">
 					<h2>red mini crits</h2>
 					<div>
-						<div class='colour-display' style="background-color: rgb(226, 150, 62);"></div>
+						<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
 					</div>
 				</div>
 				<div class="blue-particle">
 					<h2>blue mini crits</h2>
 					<div>
-						<div class='colour-display' style="background-color: rgb(29, 202, 135);"></div>
+						<div class='colour-display' jsonpath='material,blue_minicrit,color' ogcolour='29 202 135' style="background-color: rgb(29, 202, 135);"></div>
 					</div>
 				</div>
 			</div>
@@ -49,11 +50,11 @@
 <h2>bullet_bignasty_tracer01_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_red_crit,color1' ogcolour='255.0 0.0 24.0 255.0' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_red_crit,color2' ogcolour='255.0 2.0 2.0 255.0' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
 </div>
 </div>
 
@@ -61,11 +62,11 @@
 <h2>bullet_bignasty_tracer01_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_blue_crit,color1' ogcolour='0.0 30.0 255.0 255.0' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_blue_crit,color2' ogcolour='2.0 38.0 255.0 255.0' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
 </div>
 </div>
 
@@ -75,11 +76,11 @@
 <h2>bullet_impact1_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_crit,color1' ogcolour='253.0 126.0 1.0 255.0' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_crit,color2' ogcolour='176.0 65.0 5.0 255.0' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
 </div>
 </div>
 
@@ -87,11 +88,11 @@
 <h2>bullet_impact1_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_crit,color1' ogcolour='253.0 126.0 1.0 255.0' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_crit,color2' ogcolour='176.0 65.0 5.0 255.0' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
 </div>
 </div>
 
@@ -101,26 +102,26 @@
 <h2>bullet_impact1_red_critglow</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_critglow,color1' ogcolour='253.0 126.0 1.0 255.0' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_critglow,color2' ogcolour='176.0 65.0 5.0 255.0' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>bullet_impact1_blue_critglow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 198.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color_fade' ogcolour='0.0 198.0 255.0 255.0' style="background-color: rgb(0.0, 198.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(1.0, 114.0, 253.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color1' ogcolour='1.0 114.0 253.0 255.0' style="background-color: rgb(1.0, 114.0, 253.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(5.0, 69.0, 176.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color2' ogcolour='5.0 69.0 176.0 255.0' style="background-color: rgb(5.0, 69.0, 176.0);"></div>
 </div>
 </div>
 
@@ -130,11 +131,11 @@
 <h2>bullet_tracer02_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_red_crit,color1' ogcolour='255.0 0.0 24.0 255.0' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_red_crit,color2' ogcolour='255.0 2.0 2.0 255.0' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
 </div>
 </div>
 
@@ -142,11 +143,11 @@
 <h2>bullet_tracer02_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_blue_crit,color1' ogcolour='0.0 30.0 255.0 255.0' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_blue_crit,color2' ogcolour='2.0 38.0 255.0 255.0' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
 </div>
 </div>
 
@@ -156,11 +157,11 @@
 <h2>bullet_tracer01_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_red_crit,color1' ogcolour='255.0 0.0 24.0 255.0' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_red_crit,color2' ogcolour='255.0 2.0 2.0 255.0' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
 </div>
 </div>
 
@@ -168,11 +169,11 @@
 <h2>bullet_tracer01_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_blue_crit,color1' ogcolour='0.0 30.0 255.0 255.0' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_blue_crit,color2' ogcolour='2.0 38.0 255.0 255.0' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
 </div>
 </div>
 
@@ -182,11 +183,11 @@
 <h2>bullet_scattergun_tracer01_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_red_crit,color1' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 102.0, 0.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_red_crit,color2' ogcolour='255.0 102.0 0.0 255.0' style="background-color: rgb(255.0, 102.0, 0.0);"></div>
 </div>
 </div>
 
@@ -194,11 +195,11 @@
 <h2>bullet_scattergun_tracer01_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 46.0, 246.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_blue_crit,color1' ogcolour='0.0 46.0 246.0 255.0' style="background-color: rgb(0.0, 46.0, 246.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_blue_crit,color2' ogcolour='0.0 90.0 255.0 255.0' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
 </div>
 </div>
 
@@ -208,11 +209,11 @@
 <h2>bullet_pistol_tracer01_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_red_crit,color1' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(247.0, 114.0, 6.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_red_crit,color2' ogcolour='247.0 114.0 6.0 255.0' style="background-color: rgb(247.0, 114.0, 6.0);"></div>
 </div>
 </div>
 
@@ -220,11 +221,11 @@
 <h2>bullet_pistol_tracer01_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_blue_crit,color1' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(2.0, 60.0, 250.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_blue_crit,color2' ogcolour='2.0 60.0 250.0 255.0' style="background-color: rgb(2.0, 60.0, 250.0);"></div>
 </div>
 </div>
 
@@ -234,11 +235,11 @@
 <h2>bullet_shotgun_tracer01_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_red_crit,color1' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 102.0, 0.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_red_crit,color2' ogcolour='255.0 102.0 0.0 255.0' style="background-color: rgb(255.0, 102.0, 0.0);"></div>
 </div>
 </div>
 
@@ -246,11 +247,11 @@
 <h2>bullet_shotgun_tracer01_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 46.0, 246.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_blue_crit,color1' ogcolour='0.0 46.0 246.0 255.0' style="background-color: rgb(0.0, 46.0, 246.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
+<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_blue_crit,color2' ogcolour='0.0 90.0 255.0 255.0' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
 </div>
 </div>
 
@@ -262,30 +263,30 @@
 <div class="red-particle">
 <h2>critgun_weaponmodel_red</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(176.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color_fade' ogcolour='176.0 0.0 0.0 255.0' style="background-color: rgb(176.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 148.0, 70.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color1' ogcolour='255.0 148.0 70.0 255.0' style="background-color: rgb(255.0, 148.0, 70.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 108.0, 0.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color2' ogcolour='255.0 108.0 0.0 255.0' style="background-color: rgb(255.0, 108.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critgun_weaponmodel_blu</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 100.0, 249.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color_fade' ogcolour='0.0 100.0 249.0 255.0' style="background-color: rgb(0.0, 100.0, 249.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(125.0, 125.0, 255.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color1' ogcolour='125.0 125.0 255.0 255.0' style="background-color: rgb(125.0, 125.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(116.0, 162.0, 255.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color2' ogcolour='116.0 162.0 255.0 255.0' style="background-color: rgb(116.0, 162.0, 255.0);"></div>
 </div>
 </div>
 
@@ -294,30 +295,30 @@
 <div class="red-particle">
 <h2>critgun_weaponmodel_red_glow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(249.0, 53.0, 0.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color_fade' ogcolour='249.0 53.0 0.0 255.0' style="background-color: rgb(249.0, 53.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 31.0, 31.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color1' ogcolour='255.0 31.0 31.0 255.0' style="background-color: rgb(255.0, 31.0, 31.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 108.0, 0.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color2' ogcolour='255.0 108.0 0.0 255.0' style="background-color: rgb(255.0, 108.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critgun_weaponmodel_blu_glow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 100.0, 249.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color_fade' ogcolour='0.0 100.0 249.0 255.0' style="background-color: rgb(0.0, 100.0, 249.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(125.0, 125.0, 255.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color1' ogcolour='125.0 125.0 255.0 255.0' style="background-color: rgb(125.0, 125.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(116.0, 162.0, 255.0);"></div>
+<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color2' ogcolour='116.0 162.0 255.0 255.0' style="background-color: rgb(116.0, 162.0, 255.0);"></div>
 </div>
 </div>
 
@@ -329,30 +330,30 @@
 <div class="red-particle">
 <h2>new_flame_crit_red_glow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 66.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color_fade' ogcolour='255.0 66.0 0.0 255.0' style="background-color: rgb(255.0, 66.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 161.0, 161.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color1' ogcolour='255.0 161.0 161.0 255.0' style="background-color: rgb(255.0, 161.0, 161.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(246.0, 214.0, 164.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color2' ogcolour='246.0 214.0 164.0 255.0' style="background-color: rgb(246.0, 214.0, 164.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>new_flame_crit_blue_glow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(73.0, 60.0, 97.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color_fade' ogcolour='73.0 60.0 97.0 255.0' style="background-color: rgb(73.0, 60.0, 97.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(5.0, 46.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color1' ogcolour='5.0 46.0 255.0 255.0' style="background-color: rgb(5.0, 46.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(56.0, 168.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color2' ogcolour='56.0 168.0 255.0 255.0' style="background-color: rgb(56.0, 168.0, 255.0);"></div>
 </div>
 </div>
 
@@ -362,11 +363,11 @@
 <h2>new_flame_crit_red_drips_b</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(197.0, 29.0, 120.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_drips_b,color1' ogcolour='197.0 29.0 120.0 255.0' style="background-color: rgb(197.0, 29.0, 120.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(243.0, 30.0, 50.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_drips_b,color2' ogcolour='243.0 30.0 50.0 255.0' style="background-color: rgb(243.0, 30.0, 50.0);"></div>
 </div>
 </div>
 
@@ -374,11 +375,11 @@
 <h2>new_flame_crit_blue_drips_b</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(53.0, 29.0, 197.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_drips_b,color1' ogcolour='53.0 29.0 197.0 255.0' style="background-color: rgb(53.0, 29.0, 197.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 198.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_drips_b,color2' ogcolour='0.0 198.0 255.0 255.0' style="background-color: rgb(0.0, 198.0, 255.0);"></div>
 </div>
 </div>
 
@@ -387,30 +388,30 @@
 <div class="red-particle">
 <h2>new_flame_crit_red_sparks</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 240.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color_fade' ogcolour='255.0 240.0 0.0 255.0' style="background-color: rgb(255.0, 240.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 33.0, 75.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color1' ogcolour='255.0 33.0 75.0 255.0' style="background-color: rgb(255.0, 33.0, 75.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 33.0, 75.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color2' ogcolour='255.0 33.0 75.0 255.0' style="background-color: rgb(255.0, 33.0, 75.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>new_flame_crit_blue_sparks</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(174.0, 210.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color_fade' ogcolour='174.0 210.0 255.0 255.0' style="background-color: rgb(174.0, 210.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color2' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
 </div>
 </div>
 
@@ -419,30 +420,30 @@
 <div class="red-particle">
 <h2>projectile_fireball_crit_red_trail</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color_fade' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>projectile_fireball_crit_blue_trail</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(31.0, 59.0, 138.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color_fade' ogcolour='31.0 59.0 138.0 255.0' style="background-color: rgb(31.0, 59.0, 138.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
 </div>
 </div>
 
@@ -451,30 +452,30 @@
 <div class="red-particle">
 <h2>projectile_fireball_crit_red_sparks</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color_fade' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>projectile_fireball_crit_blue_sparks</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 66.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color_fade' ogcolour='0.0 66.0 255.0 255.0' style="background-color: rgb(0.0, 66.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
 </div>
 </div>
 
@@ -487,11 +488,11 @@
 <h2>nailtrails_medic_red_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(196.0, 111.0, 43.0);"></div>
+<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_red_crit,color1' ogcolour='196.0 111.0 43.0 255.0' style="background-color: rgb(196.0, 111.0, 43.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(239.0, 38.0, 38.0);"></div>
+<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_red_crit,color2' ogcolour='239.0 38.0 38.0 255.0' style="background-color: rgb(239.0, 38.0, 38.0);"></div>
 </div>
 </div>
 
@@ -499,11 +500,11 @@
 <h2>nailtrails_medic_blue_crit</h2>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(32.0, 22.0, 252.0);"></div>
+<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_blue_crit,color1' ogcolour='32.0 22.0 252.0 255.0' style="background-color: rgb(32.0, 22.0, 252.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(110.0, 156.0, 232.0);"></div>
+<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_blue_crit,color2' ogcolour='110.0 156.0 232.0 255.0' style="background-color: rgb(110.0, 156.0, 232.0);"></div>
 </div>
 </div>
 
@@ -515,30 +516,30 @@
 <div class="red-particle">
 <h2>flaregun_crit_red</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color_fade' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>flaregun_crit_blue</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color_fade' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 228.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color1' ogcolour='0.0 228.0 255.0 255.0' style="background-color: rgb(0.0, 228.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 84.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color2' ogcolour='0.0 84.0 255.0 255.0' style="background-color: rgb(0.0, 84.0, 255.0);"></div>
 </div>
 </div>
 
@@ -547,30 +548,30 @@
 <div class="red-particle">
 <h2>critical_rocket_redsparks</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color_fade' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critical_rocket_bluesparks</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 66.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color_fade' ogcolour='0.0 66.0 255.0 255.0' style="background-color: rgb(0.0, 66.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
 </div>
 </div>
 
@@ -579,30 +580,30 @@
 <div class="red-particle">
 <h2>critical_rocket_red</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(72.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color_fade' ogcolour='72.0 0.0 0.0 255.0' style="background-color: rgb(72.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color1' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(106.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color2' ogcolour='106.0 0.0 0.0 255.0' style="background-color: rgb(106.0, 0.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critical_rocket_blue</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 28.0, 110.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color_fade' ogcolour='0.0 28.0 110.0 255.0' style="background-color: rgb(0.0, 28.0, 110.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
 </div>
 </div>
 
@@ -614,30 +615,30 @@
 <div class="red-particle">
 <h2>stunballtrail_red_crit</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(93.0, 65.0, 65.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color_fade' ogcolour='93.0 65.0 65.0 255.0' style="background-color: rgb(93.0, 65.0, 65.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 96.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color1' ogcolour='255.0 96.0 0.0 255.0' style="background-color: rgb(255.0, 96.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color2' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>stunballtrail_blue_crit</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(65.0, 75.0, 93.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color_fade' ogcolour='65.0 75.0 93.0 255.0' style="background-color: rgb(65.0, 75.0, 93.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 150.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color1' ogcolour='0.0 150.0 255.0 255.0' style="background-color: rgb(0.0, 150.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 150.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color2' ogcolour='0.0 150.0 255.0 255.0' style="background-color: rgb(0.0, 150.0, 255.0);"></div>
 </div>
 </div>
 
@@ -646,30 +647,30 @@
 <div class="red-particle">
 <h2>critical_grenade_red</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(185.0, 77.0, 77.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color1' ogcolour='185.0 77.0 77.0 255.0' style="background-color: rgb(185.0, 77.0, 77.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 30.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color2' ogcolour='255.0 30.0 0.0 255.0' style="background-color: rgb(255.0, 30.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critical_grenade_blue</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(18.0, 0.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color1' ogcolour='18.0 0.0 255.0 255.0' style="background-color: rgb(18.0, 0.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color2' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
 </div>
 </div>
 
@@ -678,30 +679,30 @@
 <div class="red-particle">
 <h2>critical_grenade_red_extra</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color_fade' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 181.0, 115.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color1' ogcolour='255.0 181.0 115.0 255.0' style="background-color: rgb(255.0, 181.0, 115.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critical_grenade_blue_extra</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color_fade' ogcolour='0.0 90.0 255.0 255.0' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color1' ogcolour='115.0 158.0 255.0 255.0' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 108.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color2' ogcolour='0.0 108.0 255.0 255.0' style="background-color: rgb(0.0, 108.0, 255.0);"></div>
 </div>
 </div>
 
@@ -710,30 +711,30 @@
 <div class="red-particle">
 <h2>critical_grenade_red_glow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(199.0, 0.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color_fade' ogcolour='199.0 0.0 0.0 255.0' style="background-color: rgb(199.0, 0.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(180.0, 25.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color1' ogcolour='180.0 25.0 0.0 255.0' style="background-color: rgb(180.0, 25.0, 0.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 96.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color2' ogcolour='255.0 96.0 0.0 255.0' style="background-color: rgb(255.0, 96.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critical_grenade_blue_glow</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 48.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color_fade' ogcolour='0.0 48.0 255.0 255.0' style="background-color: rgb(0.0, 48.0, 255.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color1' ogcolour='115.0 158.0 255.0 255.0' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color2' ogcolour='115.0 158.0 255.0 255.0' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
 </div>
 </div>
 
@@ -742,30 +743,30 @@
 <div class="red-particle">
 <h2>critical_pipe_red</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(185.0, 77.0, 77.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color1' ogcolour='185.0 77.0 77.0 255.0' style="background-color: rgb(185.0, 77.0, 77.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(255.0, 30.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color2' ogcolour='255.0 30.0 0.0 255.0' style="background-color: rgb(255.0, 30.0, 0.0);"></div>
 </div>
 </div>
 
 <div class="blue-particle">
 <h2>critical_pipe_blue</h2>
 <div><h3> color_fade </h3>
-<div class='colour-display' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
 </div>
 <div>
 <h3> color1 </h3>
-<div class='colour-display' style="background-color: rgb(18.0, 0.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color1' ogcolour='18.0 0.0 255.0 255.0' style="background-color: rgb(18.0, 0.0, 255.0);"></div>
 </div>
 <div>
 <h3> color2 </h3>
-<div class='colour-display' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color2' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
 </div>
 </div>
 

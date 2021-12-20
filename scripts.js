@@ -3,14 +3,6 @@ function getJSON(path) {
     return fetch(path).then(response => response.json());
 }
 
-var data;
-
-// load JSON data; then proceed
-getJSON('output.json').then(data => {
-    data = data;
-    console.log(data);
-})
-
 document.getElementById('red').addEventListener("change", watchColorPickerRed, false);
 document.getElementById('blue').addEventListener("change", watchColorPickerBlue, false);
 
@@ -141,5 +133,11 @@ function mod (n, m) {
 }
 
 function modifyJSON() {
-
+    getJSON('output.json').then(data => {
+        Array.from(document.getElementsByClassName('colour-display')).forEach(element => {
+            jsonPath = element.attributes.jsonpath.value;
+            jsonPath = jsonPath.split(',')
+            console.log(data[jsonPath[0]][jsonPath[1]][jsonPath[2]])
+        });
+    })    
 }

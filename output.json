@@ -1,0 +1,258 @@
+{
+	"material": {
+		"red_crit": {
+			"color": [80, 8, 5]
+		},
+		"red_minicrit": {
+			"color": [226, 150, 62]
+		},
+		"blue_crit": {
+			"color": [5, 20, 80]
+		},
+		"blue_minicrit": {
+			"color": [29, 202, 135]
+		}
+	},
+	"bullet_tracers_onlycrits.pcf": {
+		"bullet_bignasty_tracer01_red_crit": {
+			"color1": [255.0, 0.0, 24.0, 255.0],
+			"color2": [255.0, 2.0, 2.0, 255.0]
+		},
+		"bullet_impact1_red_crit": {
+			"color1": [253.0, 126.0, 1.0, 255.0],
+			"color2": [176.0, 65.0, 5.0, 255.0]
+		},
+		"bullet_impact1_red_critglow": {
+			"color1": [253.0, 126.0, 1.0, 255.0],
+			"color2": [176.0, 65.0, 5.0, 255.0]
+		},
+		"bullet_tracer01_crit": {
+			"color1": [255.0, 0.0, 24.0, 255.0],
+			"color2": [255.0, 2.0, 2.0, 255.0]
+		},
+		"bullet_tracer02_red_crit": {
+			"color1": [255.0, 0.0, 24.0, 255.0],
+			"color2": [255.0, 2.0, 2.0, 255.0]
+		},
+		"bullet_tracer02_blue_crit": {
+			"color1": [0.0, 30.0, 255.0, 255.0],
+			"color2": [2.0, 38.0, 255.0, 255.0]
+		},
+		"bullet_impact1_blue_crit": {
+			"color1": [253.0, 126.0, 1.0, 255.0],
+			"color2": [176.0, 65.0, 5.0, 255.0]
+		},
+		"bullet_impact1_blue_critglow": {
+			"color_fade": [0.0, 198.0, 255.0, 255.0],
+			"color1": [1.0, 114.0, 253.0, 255.0],
+			"color2": [5.0, 69.0, 176.0, 255.0]
+		},
+		"bullet_tracer01_blue_crit": {
+			"color1": [0.0, 30.0, 255.0, 255.0],
+			"color2": [2.0, 38.0, 255.0, 255.0]
+		},
+		"bullet_tracer01_red_crit": {
+			"color1": [255.0, 0.0, 24.0, 255.0],
+			"color2": [255.0, 2.0, 2.0, 255.0]
+		},
+		"bullet_scattergun_tracer01_red_crit": {
+			"color1": [255.0, 0.0, 0.0, 255.0],
+			"color2": [255.0, 102.0, 0.0, 255.0]
+		},
+		"bullet_bignasty_tracer01_blue_crit": {
+			"color1": [0.0, 30.0, 255.0, 255.0],
+			"color2": [2.0, 38.0, 255.0, 255.0]
+		},
+		"bullet_pistol_tracer01_red_crit": {
+			"color1": [255.0, 0.0, 0.0, 255.0],
+			"color2": [247.0, 114.0, 6.0, 255.0]
+		},
+		"bullet_shotgun_tracer01_blue_crit": {
+			"color1": [0.0, 46.0, 246.0, 255.0],
+			"color2": [0.0, 90.0, 255.0, 255.0]
+		},
+		"bullet_pistol_tracer01_blue_crit": {
+			"color1": [0.0, 96.0, 255.0, 255.0],
+			"color2": [2.0, 60.0, 250.0, 255.0]
+		},
+		"bullet_shotgun_tracer01_red_crit": {
+			"color1": [255.0, 0.0, 0.0, 255.0],
+			"color2": [255.0, 102.0, 0.0, 255.0]
+		},
+		"bullet_scattergun_tracer01_blue_crit": {
+			"color1": [0.0, 46.0, 246.0, 255.0],
+			"color2": [0.0, 90.0, 255.0, 255.0]
+		}
+	},
+	"firstperson_weapon_fx.pcf": {
+		"critgun_weaponmodel_blu": {
+			"color_fade": [0.0, 100.0, 249.0, 255.0],
+			"color1": [125.0, 125.0, 255.0, 255.0],
+			"color2": [116.0, 162.0, 255.0, 255.0]
+		},
+		"critgun_weaponmodel_blu_glow": {
+			"color_fade": [0.0, 100.0, 249.0, 255.0],
+			"color1": [125.0, 125.0, 255.0, 255.0],
+			"color2": [116.0, 162.0, 255.0, 255.0]
+		},
+		"critgun_weaponmodel_red": {
+			"color_fade": [176.0, 0.0, 0.0, 255.0],
+			"color1": [255.0, 148.0, 70.0, 255.0],
+			"color2": [255.0, 108.0, 0.0, 255.0]
+		},
+		"critgun_weaponmodel_red_glow": {
+			"color_fade": [249.0, 53.0, 0.0, 255.0],
+			"color1": [255.0, 31.0, 31.0, 255.0],
+			"color2": [255.0, 108.0, 0.0, 255.0]
+		},
+		"crutgun_firstperson": {
+			"color_fade": [0.0, 100.0, 249.0, 255.0],
+			"color1": [125.0, 125.0, 255.0, 255.0],
+			"color2": [116.0, 162.0, 255.0, 255.0]
+		}
+	},
+	"flamethrower_onlycrits.pcf": {
+		"new_flame_crit_blue_glow": {
+			"color_fade": [73.0, 60.0, 97.0, 255.0],
+			"color1": [5.0, 46.0, 255.0, 255.0],
+			"color2": [56.0, 168.0, 255.0, 255.0]
+		},
+		"new_flame_crit_red_drips_b": {
+			"color1": [197.0, 29.0, 120.0, 255.0],
+			"color2": [243.0, 30.0, 50.0, 255.0]
+		},
+		"new_flame_crit_red_glow": {
+			"color_fade": [255.0, 66.0, 0.0, 255.0],
+			"color1": [255.0, 161.0, 161.0, 255.0],
+			"color2": [246.0, 214.0, 164.0, 255.0]
+		},
+		"new_flame_crit_red_sparks": {
+			"color_fade": [255.0, 240.0, 0.0, 255.0],
+			"color1": [255.0, 33.0, 75.0, 255.0],
+			"color2": [255.0, 33.0, 75.0, 255.0]
+		},
+		"new_flame_crit_blue_drips_b": {
+			"color1": [53.0, 29.0, 197.0, 255.0],
+			"color2": [0.0, 198.0, 255.0, 255.0]
+		},
+		"new_flame_crit_blue_sparks": {
+			"color_fade": [174.0, 210.0, 255.0, 255.0],
+			"color1": [0.0, 126.0, 255.0, 255.0],
+			"color2": [0.0, 126.0, 255.0, 255.0]
+		},
+		"projectile_fireball_crit_blue_trail": {
+			"color_fade": [31.0, 59.0, 138.0, 255.0],
+			"color1": [0.0, 126.0, 255.0, 255.0],
+			"color2": [0.0, 72.0, 255.0, 255.0]
+		},
+		"projectile_fireball_crit_blue_sparks": {
+			"color_fade": [0.0, 66.0, 255.0, 255.0],
+			"color1": [0.0, 126.0, 255.0, 255.0],
+			"color2": [0.0, 72.0, 255.0, 255.0]
+		},
+		"projectile_fireball_crit_red_trail": {
+			"color_fade": [255.0, 72.0, 0.0, 255.0],
+			"color1": [255.0, 180.0, 0.0, 255.0],
+			"color2": [255.0, 0.0, 0.0, 255.0]
+		},
+		"projectile_fireball_crit_red_sparks": {
+			"color_fade": [255.0, 0.0, 0.0, 255.0],
+			"color1": [255.0, 180.0, 0.0, 255.0],
+			"color2": [255.0, 0.0, 0.0, 255.0]
+		}
+	},
+	"nailtrails_onlycrits.pcf": {
+		"nailtrails_medic_red_crit": {
+			"color1": [196.0, 111.0, 43.0, 255.0],
+			"color2": [239.0, 38.0, 38.0, 255.0]
+		},
+		"nailtrails_medic_blue_crit": {
+			"color1": [32.0, 22.0, 252.0, 255.0],
+			"color2": [110.0, 156.0, 232.0, 255.0]
+		}
+	},
+	"rockettrail_onlycrits.pcf": {
+		"flaregun_crit_blue": {
+			"color_fade": [0.0, 96.0, 255.0, 255.0],
+			"color1": [0.0, 228.0, 255.0, 255.0],
+			"color2": [0.0, 84.0, 255.0, 255.0]
+		},
+		"critical_rocket_bluesparks": {
+			"color_fade": [0.0, 66.0, 255.0, 255.0],
+			"color1": [0.0, 126.0, 255.0, 255.0],
+			"color2": [0.0, 72.0, 255.0, 255.0]
+		},
+		"flaregun_crit_red": {
+			"color_fade": [255.0, 0.0, 0.0, 255.0],
+			"color1": [255.0, 180.0, 0.0, 255.0],
+			"color2": [255.0, 0.0, 0.0, 255.0]
+		},
+		"critical_rocket_blue": {
+			"color_fade": [0.0, 28.0, 110.0, 255.0],
+			"color1": [0.0, 126.0, 255.0, 255.0],
+			"color2": [0.0, 72.0, 255.0, 255.0]
+		},
+		"critical_rocket_red": {
+			"color_fade": [72.0, 0.0, 0.0, 255.0],
+			"color1": [255.0, 72.0, 0.0, 255.0],
+			"color2": [106.0, 0.0, 0.0, 255.0]
+		},
+		"critical_rocket_redsparks": {
+			"color_fade": [255.0, 0.0, 0.0, 255.0],
+			"color1": [255.0, 180.0, 0.0, 255.0],
+			"color2": [255.0, 0.0, 0.0, 255.0]
+		}
+	},
+	"stickybomb_onlycrits.pcf": {
+		"stunballtrail_blue_crit": {
+			"color_fade": [65.0, 75.0, 93.0, 255.0],
+			"color1": [0.0, 150.0, 255.0, 255.0],
+			"color2": [0.0, 150.0, 255.0, 255.0]
+		},
+		"stunballtrail_red_crit": {
+			"color_fade": [93.0, 65.0, 65.0, 255.0],
+			"color1": [255.0, 96.0, 0.0, 255.0],
+			"color2": [255.0, 72.0, 0.0, 255.0]
+		},
+		"critical_grenade_blue": {
+			"color_fade": [205.0, 87.0, 0.0, 255.0],
+			"color1": [18.0, 0.0, 255.0, 255.0],
+			"color2": [0.0, 96.0, 255.0, 255.0]
+		},
+		"critical_grenade_blue_extra": {
+			"color_fade": [0.0, 90.0, 255.0, 255.0],
+			"color1": [115.0, 158.0, 255.0, 255.0],
+			"color2": [0.0, 108.0, 255.0, 255.0]
+		},
+		"critical_grenade_blue_glow": {
+			"color_fade": [0.0, 48.0, 255.0, 255.0],
+			"color1": [115.0, 158.0, 255.0, 255.0],
+			"color2": [115.0, 158.0, 255.0, 255.0]
+		},
+		"critical_grenade_red": {
+			"color_fade": [205.0, 87.0, 0.0, 255.0],
+			"color1": [185.0, 77.0, 77.0, 255.0],
+			"color2": [255.0, 30.0, 0.0, 255.0]
+		},
+		"critical_grenade_red_extra": {
+			"color_fade": [255.0, 72.0, 0.0, 255.0],
+			"color1": [255.0, 181.0, 115.0, 255.0],
+			"color2": [255.0, 0.0, 0.0, 255.0]
+		},
+		"critical_grenade_red_glow": {
+			"color_fade": [199.0, 0.0, 0.0, 255.0],
+			"color1": [180.0, 25.0, 0.0, 255.0],
+			"color2": [255.0, 96.0, 0.0, 255.0]
+		},
+		"critical_pipe_blue": {
+			"color_fade": [205.0, 87.0, 0.0, 255.0],
+			"color1": [18.0, 0.0, 255.0, 255.0],
+			"color2": [0.0, 96.0, 255.0, 255.0]
+		},
+		"critical_pipe_red": {
+			"color_fade": [205.0, 87.0, 0.0, 255.0],
+			"color1": [185.0, 77.0, 77.0, 255.0],
+			"color2": [255.0, 30.0, 0.0, 255.0]
+		}
+	}
+}
