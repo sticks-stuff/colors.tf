@@ -6,8 +6,8 @@ f = open("intro.html", "r")
 print(f.read())
 f.close()
 
-for filename in os.listdir('particles'):
-    particle = datamodel.load('particles/' + filename)
+for filename in os.listdir('template/particles'):
+    particle = datamodel.load('template/particles/' + filename)
     # print(filename)
     print('<div>')
     print('<h1>' + filename + '</h1>')
@@ -24,7 +24,8 @@ for filename in os.listdir('particles'):
                 # print("color_fade")
                 # print("operator.get("color_fade")")
                 thisParticle += '<h3> color_fade </h3>\n'
-                thisParticle += "<div class='colour-display' style=\"background-color: rgb("
+                ogcolor = str(operator.get('color_fade'))
+                thisParticle += f"<div class='colour-display' jsonpath='{filename},{ele.name},color_fade' ogcolour='{ogcolor}' style=\"background-color: rgb("
                 thisParticle += str(operator.get("color_fade")[0])
                 thisParticle += ", "
                 thisParticle += str(operator.get("color_fade")[1])
@@ -33,12 +34,14 @@ for filename in os.listdir('particles'):
                 thisParticle += ");\"></div>\n"
                 thisParticle += '</div>\n'
         for initializer in ele.get('initializers'):
+            # i love violating "dont repeat yourself"
             if(initializer.name == "Color Random"):
                 thisParticle += '<div>\n'
                 # thisParticle += "color1")
                 thisParticle += '<h3> color1 </h3>\n'
                 # thisParticle += initializer.get("color1"))
-                thisParticle += "<div class='colour-display' style=\"background-color: rgb("
+                ogcolor = str(initializer.get('color1'))
+                thisParticle += f"<div class='colour-display' jsonpath='{filename},{ele.name},color1' ogcolour='{ogcolor}' style=\"background-color: rgb("
                 thisParticle += str(initializer.get("color1")[0])
                 thisParticle += ", "
                 thisParticle += str(initializer.get("color1")[1])
@@ -50,7 +53,8 @@ for filename in os.listdir('particles'):
                 thisParticle += '<div>\n'
                 thisParticle += '<h3> color2 </h3>\n'
                 # thisParticle += initializer.get("color1"))
-                thisParticle += "<div class='colour-display' style=\"background-color: rgb("
+                ogcolor = str(initializer.get('color2'))
+                thisParticle += f"<div class='colour-display' jsonpath='{filename},{ele.name},color2' ogcolour='{ogcolor}' style=\"background-color: rgb("
                 thisParticle += str(initializer.get("color2")[0])
                 thisParticle += ", "
                 thisParticle += str(initializer.get("color2")[1])
