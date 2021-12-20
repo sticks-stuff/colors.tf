@@ -4,11 +4,11 @@ import json
 
 data = {}
 
-for filename in os.listdir('particles'):
-    particle = datamodel.load('particles/' + filename)
+for filename in os.listdir('template/particles'):
+    particle = datamodel.load('template/particles/' + filename)
     print('\n')
     print(filename)
-    particleFile = open('particles/' + filename, "r+b")
+    particleFile = open('template/particles/' + filename, "r+b")
     data[filename] = {}
     for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):
         print('\n')
@@ -52,5 +52,5 @@ for filename in os.listdir('particles'):
                 
     particleFile.close()
     
-with open('output.json', 'w') as outfile:
+with open('../_data/colors.json', 'w') as outfile:
     json.dump(data, outfile)
