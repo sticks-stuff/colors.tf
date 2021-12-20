@@ -1,6 +1,6 @@
 import datamodel
 
-def pathPCFWithJson(data):
+def patchPCFWithJson(data):
     for filename in data:
         particle = datamodel.load('work/particles/' + filename)
         # print('\n')

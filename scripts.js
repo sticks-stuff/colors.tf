@@ -148,5 +148,10 @@ function modifyJSON() {
             jsonElement[2] = newColor[2];
         });
         console.log(data);
+        var xhr = new XMLHttpRequest();
+        var url = "http://127.0.0.1:3000/generate";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(data));
     })    
 }

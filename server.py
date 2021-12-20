@@ -1,16 +1,28 @@
 import json_to_color_patch
 import patch_vmts
-from flask import Flask, request, jsonify
+from flask import Flask, request
+from flask_cors import CORS
+import shutil
+
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/generate', methods=['POST'])
 def generate():
     if request.method == 'POST':
-	
         data = request.get_json()
+        shutil.rmtree("work/", ignore_errors=True)
+        shutil.copytree("materials/", "work/materials")
+        shutil.copytree("template/particles", "work/particles")
 
-        print('Data Received: "{data}"'.format(data=data))
+        # print('Data Received: "{data}"'.format(data=data))
+        red_crit = data['material']['red_crit']['color']
+        red_minicrit = data['material']['red_minicrit']['color']
+        blue_crit = data['material']['blue_crit']['color']
+        blue_minicrit = data['material']['blue_minicrit']['color']
+        patch_vmts.patchVMTs(blue_crit, red_crit, red_minicrit, blue_minicrit)
+        json_to_color_patch.patchPCFWithJson(data)
         return "Request Processed.\n"
 
 if __name__ == "__main__":

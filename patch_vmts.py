@@ -6,10 +6,10 @@ def patchVMTs(bluCritColor, redCritColor, redMiniCritColor, bluMiniCritColor):
     template = f.readlines()
     f.close()
 
-    template.insert(0, '    "$bluCritGlow" "[{bluCritColor[0]} {bluCritColor[1]} {bluCritColor[2]}]"\n')
-    template.insert(0, '	"$redCritGlow" "[{redCritColor[0]} {redCritColor[1]} {redCritColor[2]}]"\n')
-    template.insert(0, '	"$redMiniCritGlow" "[{redMiniCritColor[0]} {redMiniCritColor[1]} {bluMiniCritColor[2]}]"\n')
-    template.insert(0, '"$bluMiniCritGlow" "[{bluMiniCritColor[0]} {bluMiniCritColor[1]} {bluMiniCritColor[2]}]"\n')
+    template.insert(0, f'    "$bluCritGlow" "[{bluCritColor[0]} {bluCritColor[1]} {bluCritColor[2]}]"\n')
+    template.insert(0, f'	"$redCritGlow" "[{redCritColor[0]} {redCritColor[1]} {redCritColor[2]}]"\n')
+    template.insert(0, f'	"$redMiniCritGlow" "[{redMiniCritColor[0]} {redMiniCritColor[1]} {redMiniCritColor[2]}]"\n')
+    template.insert(0, f'"$bluMiniCritGlow" "[{bluMiniCritColor[0]} {bluMiniCritColor[1]} {bluMiniCritColor[2]}]"\n')
 
     for root, dirs, files in os.walk("work/materials"):
         for file in files:
