@@ -136,8 +136,17 @@ function modifyJSON() {
     getJSON('output.json').then(data => {
         Array.from(document.getElementsByClassName('colour-display')).forEach(element => {
             jsonPath = element.attributes.jsonpath.value;
-            jsonPath = jsonPath.split(',')
-            console.log(data[jsonPath[0]][jsonPath[1]][jsonPath[2]])
+            jsonPath = jsonPath.split(',');
+            jsonElement = data[jsonPath[0]][jsonPath[1]][jsonPath[2]];
+
+            newColor = element.style.backgroundColor;
+			newColor = newColor.substring(4).slice(0, -1);
+			newColor = newColor.split(', ');
+
+            jsonElement[0] = newColor[0];
+            jsonElement[1] = newColor[1];
+            jsonElement[2] = newColor[2];
         });
+        console.log(data);
     })    
 }
