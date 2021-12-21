@@ -1,25 +1,17 @@
 "VertexLitGeneric"
 {
-	"$baseTexture" "models\weapons\v_knife/v_knife_gold"
-
-	// Begin GOLD look
-	"$envmap" "cubemaps/cubemap_gold001"	
-	"$envmaptint" "[2.5 2.5 1.15]"
+	"$baseTexture" "models\weapons\v_builder/v_builder"
 
 	"$phong" "1"
-	"$phongexponent" "100"
-	"$phongboost" "5"	
+	"$phongexponent" "50"
+	"$phongboost" "4"	
 	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
-	"$phongfresnelranges"	"[.25 .5 1]"
-
-	"$tempvar" "0"
+	"$phongfresnelranges" "[0.25 0.5 1]"
+	"$basemapalphaphongmask" "1"
 
 	"$rimlight" "1"
-	"$rimlightexponent" "10"	
+	"$rimlightexponent" "4"	
 	"$rimlightboost" "2"
-
-
-	"$glowcolor" "1"
 
 	// Cloaking
 	"$cloakPassEnabled" "1"
@@ -32,18 +24,10 @@
 	"$sheenindex" 		"0"
 
 	"$yellow" "0"
+	"$glowcolor" "1"
 
 	"Proxies"
 	{
-		"AnimatedWeaponSheen"
-		{
-			"animatedtexturevar" 		"$sheenmapmask"
-			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
-			"animatedtextureframerate" 		"40"
-		}
-		"invis"
-		{
-		}
 		"ModelGlowColor"
 		{
 			"resultVar" "$glowcolor"
@@ -58,14 +42,22 @@
 			"srcVar1"  "$glowcolor"
 			"resultVar" "$color2"
 		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+		"invis"
+		{
+		}
 		"YellowLevel"
 		{
 			"resultVar" "$yellow"
 		}
-		"Multiply"
+		"Equals"
 		{
-			"srcVar1" "$color2"
-			"srcVar2" "$yellow"
+			"srcVar1"  "$yellow"
 			"resultVar" "$color2"
 		}
 	}
