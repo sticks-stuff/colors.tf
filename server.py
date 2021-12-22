@@ -3,7 +3,7 @@ import patch_vmts
 from flask import Flask, request
 from flask_cors import CORS
 import shutil
-
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -11,18 +11,20 @@ CORS(app)
 @app.route('/generate', methods=['POST'])
 def generate():
     if request.method == 'POST':
+        requestTime = str(int(time.time()))
         data = request.get_json()
-        shutil.rmtree("work/", ignore_errors=True)
-        shutil.copytree("materials/", "work/materials")
-        shutil.copytree("template/particles", "work/particles")
+        # shutil.rmtree("work/", ignore_errors=True)
+        # shutil.copytree("materials/", "work/" + requestTime + "/materials")
+        shutil.copytree("template/particles", "work/" + requestTime + "/particles/")
 
-        # print('Data Received: "{data}"'.format(data=data))
-        red_crit = data['material']['red_crit']['color']
-        red_minicrit = data['material']['red_minicrit']['color']
-        blue_crit = data['material']['blue_crit']['color']
-        blue_minicrit = data['material']['blue_minicrit']['color']
-        patch_vmts.patchVMTs(blue_crit, red_crit, red_minicrit, blue_minicrit)
-        json_to_color_patch.patchPCFWithJson(data)
+        print('Data Received: "{data}"'.format(data=data))
+        # red_crit = data['material']['red_crit']['color']
+        # red_minicrit = data['material']['red_minicrit']['color']
+        # blue_crit = data['material']['blue_crit']['color']
+        # blue_minicrit = data['material']['blue_minicrit']['color']
+        # patch_vmts.patchVMTs(blue_crit, red_crit, red_minicrit, blue_minicrit, "work" + requestTime + "/materials")
+        
+        json_to_color_patch.patchPCFWithJson(data, "work/" + requestTime + "/particles/")
         return "Request Processed.\n"
 
 if __name__ == "__main__":

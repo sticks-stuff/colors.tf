@@ -1,11 +1,11 @@
 import datamodel
 
-def patchPCFWithJson(data):
+def patchPCFWithJson(data, directory):
     for filename in data:
-        particle = datamodel.load('work/particles/' + filename)
+        particle = datamodel.load(directory + filename)
         # print('\n')
         # print(filename)
-        particleFile = open('work/particles/' + filename, "r+b")
+        particleFile = open(directory + filename, "r+b")
 
         for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):
             if ele.name in data[filename]:
