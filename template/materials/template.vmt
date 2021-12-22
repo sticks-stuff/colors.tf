@@ -4,10 +4,12 @@
 	$bluCrit 0
 	$redMiniCrit 0
 	$redCrit 0
+	$hypeBoost 0
 
 	$onethirtyfive 135
 	$eighty 80
 	$sixtytwo 62
+	$fourtyeight 48
 	$five 5
 
 	$zero 0.0
@@ -43,6 +45,15 @@
 			srcVar2						$eighty
 			resultVar					$bluCrit
 		}
+		
+		// if its 48 its a blue crit
+		// hardcode this to avoid resetting it
+		Subtract
+		{
+			srcVar1						$originalCritGlow2
+			srcVar2						$fourtyeight
+			resultVar					$hypeBoost
+		}
 
 		// if its 62 its a red minicrit
 		Subtract
@@ -69,6 +80,11 @@
 		{
 			srcVar1						$bluCrit
 			resultVar					$bluCrit
+		}
+		Abs
+		{
+			srcVar1						$hypeBoost
+			resultVar					$hypeBoost
 		}
 		Abs
 		{
@@ -101,6 +117,15 @@
 			lessEqualVar $bluCritGlow
 			greaterVar $glowcolor
 			srcVar1 $bluCrit
+			srcVar2 $zero
+			resultVar $glowcolor
+		}
+		
+		LessOrEqual
+		{
+			lessEqualVar $originalCritGlow
+			greaterVar $glowcolor
+			srcVar1 $hypeBoost
 			srcVar2 $zero
 			resultVar $glowcolor
 		}
