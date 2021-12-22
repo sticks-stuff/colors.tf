@@ -3,8 +3,8 @@ import datamodel
 def patchPCFWithJson(data, directory):
     for filename in data:
         particle = datamodel.load(directory + filename)
-        # print('\n')
-        # print(filename)
+        print('\n')
+        print(filename)
         particleFile = open(directory + filename, "r+b")
 
         for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):

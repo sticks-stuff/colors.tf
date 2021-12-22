@@ -14,16 +14,17 @@ def generate():
         requestTime = str(int(time.time()))
         data = request.get_json()
         # shutil.rmtree("work/", ignore_errors=True)
-        # shutil.copytree("materials/", "work/" + requestTime + "/materials")
+        shutil.copytree("materials/", "work/" + requestTime + "/materials/")
         shutil.copytree("template/particles", "work/" + requestTime + "/particles/")
 
         print('Data Received: "{data}"'.format(data=data))
-        # red_crit = data['material']['red_crit']['color']
-        # red_minicrit = data['material']['red_minicrit']['color']
-        # blue_crit = data['material']['blue_crit']['color']
-        # blue_minicrit = data['material']['blue_minicrit']['color']
-        # patch_vmts.patchVMTs(blue_crit, red_crit, red_minicrit, blue_minicrit, "work" + requestTime + "/materials")
+        red_crit = data['material']['red_crit']['color']
+        red_minicrit = data['material']['red_minicrit']['color']
+        blue_crit = data['material']['blue_crit']['color']
+        blue_minicrit = data['material']['blue_minicrit']['color']
+        patch_vmts.patchVMTs(blue_crit, red_crit, red_minicrit, blue_minicrit, "work/" + requestTime + "/materials/")
         
+        del data['material'] #clean up the stuff thats only for vmfs
         json_to_color_patch.patchPCFWithJson(data, "work/" + requestTime + "/particles/")
         return "Request Processed.\n"
 

@@ -78,7 +78,7 @@ for filename in os.listdir('template/particles'):
             thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle
             thisParticle = '<div class="blue-particle">\n' + thisParticle
             if 'blu_' in ele.name or ele.name.endswith('_blu'):
-                #awful hack because sometimes its 'blue' and sometimes its 'blue'
+                #awful hack because sometimes its 'blue' and sometimes its 'blu'
                 if ele.name.replace('blu', 'team') not in particles:
                     particles[ele.name.replace('blu', 'team')] = {}
                 particles[ele.name.replace('blu', 'team')]['blue'] = thisParticle
