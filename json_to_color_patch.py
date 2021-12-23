@@ -44,7 +44,7 @@ def patchPCFWithJson(data, directory):
                             # print(initializer.get("color1")[2])
                             
                             # print("color2")
-                            print(initializer['color2'].offset)
+                            # print(initializer['color2'].offset)
                             particleFile.seek(initializer['color2'].offset)
                             for i in data[filename][ele.name]['color2']:
                                 particleFile.write(bytes((int(i),)))
