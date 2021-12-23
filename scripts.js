@@ -148,10 +148,25 @@ function modifyJSON() {
             jsonElement[2] = newColor[2];
         });
         console.log(data);
-        var xhr = new XMLHttpRequest();
-        var url = "http://127.0.0.1:3000/generate";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(data));
     })    
 }
+
+var xhr = new XMLHttpRequest();
+var url = "http://127.0.0.1:3000/generate";
+xhr.responseType = "blob";
+
+xhr.onreadystatechange = function() {
+    console.log(xhr.readyState)
+    console.log(xhr.status)
+    if(xhr.readyState == 4) {
+        var blob = xhr.response;
+        var fileName = xhr.getResponseHeader('content-disposition').split('filename=')[1].split(';')[0];
+        var link=document.createElement('a');
+        link.href=window.URL.createObjectURL(blob);
+        link.download=fileName;
+        link.click();
+    }
+}  
