@@ -4,6 +4,7 @@ from flask import Flask, request
 from flask_cors import CORS
 import shutil
 import time
+import vpk
 
 app = Flask(__name__)
 CORS(app)
@@ -26,6 +27,9 @@ def generate():
         
         del data['material'] #clean up the stuff thats only for vmfs
         json_to_color_patch.patchPCFWithJson(data, "work/" + requestTime + "/particles/")
+        newpak = vpk.new("work/" + requestTime)
+        newpak.save("colors.tf_" + requestTime + ".vpk")
+
         return "Request Processed.\n"
 
 if __name__ == "__main__":
