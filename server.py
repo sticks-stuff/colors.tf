@@ -8,6 +8,7 @@ import vpk
 import os
 import io
 from multiprocessing import Process
+import glob
 
 app = Flask(__name__)
 CORS(app, expose_headers=["Content-Disposition"])
@@ -31,6 +32,7 @@ def generate():
         print("Patched vmts!");
         
         del data['material'] #clean up the stuff thats only for vmfs
+        #hacky i know
         json_to_color_patch.patchPCFWithJson(data, "work/" + requestTime + "/particles/")
         print("Patched particles!");
         
@@ -40,12 +42,15 @@ def generate():
 
         filename = "colors.tf_" + requestTime + ".vpk"
         
-        return_data = io.BytesIO()
+        
+        return_data = io.BytesIO() #all this shit is literally just to remove the vpk after its sent
         with open(filename, 'rb') as fo:
             return_data.write(fo.read())
             return_data.seek(0)    
 
-        background_remove(filename)
+        background_remove(filename) #see above
+        
+        shutil.rmtree("work/" + requestTime, ignore_errors=True) #clean up the directory we made too
     
         return send_file(return_data, as_attachment=True, attachment_filename=filename)
 
