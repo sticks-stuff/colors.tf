@@ -1,10 +1,13 @@
 import json_to_color_patch
 import patch_vmts
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, after_this_request
 from flask_cors import CORS
 import shutil
 import time
 import vpk
+import os
+import io
+from multiprocessing import Process
 
 app = Flask(__name__)
 CORS(app, expose_headers=["Content-Disposition"])
@@ -35,8 +38,24 @@ def generate():
         newpak.save("colors.tf_" + requestTime + ".vpk")
         print("Packed files!");
 
-        path = "colors.tf_" + requestTime + ".vpk"
-        return send_file(path, as_attachment=True, attachment_filename=path)
+        filename = "colors.tf_" + requestTime + ".vpk"
+        
+        return_data = io.BytesIO()
+        with open(filename, 'rb') as fo:
+            return_data.write(fo.read())
+            return_data.seek(0)    
+
+        background_remove(filename)
+    
+        return send_file(return_data, as_attachment=True, attachment_filename=filename)
+
+def background_remove(path):
+    task = Process(target=rm(path))
+    task.start()
+
+    
+def rm(path):
+    os.remove(path)
 
 if __name__ == "__main__":
 #   app.run(port=3000)
