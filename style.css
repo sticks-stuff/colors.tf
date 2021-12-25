@@ -82,4 +82,12 @@
   -webkit-mask-size: cover;
           mask-size: cover;
 }
+
+#rocketlauncher_preview .preview-hand {
+  background-image: url("assets/preview/rocketlauncher/blu_hand.png");
+}
+
+#rocketlauncher_preview .preview-background {
+  background-image: url("assets/preview/rocketlauncher/background.png");
+}
 /*# sourceMappingURL=style.css.map */
