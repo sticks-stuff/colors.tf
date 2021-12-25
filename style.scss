@@ -38,26 +38,39 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-	.preview-template {
+	#preview-template {
 		background-image: url('assets/preview/rocketlauncher/template.png');
 		mix-blend-mode: luminosity;
 	}
-	.preview-color {
+	#preview-color-blu {
 		background-color: rgb(33, 95, 204);
+  		mask-image: url('assets/preview/rocketlauncher/mask.png');
+		mask-position: center;
+		mask-size: cover;
+		display: none;
+	}
+
+	#preview-color-red {
+		background-color: rgb(204, 20, 13);
   		mask-image: url('assets/preview/rocketlauncher/mask.png');
 		mask-position: center;
 		mask-size: cover;
 	}
 
-	.preview-hand {
+	#preview-hand-blu {
 		background-image: url('assets/preview/rocketlauncher/blu_hand.png');
+		display: none;
 	}
 
-	.preview-background {
+	#preview-hand-red {
+		background-image: url('assets/preview/rocketlauncher/red_hand.png');
+	}
+
+	#preview-background {
 		background-image: url('assets/preview/rocketlauncher/background.png');
 	}
 
-	.preview-crits {
+	#preview-crits {
 		
 		background-color: rgb(33, 95, 204);
 		video {

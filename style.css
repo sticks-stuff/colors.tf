@@ -68,13 +68,24 @@
   background-size: cover;
 }
 
-#rocketlauncher_preview .preview-template {
+#rocketlauncher_preview #preview-template {
   background-image: url("assets/preview/rocketlauncher/template.png");
   mix-blend-mode: luminosity;
 }
 
-#rocketlauncher_preview .preview-color {
+#rocketlauncher_preview #preview-color-blu {
   background-color: #215fcc;
+  -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
+          mask-image: url("assets/preview/rocketlauncher/mask.png");
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  display: none;
+}
+
+#rocketlauncher_preview #preview-color-red {
+  background-color: #cc140d;
   -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
           mask-image: url("assets/preview/rocketlauncher/mask.png");
   -webkit-mask-position: center;
@@ -83,19 +94,24 @@
           mask-size: cover;
 }
 
-#rocketlauncher_preview .preview-hand {
+#rocketlauncher_preview #preview-hand-blu {
   background-image: url("assets/preview/rocketlauncher/blu_hand.png");
+  display: none;
 }
 
-#rocketlauncher_preview .preview-background {
+#rocketlauncher_preview #preview-hand-red {
+  background-image: url("assets/preview/rocketlauncher/red_hand.png");
+}
+
+#rocketlauncher_preview #preview-background {
   background-image: url("assets/preview/rocketlauncher/background.png");
 }
 
-#rocketlauncher_preview .preview-crits {
+#rocketlauncher_preview #preview-crits {
   background-color: #215fcc;
 }
 
-#rocketlauncher_preview .preview-crits video {
+#rocketlauncher_preview #preview-crits video {
   mix-blend-mode: luminosity;
 }
 /*# sourceMappingURL=style.css.map */

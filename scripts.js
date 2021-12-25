@@ -19,8 +19,10 @@ function watchColorPicker(event, team) {
 	
     if(team == "red") {
         originalHSL = rgbToHsl(255, 0, 24); //god i love hard coding vars
+        critColor = document.querySelectorAll('[jsonpath="material,red_crit,color"]')[0]
     } else {
         originalHSL = rgbToHsl(0, 30, 255);
+        critColor = document.querySelectorAll('[jsonpath="material,blue_crit,color"]')[0]
     }
 
 	colorHSL = rgbToHsl(color[0], color[1], color[2])
@@ -28,9 +30,9 @@ function watchColorPicker(event, team) {
 	newColorDiff[0] = colorHSL[0] - originalHSL[0];
 	newColorDiff[1] = colorHSL[1] - originalHSL[1];
 	newColorDiff[2] = colorHSL[2] - originalHSL[2];
-	console.log({originalHSL})
-	console.log({colorHSL})
-	console.log({newColorDiff})
+	// console.log({originalHSL})
+	// console.log({colorHSL})
+	// console.log({newColorDiff})
 	Array.from(document.getElementsByClassName(`${team}-particle`)).forEach(element => {
 		Array.from(element.getElementsByClassName('colour-display')).forEach(element => {
 			originalColor = element.attributes.ogcolour.value;
@@ -38,7 +40,7 @@ function watchColorPicker(event, team) {
             // console.log(originalColor)
 			originalColor = originalColor.split(' ');
 			originalColorHSL = rgbToHsl(originalColor[0], originalColor[1], originalColor[2]);
-			console.log({originalColorHSL})
+			// console.log({originalColorHSL})
 			originalColorHSL[0] += newColorDiff[0];
 			originalColorHSL[1] += newColorDiff[1];
 			originalColorHSL[2] += newColorDiff[2];
@@ -46,6 +48,28 @@ function watchColorPicker(event, team) {
 			element.style.backgroundColor = 'rgb(' + originalColor.join(', ') + ')';
 		});
 	});
+
+    // critColorRGB = critColor.style.backgroundColor.slice(4, -1);
+    // critColorRGB = critColorRGB.split(', ');
+    // console.log({critColorRGB})
+    // console.log(parseInt(critColorRGB[0]), parseInt(critColorRGB[1]), parseInt(critColorRGB[2]));
+    // critColorHSL = rgbToHsl(parseInt(critColorRGB[0]), parseInt(critColorRGB[1]), parseInt(critColorRGB[2]));
+    // console.log({critColorHSL})
+
+    // critColorHSL[0] -= 0.05;
+    // critColorHSL[1] -= 0.05;
+    // from my testing take 10 away from hue and sat to get in game color
+    // critColorHSL = hslToRgb(critColorHSL[0], critColorHSL[1], critColorHSL[2]);
+
+    // console.log({critColorHSL})
+
+    if(team == "red") {
+        document.getElementById('preview-color-red').style.backgroundColor = critColor.style.backgroundColor;
+        // document.getElementById('preview-color-red').style.backgroundColor = 'rgb(' + critColorHSL.join(', ') + ')';
+    } else {
+        document.getElementById('preview-color-blu').style.backgroundColor = critColor.style.backgroundColor;
+        // document.getElementById('preview-color-blu').style.backgroundColor = 'rgb(' + critColorHSL.join(', ') + ')';
+    }
 }
 
 function hexToRgb(hex) {
@@ -170,3 +194,17 @@ xhr.onreadystatechange = function() {
         link.click();
     }
 }  
+
+function previewSelect(team) {
+    if(team == 'red') {
+        document.getElementById('preview-color-blu').style.display = 'none';
+        document.getElementById('preview-color-red').style.display = 'revert';
+        document.getElementById('preview-hand-blu').style.display = 'none';
+        document.getElementById('preview-hand-red').style.display = 'revert';
+    } else {
+        document.getElementById('preview-color-red').style.display = 'none';
+        document.getElementById('preview-color-blu').style.display = 'revert';
+        document.getElementById('preview-hand-red').style.display = 'none';
+        document.getElementById('preview-hand-blu').style.display = 'revert';
+    }
+}

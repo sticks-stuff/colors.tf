@@ -12,6 +12,28 @@
 		<label for="blue">blue</label>
 		<input id="blue" name="blue" type="color" value="#001eff">
 		<button onClick="modifyJSON()">modifyJSON</button>
+
+		<h1>preview</h1>
+
+		<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
+		<label for="red_preview">red</label>
+		<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
+		<label for="blu_preview">blu</label><br>
+
+		<div id="rocketlauncher_preview">
+			<div id="preview-background"></div>
+			<div id="preview-hand-red"></div>
+			<div id="preview-hand-blu"></div>
+			<div id="preview-color-red"></div>
+			<div id="preview-color-blu"></div>
+			<div id="preview-template"></div>
+			<!-- <div class="preview-crits">
+				<video autoplay loop muted playsinline>
+					<source src="assets/preview/rocketlauncher/crits.webm" type="video/webm">
+				</video>
+			</div> -->
+		</div>
+
 		<h1>original crit colours</h1>
 			<div class="both-class-colours">
 				<div class="red-particle">
@@ -41,6 +63,7 @@
 					</div>
 				</div>
 			</div>
+
 
 
 <div>
@@ -772,6 +795,6 @@
 
 </div>
 </div>
-	<script src="scripts.js"></script>
-	</body>
+<script src="scripts.js"></script>
+</body>
 </html>
