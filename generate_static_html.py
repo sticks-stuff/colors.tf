@@ -7,8 +7,9 @@ print(f.read())
 f.close()
 
 for filename in os.listdir('template/particles'):
+    if filename == 'particles_manifest.txt': #hardcoding shit fuck you
+        continue;
     particle = datamodel.load('template/particles/' + filename)
-    # print(filename)
     print('<div>')
     print('<h1>' + filename + '</h1>')
     particles = {}
