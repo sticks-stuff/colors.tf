@@ -5,6 +5,9 @@ def patchVMTs(bluCritColor, redCritColor, redMiniCritColor, bluMiniCritColor, di
     f = open("template/materials/template.vmt", "r")
     template = f.readlines()
     f.close()
+    
+    redCritColor = list(map(percentage, redCritColor))
+    bluCritColor = list(map(percentage, bluCritColor))
 
     template.insert(0, f'    "$bluCritGlow" "[{bluCritColor[0]} {bluCritColor[1]} {bluCritColor[2]}]"\n')
     template.insert(0, f'	"$redCritGlow" "[{redCritColor[0]} {redCritColor[1]} {redCritColor[2]}]"\n')
@@ -23,3 +26,6 @@ def patchVMTs(bluCritColor, redCritColor, redMiniCritColor, bluMiniCritColor, di
                     
                 with open(os.path.join(root, file), 'w') as f:
                     f.write(filedata)
+                    
+def percentage(part):
+  return round(100 * float(part)/float(255))
