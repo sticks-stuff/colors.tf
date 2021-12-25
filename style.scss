@@ -25,3 +25,28 @@
 	}
 }
 
+#rocketlauncher_preview {
+	aspect-ratio: 16 / 9;
+	width: 80vw;	
+	height: auto;
+	* {
+		aspect-ratio: 16 / 9;
+		width: 80vw;	
+		height: auto;
+		position: absolute;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.preview-template {
+		background-image: url('assets/preview/rocketlauncher/template.png');
+		mix-blend-mode: luminosity;
+	}
+	.preview-color {
+		background-color: rgb(33, 95, 204);
+  		mask-image: url('assets/preview/rocketlauncher/mask.png');
+		mask-position: center;
+		mask-size: cover;
+	}
+}
+

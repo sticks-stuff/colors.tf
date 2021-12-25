@@ -51,4 +51,35 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+#rocketlauncher_preview {
+  aspect-ratio: 16 / 9;
+  width: 80vw;
+  height: auto;
+}
+
+#rocketlauncher_preview * {
+  aspect-ratio: 16 / 9;
+  width: 80vw;
+  height: auto;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#rocketlauncher_preview .preview-template {
+  background-image: url("assets/preview/rocketlauncher/template.png");
+  mix-blend-mode: luminosity;
+}
+
+#rocketlauncher_preview .preview-color {
+  background-color: #215fcc;
+  -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
+          mask-image: url("assets/preview/rocketlauncher/mask.png");
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+}
 /*# sourceMappingURL=style.css.map */
