@@ -208,3 +208,31 @@ function previewSelect(team) {
         document.getElementById('preview-hand-blu').style.display = 'revert';
     }
 }
+
+Array.from(document.getElementsByClassName('colour-display')).forEach(element => {
+    picker = new CP(element);
+    disableAlphaControl(picker);
+    // console.log({rgbColorofEl});
+    picker.on('enter', function(r, g, b, a) {
+        rgbColorofEl = this.source.style.backgroundColor.slice(4, -1).split(', ');
+        this.set(parseInt(rgbColorofEl[0]), parseInt(rgbColorofEl[1]), parseInt(rgbColorofEl[2]), 1);
+    });
+    picker.on('drag', function(r, g, b, a) {
+        this.source.style.backgroundColor = this.color(r, g, b, a);
+        // this.set(this.color(r, g, b, a))
+    });
+    picker.on('exit', function(r, g, b, a) {
+        this.set(this.color(r, g, b, a))
+    });
+});
+
+function disableAlphaControl(picker) {
+    if (picker.noAlpha) {
+        return;
+    }
+    picker.noAlpha = true;
+    picker.self.classList.add('no-alpha');
+    picker.on('change', function(r, g, b) {
+        this.source.value = this.color(r, g, b, 1);
+    });
+}

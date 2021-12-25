@@ -5,6 +5,12 @@
 		<title>My Page Title</title>
 		<meta name="description" content="My Page Description">
 		<link rel="stylesheet" href="style.css">
+		<link href="color-picker.min.css" rel="stylesheet">
+		<style>
+			.color-picker.no-alpha .color-picker\:a {
+			  display: none;
+			}
+		</style>
 	</head>
 	<body>
 		<label for="red">red</label>
@@ -12,10 +18,11 @@
 		<label for="blue">blue</label>
 		<input id="blue" name="blue" type="color" value="#001eff">
 		<button onClick="modifyJSON()">modifyJSON</button>
+		<script src="color-picker.min.js"></script>
 
 		<h1>preview</h1>
 
-		<input type="radio" onclick="previewSelect('red');" name="team" value="red_preview">
+		<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
 		<label for="red_preview">red</label>
 		<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
 		<label for="blu_preview">blu</label><br>
@@ -63,4 +70,3 @@
 					</div>
 				</div>
 			</div>
-

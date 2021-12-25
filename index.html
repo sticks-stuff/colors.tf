@@ -5,6 +5,12 @@
 		<title>My Page Title</title>
 		<meta name="description" content="My Page Description">
 		<link rel="stylesheet" href="style.css">
+		<link href="color-picker.min.css" rel="stylesheet">
+		<style>
+			.color-picker.no-alpha .color-picker\:a {
+			  display: none;
+			}
+		</style>
 	</head>
 	<body>
 		<label for="red">red</label>
@@ -12,6 +18,7 @@
 		<label for="blue">blue</label>
 		<input id="blue" name="blue" type="color" value="#001eff">
 		<button onClick="modifyJSON()">modifyJSON</button>
+		<script src="color-picker.min.js"></script>
 
 		<h1>preview</h1>
 
@@ -63,9 +70,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
 <div>
 <h1>bullet_tracers_onlycrits.pcf</h1>
 <div class="both-class-colours">
@@ -795,6 +799,6 @@
 
 </div>
 </div>
-<script src="scripts.js"></script>
-</body>
+	<script src="scripts.js"></script>
+	</body>
 </html>
