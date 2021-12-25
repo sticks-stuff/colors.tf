@@ -56,5 +56,13 @@
 	.preview-background {
 		background-image: url('assets/preview/rocketlauncher/background.png');
 	}
+
+	.preview-crits {
+		
+		background-color: rgb(33, 95, 204);
+		video {
+			mix-blend-mode: luminosity;
+		}
+	}
 }
 

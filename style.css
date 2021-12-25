@@ -90,4 +90,12 @@
 #rocketlauncher_preview .preview-background {
   background-image: url("assets/preview/rocketlauncher/background.png");
 }
+
+#rocketlauncher_preview .preview-crits {
+  background-color: #215fcc;
+}
+
+#rocketlauncher_preview .preview-crits video {
+  mix-blend-mode: luminosity;
+}
 /*# sourceMappingURL=style.css.map */
