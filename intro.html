@@ -17,22 +17,26 @@
 
 		<div id="preview-box">
 			<div id="team-select">
-				<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
-				<label for="red_preview">red</label>
-				<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
-				<label for="blu_preview">blu</label><br>	
+				<div>
+					<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
+					<label for="red_preview">red</label>	
+				</div>
+				<div>
+					<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
+					<label for="blu_preview">blu</label><br>		
+				</div>
 			</div>
 			<div id="colorpaneandimage">
 				<div id="preview-color-pane">
 					<div class="red-preview-colors">
 						<div class="red-particle">
-							<h2>red crits</h2>
+							<h2>crits</h2>
 							<div>
 								<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='204 20 13' style="background-color: rgb(204, 20, 13);"></div>
 							</div>
 						</div>
 						<div class="red-particle">
-							<h2>red mini crits</h2>
+							<h2>mini-crits</h2>
 							<div>
 								<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
 							</div>

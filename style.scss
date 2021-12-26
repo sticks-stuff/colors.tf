@@ -1,7 +1,10 @@
+@import url('http://fonts.cdnfonts.com/css/tf2-build');
+
 .colour-display {
 	aspect-ratio: 1;
 	width: 100px;
 	height: 100px;
+	border-radius: 10px;
 }
 
 .both-class-colours {
@@ -27,10 +30,15 @@
 
 body {
 	margin: 0;
+	font-family: 'TF2 Build', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 
 #preview-box {
-	width: 100vw;
+	width: 90vw;
 	height: 90vh;
 	display: flex;
 	align-items: stretch;
@@ -38,25 +46,42 @@ body {
 	#team-select {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-evenly;
 		width: 100%;
-		height: 20%;
+		height: 10%;
+		background-color: #6A6664;
+		color: #fff;
+		font-size: 2em;
+		border-radius: 10px;
+		scale: 1.05;
+		z-index: 99;
 	}
 	#colorpaneandimage {
 		display: flex;
 		align-items: stretch;
+		flex: 1;
 		#preview-color-pane {
-			width: 20vw;
+			width: 20%;
 			height: 100%;
 			display: flex;
+			justify-content: center;
+			align-items: center;
+			.blue-preview-colours {
+				display: none;
+			}
+			margin-bottom: 10%;
+			background-color: #282320;
+			color: #C65032;
+			border-radius: 10px;
 		}
 		#preview-image {
 			display: flex;
 			align-items: center;
 			aspect-ratio: 16 / 9;
-			width: 80vw;
+			width: 80%;
 			height: auto;
 			position: relative;
+			scale: 0.9;
 			* {
 				width: 100%;
 				height: 100%;
@@ -64,6 +89,7 @@ body {
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
+				border-radius: 50px;
 			}
 			#preview-template {
 				background-image: url('assets/preview/rocketlauncher/template.png');
