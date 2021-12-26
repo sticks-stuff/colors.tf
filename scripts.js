@@ -3,19 +3,19 @@ function getJSON(path) {
     return fetch(path).then(response => response.json());
 }
 
-document.getElementById('red').addEventListener("change", watchColorPickerRed, false);
-document.getElementById('blue').addEventListener("change", watchColorPickerBlue, false);
+// document.getElementById('red').addEventListener("change", watchColorPickerRed, false);
+// document.getElementById('blue').addEventListener("change", watchColorPickerBlue, false);
 
-function watchColorPickerRed(event) {
-    watchColorPicker(event, "red")
-}
+// function watchColorPickerRed(event) {
+//     watchColorPicker(event, "red")
+// }
 
-function watchColorPickerBlue(event) {
-    watchColorPicker(event, "blue")
-}
+// function watchColorPickerBlue(event) {
+//     watchColorPicker(event, "blue")
+// }
 
-function watchColorPicker(event, team) {
-	color = hexToRgb(event.target.value);
+function watchColorPicker(hex, team) {
+	color = hexToRgb(hex);
 	
     if(team == "red") {
         originalHSL = rgbToHsl(255, 0, 24); //god i love hard coding vars
@@ -219,11 +219,22 @@ Array.from(document.getElementsByClassName('colour-display')).forEach(element =>
     });
     picker.on('drag', function(r, g, b, a) {
         this.source.style.backgroundColor = this.color(r, g, b, a);
-        // this.set(this.color(r, g, b, a))
     });
     picker.on('exit', function(r, g, b, a) {
         this.set(this.color(r, g, b, a))
     });
+    if(element.attributes.jsonpath.value == "material,red_crit,color") {
+        picker.on('drag', function(r, g, b, a) {
+            this.source.style.backgroundColor = this.color(r, g, b, a);
+            watchColorPicker(CP.HEX([r, g, b]), 'red')
+        });
+    }
+    if(element.attributes.jsonpath.value == "material,blue_crit,color") {
+        picker.on('drag', function(r, g, b, a) {
+            this.source.style.backgroundColor = this.color(r, g, b, a);
+            watchColorPicker(CP.HEX([r, g, b]), 'blue')
+        });
+    }
 });
 
 function disableAlphaControl(picker) {
