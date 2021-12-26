@@ -18,10 +18,10 @@ function watchColorPicker(hex, team) {
 	color = hexToRgb(hex);
 	
     if(team == "red") {
-        originalHSL = rgbToHsl(255, 0, 24); //god i love hard coding vars
+        originalHSL = rgbToHsl(204, 20, 13); //god i love hard coding vars
         critColor = document.querySelectorAll('[jsonpath="material,red_crit,color"]')[0]
     } else {
-        originalHSL = rgbToHsl(0, 30, 255);
+        originalHSL = rgbToHsl(13, 51, 204);
         critColor = document.querySelectorAll('[jsonpath="material,blue_crit,color"]')[0]
     }
 
@@ -226,7 +226,7 @@ Array.from(document.getElementsByClassName('colour-display')).forEach(element =>
     if(element.attributes.jsonpath.value == "material,red_crit,color") {
         picker.on('drag', function(r, g, b, a) {
             this.source.style.backgroundColor = this.color(r, g, b, a);
-            watchColorPicker(CP.HEX([r, g, b]), 'red')
+            watchColorPicker(CP.HEX([r, g, b]), 'red') //yes i turn RGB into a hex color only to turn it back into RGB stop asking so many questions
         });
     }
     if(element.attributes.jsonpath.value == "material,blue_crit,color") {

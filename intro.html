@@ -13,60 +13,55 @@
 		</style>
 	</head>
 	<body>
-		<!-- <label for="red">red</label>
-		<input id="red" name="red" type="color" value="#ff0018">
-		<label for="blue">blue</label>
-		<input id="blue" name="blue" type="color" value="#001eff">
-		<button onClick="modifyJSON()">modifyJSON</button> -->
 		<script src="color-picker.min.js"></script>
 
-		<h1>original crit colours</h1>
-			<div class="both-class-colours">
-				<div class="red-particle">
-					<h2>red crits</h2>
-					<div>
-						<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='204 20 13' style="background-color: rgb(204, 20, 13);"></div>
+		<div id="preview-box">
+			<div id="team-select">
+				<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
+				<label for="red_preview">red</label>
+				<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
+				<label for="blu_preview">blu</label><br>	
+			</div>
+			<div id="colorpaneandimage">
+				<div id="preview-color-pane">
+					<div class="red-preview-colors">
+						<div class="red-particle">
+							<h2>red crits</h2>
+							<div>
+								<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='204 20 13' style="background-color: rgb(204, 20, 13);"></div>
+							</div>
+						</div>
+						<div class="red-particle">
+							<h2>red mini crits</h2>
+							<div>
+								<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="blue-preview-colours">
+						<div class="blue-particle">
+							<h2>blue crits</h2>
+							<div>
+								<div class='colour-display' jsonpath='material,blue_crit,color' ogcolour='13 51 204' style="background-color: rgb(13, 51, 204);"></div>
+							</div>
+						</div>
+						<div class="blue-particle">
+							<h2>blue mini crits</h2>
+							<div>
+								<div class='colour-display' jsonpath='material,blue_minicrit,color' ogcolour='29 202 135' style="background-color: rgb(29, 202, 135);"></div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="blue-particle">
-					<h2>blue crits</h2>
-					<div>
-						<div class='colour-display' jsonpath='material,blue_crit,color' ogcolour='13 51 204' style="background-color: rgb(13, 51, 204);"></div>
-					</div>
+				
+				<div id="preview-image">
+					<div id="preview-background"></div>
+					<div id="preview-hand-red"></div>
+					<div id="preview-hand-blu"></div>
+					<div id="preview-color-red"></div>
+					<div id="preview-color-blu"></div>
+					<div id="preview-template"></div>
 				</div>
 			</div>
-			<div class="both-class-colours">
-				<div class="red-particle">
-					<h2>red mini crits</h2>
-					<div>
-						<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
-					</div>
-				</div>
-				<div class="blue-particle">
-					<h2>blue mini crits</h2>
-					<div>
-						<div class='colour-display' jsonpath='material,blue_minicrit,color' ogcolour='29 202 135' style="background-color: rgb(29, 202, 135);"></div>
-					</div>
-				</div>
-			</div>
-
-			<h1>preview</h1>
-
-			<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
-			<label for="red_preview">red</label>
-			<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
-			<label for="blu_preview">blu</label><br>
-
-			<div id="rocketlauncher_preview">
-				<div id="preview-background"></div>
-				<div id="preview-hand-red"></div>
-				<div id="preview-hand-blu"></div>
-				<div id="preview-color-red"></div>
-				<div id="preview-color-blu"></div>
-				<div id="preview-template"></div>
-				<!-- <div class="preview-crits">
-					<video autoplay loop muted playsinline>
-						<source src="assets/preview/rocketlauncher/crits.webm" type="video/webm">
-					</video>
-				</div> -->
-			</div>
+		</div>

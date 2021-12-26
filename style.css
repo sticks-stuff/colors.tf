@@ -52,28 +52,86 @@
           align-items: center;
 }
 
-#rocketlauncher_preview {
-  aspect-ratio: 16 / 9;
-  width: 80vw;
-  height: auto;
+body {
+  margin: 0;
 }
 
-#rocketlauncher_preview * {
+#preview-box {
+  width: 100vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#preview-box #team-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 20%;
+}
+
+#preview-box #colorpaneandimage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#preview-box #colorpaneandimage #preview-color-pane {
+  width: 20vw;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#preview-box #colorpaneandimage #preview-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   aspect-ratio: 16 / 9;
   width: 80vw;
   height: auto;
+  position: relative;
+}
+
+#preview-box #colorpaneandimage #preview-image * {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#rocketlauncher_preview #preview-template {
+#preview-box #colorpaneandimage #preview-image #preview-template {
   background-image: url("assets/preview/rocketlauncher/template.png");
   mix-blend-mode: luminosity;
 }
 
-#rocketlauncher_preview #preview-color-blu {
+#preview-box #colorpaneandimage #preview-image #preview-color-blu {
   background-color: #215fcc;
   -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
           mask-image: url("assets/preview/rocketlauncher/mask.png");
@@ -84,7 +142,7 @@
   display: none;
 }
 
-#rocketlauncher_preview #preview-color-red {
+#preview-box #colorpaneandimage #preview-image #preview-color-red {
   background-color: #cc140d;
   -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
           mask-image: url("assets/preview/rocketlauncher/mask.png");
@@ -94,24 +152,24 @@
           mask-size: cover;
 }
 
-#rocketlauncher_preview #preview-hand-blu {
+#preview-box #colorpaneandimage #preview-image #preview-hand-blu {
   background-image: url("assets/preview/rocketlauncher/blu_hand.png");
   display: none;
 }
 
-#rocketlauncher_preview #preview-hand-red {
+#preview-box #colorpaneandimage #preview-image #preview-hand-red {
   background-image: url("assets/preview/rocketlauncher/red_hand.png");
 }
 
-#rocketlauncher_preview #preview-background {
+#preview-box #colorpaneandimage #preview-image #preview-background {
   background-image: url("assets/preview/rocketlauncher/background.png");
 }
 
-#rocketlauncher_preview #preview-crits {
+#preview-box #colorpaneandimage #preview-image #preview-crits {
   background-color: #215fcc;
 }
 
-#rocketlauncher_preview #preview-crits video {
+#preview-box #colorpaneandimage #preview-image #preview-crits video {
   mix-blend-mode: luminosity;
 }
 /*# sourceMappingURL=style.css.map */

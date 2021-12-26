@@ -25,57 +25,85 @@
 	}
 }
 
-#rocketlauncher_preview {
-	aspect-ratio: 16 / 9;
-	width: 80vw;	
-	height: auto;
-	* {
-		aspect-ratio: 16 / 9;
-		width: 80vw;	
-		height: auto;
-		position: absolute;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-	#preview-template {
-		background-image: url('assets/preview/rocketlauncher/template.png');
-		mix-blend-mode: luminosity;
-	}
-	#preview-color-blu {
-		background-color: rgb(33, 95, 204);
-  		mask-image: url('assets/preview/rocketlauncher/mask.png');
-		mask-position: center;
-		mask-size: cover;
-		display: none;
-	}
-
-	#preview-color-red {
-		background-color: rgb(204, 20, 13);
-  		mask-image: url('assets/preview/rocketlauncher/mask.png');
-		mask-position: center;
-		mask-size: cover;
-	}
-
-	#preview-hand-blu {
-		background-image: url('assets/preview/rocketlauncher/blu_hand.png');
-		display: none;
-	}
-
-	#preview-hand-red {
-		background-image: url('assets/preview/rocketlauncher/red_hand.png');
-	}
-
-	#preview-background {
-		background-image: url('assets/preview/rocketlauncher/background.png');
-	}
-
-	#preview-crits {
-		
-		background-color: rgb(33, 95, 204);
-		video {
-			mix-blend-mode: luminosity;
-		}
-	}
+body {
+	margin: 0;
 }
 
+#preview-box {
+	width: 100vw;
+	height: 90vh;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+	#team-select {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 20%;
+	}
+	#colorpaneandimage {
+		display: flex;
+		align-items: stretch;
+		#preview-color-pane {
+			width: 20vw;
+			height: 100%;
+			display: flex;
+		}
+		#preview-image {
+			display: flex;
+			align-items: center;
+			aspect-ratio: 16 / 9;
+			width: 80vw;
+			height: auto;
+			position: relative;
+			* {
+				width: 100%;
+				height: 100%;
+				position: absolute; top: 0; left: 0;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			#preview-template {
+				background-image: url('assets/preview/rocketlauncher/template.png');
+				mix-blend-mode: luminosity;
+			}
+			#preview-color-blu {
+				background-color: rgb(33, 95, 204);
+				mask-image: url('assets/preview/rocketlauncher/mask.png');
+				mask-position: center;
+				mask-size: cover;
+				display: none;
+			}
+		
+			#preview-color-red {
+				background-color: rgb(204, 20, 13);
+				mask-image: url('assets/preview/rocketlauncher/mask.png');
+				mask-position: center;
+				mask-size: cover;
+			}
+		
+			#preview-hand-blu {
+				background-image: url('assets/preview/rocketlauncher/blu_hand.png');
+				display: none;
+			}
+		
+			#preview-hand-red {
+				background-image: url('assets/preview/rocketlauncher/red_hand.png');
+			}
+		
+			#preview-background {
+				background-image: url('assets/preview/rocketlauncher/background.png');
+			}
+		
+			#preview-crits {
+				
+				background-color: rgb(33, 95, 204);
+				video {
+					mix-blend-mode: luminosity;
+				}
+			}
+		}	
+	}
+}
