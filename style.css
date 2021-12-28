@@ -100,7 +100,6 @@ body {
   color: #fff;
   font-size: 2em;
   border-radius: 10px;
-  scale: 1.05;
   z-index: 99;
 }
 
@@ -135,7 +134,30 @@ body {
 }
 
 #preview-box #colorpaneandimage #preview-color-pane .blue-preview-colours {
-  display: none;
+  display: none !important;
+}
+
+#preview-box #colorpaneandimage #preview-color-pane .red-preview-colors .red-particle, #preview-box #colorpaneandimage #preview-color-pane .red-preview-colors .blue-particle, #preview-box #colorpaneandimage #preview-color-pane .blue-preview-colours .red-particle, #preview-box #colorpaneandimage #preview-color-pane .blue-preview-colours .blue-particle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#preview-box #colorpaneandimage #preview-color-pane .red-preview-colors .red-particle h2, #preview-box #colorpaneandimage #preview-color-pane .red-preview-colors .blue-particle h2, #preview-box #colorpaneandimage #preview-color-pane .blue-preview-colours .red-particle h2, #preview-box #colorpaneandimage #preview-color-pane .blue-preview-colours .blue-particle h2 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  white-space: nowrap;
 }
 
 #preview-box #colorpaneandimage #preview-image {
@@ -149,7 +171,6 @@ body {
   width: 80%;
   height: auto;
   position: relative;
-  scale: 0.9;
 }
 
 #preview-box #colorpaneandimage #preview-image * {
