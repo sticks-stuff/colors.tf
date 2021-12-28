@@ -15,18 +15,10 @@
 	<body>
 		<script src="color-picker.min.js"></script>
 
-		<div id="preview-box">
-			<div id="team-select">
-				<div>
-					<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
-					<label for="red_preview">red</label>	
-				</div>
-				<div>
-					<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
-					<label for="blu_preview">blu</label><br>		
-				</div>
-			</div>
-			<div id="colorpaneandimage">
+		<main>
+			<nav>Colors.TF</nav>
+
+			<div id="preview-box">
 				<div id="preview-color-pane">
 					<div class="red-preview-colors">
 						<div class="red-particle">
@@ -51,13 +43,27 @@
 					</div>
 				</div>
 				
-				<div id="preview-image">
-					<div id="preview-background"></div>
-					<div id="preview-hand-red"></div>
-					<div id="preview-hand-blu"></div>
-					<div id="preview-color-red"></div>
-					<div id="preview-color-blu"></div>
-					<div id="preview-template"></div>
+				<div id="preview-tv">
+					<div id="preview-image">
+						<div id="preview-background"></div>
+						<div id="preview-hand-red"></div>
+						<div id="preview-hand-blu"></div>
+						<div id="preview-color-red"></div>
+						<div id="preview-color-blu"></div>
+						<div id="preview-template"></div>
+					</div>
+					
+					<div id="team-select">
+						<div>
+							<input type="radio" onclick="previewSelect('red');" checked="checked" name="team" value="red_preview">
+							<label for="red_preview">red</label>	
+						</div>
+						<div>
+							<input type="radio" onclick="previewSelect('blu');" name="team" value="blu_preview">
+							<label for="blu_preview">blu</label><br>		
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+
+		</main>

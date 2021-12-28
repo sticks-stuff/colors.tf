@@ -1,12 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/tf2-build');
 
-// .colour-display {
-// 	aspect-ratio: 1;
-// 	width: 100px;
-// 	height: 100px;
-// 	border-radius: 10px;
-// }
-
 .both-class-colours {
 	display: flex;
 	justify-content: space-around;
@@ -34,37 +27,36 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
 }
 
-#preview-box {
-	width: 90vw;
-	height: 90vh;
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-	#team-select {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		width: 100%;
-		height: 10%;
+main {
+	background-color: #282320;
+	min-height: 100vh;
+	// each section is gonna be an eighth of the main window or smth
+	// except for the preview box which will be 4/8
+	nav {
+		width: 100vw;
+		height: 12.5vh;
 		background-color: #6A6664;
-		color: #fff;
-		font-size: 2em;
-		border-radius: 10px;
-		z-index: 99;
+		color: #C65032;
 	}
-	#colorpaneandimage {
+	#preview-box {
+		width: 100vw;
+		height: 50vh;
 		display: flex;
-		align-items: stretch;
-		flex: 1;
+		justify-content: space-between;
 		#preview-color-pane {
 			width: 20%;
 			height: 100%;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			background-color: #282320;
+			color: #C65032;
+	
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+			
 			.blue-preview-colours {
 				display: none !important;
 			}
@@ -78,68 +70,93 @@ body {
 						width: min-content;
 						white-space: nowrap;
 					}
+	
+					.colour-display {
+						aspect-ratio: 1;
+						width: 100px;
+						height: 100px;
+						border-radius: 10px;
+					}
 				}
 			}
-			margin-bottom: 10%;
-			background-color: #282320;
-			color: #C65032;
-			border-radius: 10px;
 		}
-		#preview-image {
+		#preview-tv {
 			display: flex;
 			align-items: center;
-			aspect-ratio: 16 / 9;
 			width: 80%;
 			height: auto;
 			position: relative;
-			* {
-				width: 100%;
-				height: 100%;
-				position: absolute; top: 0; left: 0;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				border-radius: 50px;
-			}
-			#preview-template {
-				background-image: url('assets/preview/rocketlauncher/template.png');
-				mix-blend-mode: luminosity;
-			}
-			#preview-color-blu {
-				background-color: rgb(33, 95, 204);
-				mask-image: url('assets/preview/rocketlauncher/mask.png');
-				mask-position: center;
-				mask-size: cover;
-				display: none;
-			}
-		
-			#preview-color-red {
-				background-color: rgb(204, 20, 13);
-				mask-image: url('assets/preview/rocketlauncher/mask.png');
-				mask-position: center;
-				mask-size: cover;
-			}
-		
-			#preview-hand-blu {
-				background-image: url('assets/preview/rocketlauncher/blu_hand.png');
-				display: none;
-			}
-		
-			#preview-hand-red {
-				background-image: url('assets/preview/rocketlauncher/red_hand.png');
-			}
-		
-			#preview-background {
-				background-image: url('assets/preview/rocketlauncher/background.png');
-			}
-		
-			#preview-crits {
-				
-				background-color: rgb(33, 95, 204);
-				video {
+			flex-direction: column;
+			#preview-image {
+				display: flex;
+				align-items: center;
+				aspect-ratio: 16 / 9;
+				width: 80%;
+				height: auto;
+				position: relative;
+				* {
+					width: 100%;
+					height: 100%;
+					position: absolute; top: 0; left: 0;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					border-radius: 50px;
+				}
+				#preview-template {
+					background-image: url('assets/preview/rocketlauncher/template.png');
 					mix-blend-mode: luminosity;
 				}
+				#preview-color-blu {
+					background-color: rgb(33, 95, 204);
+					mask-image: url('assets/preview/rocketlauncher/mask.png');
+					mask-position: center;
+					mask-size: cover;
+					display: none;
+				}
+			
+				#preview-color-red {
+					background-color: rgb(204, 20, 13);
+					mask-image: url('assets/preview/rocketlauncher/mask.png');
+					mask-position: center;
+					mask-size: cover;
+				}
+			
+				#preview-hand-blu {
+					background-image: url('assets/preview/rocketlauncher/blu_hand.png');
+					display: none;
+				}
+			
+				#preview-hand-red {
+					background-image: url('assets/preview/rocketlauncher/red_hand.png');
+				}
+			
+				#preview-background {
+					background-image: url('assets/preview/rocketlauncher/background.png');
+				}
+			
+				#preview-crits {
+					
+					background-color: rgb(33, 95, 204);
+					video {
+						mix-blend-mode: luminosity;
+					}
+				}
 			}
-		}	
-	}
+				
+			#team-select {
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				width: 100%;
+				height: 10%;
+				background-color: #6A6664;
+				color: #fff;
+				font-size: 2em;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+				z-index: 99;
+			}
+		}
+	}	
 }
