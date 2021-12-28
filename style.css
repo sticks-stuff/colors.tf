@@ -62,51 +62,82 @@ body {
 }
 
 main {
-  background-color: #282320;
+  background-color: #34302d;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main nav {
   width: 100vw;
-  height: 12.5vh;
-  background-color: #6A6664;
+  height: 10vh;
+  background-color: #6a4535;
   color: #C65032;
 }
 
 main #preview-box {
   width: 100vw;
-  height: 50vh;
+  height: 75vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-main #preview-box #preview-color-pane {
-  width: 20%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #4f4945;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #282320;
-  color: #C65032;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
-main #preview-box #preview-color-pane .blue-preview-colours {
+main #preview-box #preview-color-pane {
+  width: 15%;
+  height: 75%;
+  color: #C65032;
+  background-color: #34302d;
+  border-radius: 50px;
+  border-radius: 50px;
+}
+
+main #preview-box #preview-color-pane #blue-preview-colors {
   display: none !important;
 }
 
-main #preview-box #preview-color-pane .red-preview-colors .red-particle, main #preview-box #preview-color-pane .red-preview-colors .blue-particle, main #preview-box #preview-color-pane .blue-preview-colours .red-particle, main #preview-box #preview-color-pane .blue-preview-colours .blue-particle {
+main #preview-box #preview-color-pane .preview-colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+main #preview-box #preview-color-pane .preview-colors .crits, main #preview-box #preview-color-pane .preview-colors .minicrits {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,17 +153,30 @@ main #preview-box #preview-color-pane .red-preview-colors .red-particle, main #p
           flex-direction: column;
 }
 
-main #preview-box #preview-color-pane .red-preview-colors .red-particle h2, main #preview-box #preview-color-pane .red-preview-colors .blue-particle h2, main #preview-box #preview-color-pane .blue-preview-colours .red-particle h2, main #preview-box #preview-color-pane .blue-preview-colours .blue-particle h2 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+main #preview-box #preview-color-pane .preview-colors .crits h2, main #preview-box #preview-color-pane .preview-colors .minicrits h2 {
   white-space: nowrap;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
-main #preview-box #preview-color-pane .red-preview-colors .red-particle .colour-display, main #preview-box #preview-color-pane .red-preview-colors .blue-particle .colour-display, main #preview-box #preview-color-pane .blue-preview-colours .red-particle .colour-display, main #preview-box #preview-color-pane .blue-preview-colours .blue-particle .colour-display {
+main #preview-box #preview-color-pane .preview-colors .crits .colour-display, main #preview-box #preview-color-pane .preview-colors .minicrits .colour-display {
   aspect-ratio: 1;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+main #preview-box #preview-color-pane .preview-colors .crits {
+  margin-bottom: 10px;
+}
+
+main #preview-box #preview-color-pane .preview-colors .minicrits h2 {
+  font-size: 1.25em;
+}
+
+main #preview-box #preview-color-pane .preview-colors .minicrits .colour-display {
+  aspect-ratio: 1;
+  width: 70%;
   border-radius: 10px;
 }
 
@@ -143,9 +187,17 @@ main #preview-box #preview-tv {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80%;
-  height: auto;
+  width: 75%;
+  height: 90%;
   position: relative;
+  background-color: #6b625c;
+  border-radius: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -159,9 +211,8 @@ main #preview-box #preview-tv #preview-image {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  aspect-ratio: 16 / 9;
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -171,10 +222,11 @@ main #preview-box #preview-tv #preview-image * {
   position: absolute;
   top: 0;
   left: 0;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 main #preview-box #preview-tv #preview-image #preview-template {
@@ -197,8 +249,8 @@ main #preview-box #preview-tv #preview-image #preview-color-red {
   background-color: #cc140d;
   -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
           mask-image: url("assets/preview/rocketlauncher/mask.png");
-  -webkit-mask-position: center;
-          mask-position: center;
+  -webkit-mask-position: bottom;
+          mask-position: bottom;
   -webkit-mask-size: cover;
           mask-size: cover;
 }
@@ -236,7 +288,7 @@ main #preview-box #preview-tv #team-select {
           justify-content: space-evenly;
   width: 100%;
   height: 10%;
-  background-color: #6A6664;
+  background-color: #847f7d;
   color: #fff;
   font-size: 2em;
   border-bottom-right-radius: 10px;

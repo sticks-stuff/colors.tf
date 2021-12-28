@@ -29,52 +29,83 @@ body {
 	justify-content: center;
 }
 
+$background-layer-0: #34302d;
+$background-layer-1: lighten($background-layer-0, 10);
+$background-layer-2: lighten($background-layer-1, 10);
+$background-layer-3: #6A6664;
+$background-layer-4: lighten($background-layer-3, 10);
+
 main {
-	background-color: #282320;
+	background-color: $background-layer-0;
 	min-height: 100vh;
-	// each section is gonna be an eighth of the main window or smth
-	// except for the preview box which will be 4/8
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	nav {
 		width: 100vw;
-		height: 12.5vh;
-		background-color: #6A6664;
+		height: 10vh;
+		background-color: #6a4535;
 		color: #C65032;
 	}
 	#preview-box {
 		width: 100vw;
-		height: 50vh;
+		height: 75vh;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
+		background-color: $background-layer-1;
+		align-items: center;
 		#preview-color-pane {
-			width: 20%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #282320;
+			width: 15%;
+			height: 75%;
 			color: #C65032;
+			background-color: darken($background-layer-2, 20);
 	
-			border-top-right-radius: 10px;
-			border-bottom-right-radius: 10px;
+			border-radius: 50px;
+			border-radius: 50px;
 			
-			.blue-preview-colours {
+			#blue-preview-colors {
 				display: none !important;
 			}
-			.red-preview-colors, .blue-preview-colours {
-				.red-particle, .blue-particle {
+			.preview-colors {
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				padding-top: 20%;
+				padding-bottom: 20%;
+				box-sizing: border-box;
+				flex-direction: column;
+				height: 100%;
+				width: 100%;
+				.crits, .minicrits {
+					height: min-content;
+					width: 60%;
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					flex-direction: column;	
+					flex-direction: column;
 					h2 {
-						width: min-content;
 						white-space: nowrap;
+						text-align: center;
+						margin: 0;
+						margin-bottom: 10px;
 					}
 	
 					.colour-display {
 						aspect-ratio: 1;
-						width: 100px;
-						height: 100px;
+						width: 100%;
+						border-radius: 10px;
+					}
+				}
+				.crits {
+					margin-bottom: 10px;
+				}
+				.minicrits {
+					h2 {
+						font-size: 1.25em;
+					}
+					.colour-display {
+						aspect-ratio: 1;
+						width: 70%;
 						border-radius: 10px;
 					}
 				}
@@ -83,25 +114,33 @@ main {
 		#preview-tv {
 			display: flex;
 			align-items: center;
-			width: 80%;
-			height: auto;
+			width: 75%;
+			height: 90%;
 			position: relative;
+			background-color: $background-layer-2;
+			border-radius: 50px;
+			box-sizing: border-box;
+			padding-left: 2.5%;
+			padding-right: 2.5%;
+			padding-top: 2%;
+			padding-bottom: 2%;
 			flex-direction: column;
 			#preview-image {
 				display: flex;
 				align-items: center;
-				aspect-ratio: 16 / 9;
-				width: 80%;
-				height: auto;
+				width: 100%;
+				height: 100%;
 				position: relative;
 				* {
 					width: 100%;
 					height: 100%;
 					position: absolute; top: 0; left: 0;
-					background-position: center;
+					background-position: bottom;
+					// background-position-x: right;
 					background-repeat: no-repeat;
 					background-size: cover;
-					border-radius: 50px;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;		
 				}
 				#preview-template {
 					background-image: url('assets/preview/rocketlauncher/template.png');
@@ -118,7 +157,7 @@ main {
 				#preview-color-red {
 					background-color: rgb(204, 20, 13);
 					mask-image: url('assets/preview/rocketlauncher/mask.png');
-					mask-position: center;
+					mask-position: bottom;
 					mask-size: cover;
 				}
 			
@@ -150,7 +189,7 @@ main {
 				justify-content: space-evenly;
 				width: 100%;
 				height: 10%;
-				background-color: #6A6664;
+				background-color: $background-layer-4;
 				color: #fff;
 				font-size: 2em;
 				border-bottom-right-radius: 10px;
