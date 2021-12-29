@@ -328,19 +328,43 @@ main #preview-box #preview-tv #team-select {
   transition: max-height 0.2s ease-out;
 }
 
-.collapsible .content .collapsible {
-  background-color: #6A6664;
-}
-
-.collapsible .content .collapsible button {
+.collapsible.layer0 {
   background-color: #6b625c;
 }
 
-.collapsible .content .collapsible .content .collapsible button {
+.collapsible.layer0 button {
+  background-color: #6b625c;
+}
+
+.collapsible.layer0 content {
+  background-color: #6A6664;
+}
+
+.collapsible.layer1 {
   background-color: #847f7d;
 }
 
-.collapsible .content .collapsible .content .collapsible .content * {
+.collapsible.layer1 button {
+  background-color: #847f7d;
+}
+
+.collapsible.layer1 content {
   background-color: #9d9997;
+}
+
+.collapsible.layer2 {
+  background-color: #b6b3b1;
+}
+
+.collapsible.layer2 button {
+  background-color: #b6b3b1;
+}
+
+.collapsible.layer2 content {
+  background-color: #cecdcc;
+}
+
+.collapsible.layer2 content * {
+  background-color: #e7e6e6;
 }
 /*# sourceMappingURL=style.css.map */
