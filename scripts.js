@@ -249,7 +249,7 @@ function disableAlphaControl(picker) {
 }
 
 
-Array.from(document.getElementsByClassName('collapsible')).forEach(element => {
+Array.from(document.getElementsByClassName('collapsible')).forEach(element => { //awful garbage adapted from https://www.w3schools.com/howto/howto_js_collapsible.asp
     element.getElementsByTagName("button")[0].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = element.getElementsByTagName("div")[0];
@@ -261,7 +261,7 @@ Array.from(document.getElementsByClassName('collapsible')).forEach(element => {
     });
 })
 
-function reflow(element, add = 0) {
+function reflow(element, add = 0) { //this ugly function makes collapseables within collapseables work
     element.style.maxHeight = (element.scrollHeight + add) + "px";
     if(element.parentElement.classList.contains('collapsible')) {
         reflow(element.parentElement.parentElement, element.scrollHeight);
