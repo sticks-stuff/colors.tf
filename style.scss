@@ -64,8 +64,6 @@ main {
 			height: 75%;
 			color: #C65032;
 			background-color: darken($background-layer-2, 20);
-	
-			border-radius: 50px;
 			border-radius: 50px;
 			
 			#blue-preview-colors {
@@ -205,6 +203,19 @@ main {
 	}	
 }
 
+@mixin layering($color1: "default", $color2: "default") {
+	background-color: $color1;
+	button {
+		background-color: $color1;
+		&.active, &:hover {
+			background-color: darken($color1, 10)
+		}
+	}
+	content {
+		background-color: $color2;
+	}
+}
+
 .collapsible {
 	width: 100%;
 	button {
@@ -235,36 +246,15 @@ main {
 	}
 
 	&.layer0 {
-		background-color: $background-layer-2;
-		button {
-			background-color: $background-layer-2;
-		}
-		content {
-			background-color: $background-layer-3;
-		}
+		@include layering($background-layer-2, $background-layer-3);
 	}
 
 	&.layer1 {
-		background-color: $background-layer-4;
-		button {
-			background-color: $background-layer-4;
-		}
-		content {
-			background-color: $background-layer-5;
-		}
+		@include layering($background-layer-3, $background-layer-4);
 	}
 
 	&.layer2 {
-		background-color: $background-layer-6;
-		button {
-			background-color: $background-layer-6;
-		}
-		content {
-			background-color: $background-layer-7;
-			* {
-				background-color: lighten($background-layer-7, $amount: 10);
-			}
-		}
+		@include layering($background-layer-4, $background-layer-5);
 	}
 }
   

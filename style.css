@@ -106,7 +106,6 @@ main #preview-box #preview-color-pane {
   color: #C65032;
   background-color: #34302d;
   border-radius: 50px;
-  border-radius: 50px;
 }
 
 main #preview-box #preview-color-pane #blue-preview-colors {
@@ -336,35 +335,43 @@ main #preview-box #preview-tv #team-select {
   background-color: #6b625c;
 }
 
+.collapsible.layer0 button.active, .collapsible.layer0 button:hover {
+  background-color: #4f4945;
+}
+
 .collapsible.layer0 content {
   background-color: #6A6664;
 }
 
 .collapsible.layer1 {
-  background-color: #847f7d;
+  background-color: #6A6664;
 }
 
 .collapsible.layer1 button {
-  background-color: #847f7d;
+  background-color: #6A6664;
+}
+
+.collapsible.layer1 button.active, .collapsible.layer1 button:hover {
+  background-color: #504d4b;
 }
 
 .collapsible.layer1 content {
-  background-color: #9d9997;
+  background-color: #847f7d;
 }
 
 .collapsible.layer2 {
-  background-color: #b6b3b1;
+  background-color: #847f7d;
 }
 
 .collapsible.layer2 button {
-  background-color: #b6b3b1;
+  background-color: #847f7d;
+}
+
+.collapsible.layer2 button.active, .collapsible.layer2 button:hover {
+  background-color: #6a6664;
 }
 
 .collapsible.layer2 content {
-  background-color: #cecdcc;
-}
-
-.collapsible.layer2 content * {
-  background-color: #e7e6e6;
+  background-color: #9d9997;
 }
 /*# sourceMappingURL=style.css.map */
