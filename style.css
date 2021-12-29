@@ -304,12 +304,12 @@ main #preview-box #preview-tv #team-select {
 
 .collapsible button {
   font-family: 'TF2 Build', sans-serif;
-  background-color: #777;
+  background-color: #4f4945;
   color: white;
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px;
+  padding: 3vw;
   width: 100%;
   border: none;
   text-align: left;
@@ -317,12 +317,8 @@ main #preview-box #preview-tv #team-select {
   font-size: 15px;
 }
 
-.collapsible button.active, .collapsible button:hover {
-  background-color: #555;
-}
-
 .collapsible .content {
-  padding: 0 18px;
+  padding: 0 3vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-height: 0;
@@ -330,6 +326,21 @@ main #preview-box #preview-tv #team-select {
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+}
+
+.collapsible .content .collapsible {
+  background-color: #6A6664;
+}
+
+.collapsible .content .collapsible button {
+  background-color: #6b625c;
+}
+
+.collapsible .content .collapsible .content .collapsible button {
+  background-color: #847f7d;
+}
+
+.collapsible .content .collapsible .content .collapsible .content * {
+  background-color: #9d9997;
 }
 /*# sourceMappingURL=style.css.map */

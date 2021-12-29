@@ -36,6 +36,8 @@ $background-layer-1: lighten($background-layer-0, 10);
 $background-layer-2: lighten($background-layer-1, 10);
 $background-layer-3: #6A6664;
 $background-layer-4: lighten($background-layer-3, 10);
+$background-layer-5: lighten($background-layer-4, 10);
+$background-layer-6: lighten($background-layer-5, 10);
 
 main {
 	background-color: $background-layer-0;
@@ -206,31 +208,47 @@ main {
 	width: 100%;
 	button {
 		font-family: 'TF2 Build', sans-serif;
-
-		background-color: #777;
+		background-color: $background-layer-1;
 		color: white;
 		cursor: pointer;
 		box-sizing: border-box;
-		padding: 10px;
+		padding: 3vw;
 		width: 100%;
 		border: none;
 		text-align: left;
 		outline: none;
 		font-size: 15px;
 		
-		&.active, &:hover {
-			background-color: #555;
-		}
+		// &.active, &:hover {
+		// 	background-color: #555;
+		// }
 	}
 	
 	.content {
-		padding: 0 18px;
+		padding: 0 3vw;
 		box-sizing: border-box;
 		max-height: 0;
 		width: 100%;
 		overflow: hidden;
 		transition: max-height 0.2s ease-out;
-		background-color: #f1f1f1;
+		.collapsible {
+			button {
+				background-color: $background-layer-2;
+			}
+			background-color: $background-layer-3;
+			.content {
+				.collapsible {
+					button {
+						background-color: $background-layer-4;
+					}
+					.content {
+						* {
+							background-color: $background-layer-5;
+						}
+					}
+				}		
+			}
+		}
 	}
 }
   
