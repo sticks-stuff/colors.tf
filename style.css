@@ -297,6 +297,10 @@ main #preview-box #preview-tv #team-select {
 }
 
 .collapsible {
+  width: 100%;
+}
+
+.collapsible button {
   background-color: #777;
   color: white;
   cursor: pointer;
@@ -308,11 +312,11 @@ main #preview-box #preview-tv #team-select {
   font-size: 15px;
 }
 
-.active, .collapsible:hover {
+.collapsible button.active, .collapsible button:hover {
   background-color: #555;
 }
 
-.content {
+.collapsible .content {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;

@@ -248,17 +248,22 @@ function disableAlphaControl(picker) {
     });
 }
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
+Array.from(document.getElementsByClassName('collapsible')).forEach(element => {
+    element.getElementsByTagName("button")[0].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = element.getElementsByTagName("div")[0];
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            reflow(content);
+        }
+    });
+})
+
+function reflow(element, add = 0) {
+    element.style.maxHeight = (element.scrollHeight + add) + "px";
+    if(element.parentElement.classList.contains('collapsible')) {
+        reflow(element.parentElement.parentElement, element.scrollHeight);
     }
-  });
 }
