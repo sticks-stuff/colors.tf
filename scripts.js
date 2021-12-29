@@ -256,14 +256,18 @@ Array.from(document.getElementsByClassName('collapsible')).forEach(element => { 
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
-            reflow(content);
+            reflow(element);
         }
     });
 })
 
 function reflow(element, add = 0) { //this ugly function makes collapseables within collapseables work
-    element.style.maxHeight = (element.scrollHeight + add) + "px";
-    if(element.parentElement.classList.contains('collapsible')) {
-        reflow(element.parentElement.parentElement, element.scrollHeight);
+    var content = element.getElementsByTagName("div")[0];
+    console.log({element})
+    console.log({add})
+    content.style.maxHeight = (content.scrollHeight + add) + "px";
+    element.style.maxHeight = (element.scrollHeight + content.scrollHeight + add) + "px";
+    if(element.parentElement.parentElement.classList.contains('collapsible')) {
+        reflow(element.parentElement.parentElement, (element.scrollHeight + content.scrollHeight));
     }
 }

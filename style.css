@@ -308,12 +308,12 @@ main #preview-box #preview-tv #team-select {
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 3vw;
+  padding: 1vh 3vw;
+  font-size: 30px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
 }
 
 .collapsible .content {
@@ -328,50 +328,50 @@ main #preview-box #preview-tv #team-select {
 }
 
 .collapsible.layer0 {
-  background-color: #6b625c;
+  background-color: #9d9997;
 }
 
 .collapsible.layer0 button {
-  background-color: #6b625c;
+  background-color: #9d9997;
 }
 
 .collapsible.layer0 button.active, .collapsible.layer0 button:hover {
-  background-color: #4f4945;
+  background-color: #847f7d;
 }
 
 .collapsible.layer0 content {
-  background-color: #6A6664;
+  background-color: #4f4945;
 }
 
 .collapsible.layer1 {
-  background-color: #6A6664;
+  background-color: #4f4945;
 }
 
 .collapsible.layer1 button {
-  background-color: #6A6664;
+  background-color: #4f4945;
 }
 
 .collapsible.layer1 button.active, .collapsible.layer1 button:hover {
-  background-color: #504d4b;
+  background-color: #34302d;
 }
 
 .collapsible.layer1 content {
-  background-color: #847f7d;
+  background-color: #9d9997;
 }
 
 .collapsible.layer2 {
-  background-color: #847f7d;
+  background-color: #9d9997;
 }
 
 .collapsible.layer2 button {
-  background-color: #847f7d;
+  background-color: #9d9997;
 }
 
 .collapsible.layer2 button.active, .collapsible.layer2 button:hover {
-  background-color: #6a6664;
+  background-color: #847f7d;
 }
 
 .collapsible.layer2 content {
-  background-color: #9d9997;
+  background-color: #4f4945;
 }
 /*# sourceMappingURL=style.css.map */

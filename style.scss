@@ -224,12 +224,12 @@ main {
 		color: white;
 		cursor: pointer;
 		box-sizing: border-box;
-		padding: 3vw;
+		padding: 1vh 3vw;
+		font-size: 30px;
 		width: 100%;
 		border: none;
 		text-align: left;
 		outline: none;
-		font-size: 15px;
 		
 		// &.active, &:hover {
 		// 	background-color: #555;
@@ -246,15 +246,15 @@ main {
 	}
 
 	&.layer0 {
-		@include layering($background-layer-2, $background-layer-3);
+		@include layering($background-layer-5, $background-layer-1);
 	}
 
 	&.layer1 {
-		@include layering($background-layer-3, $background-layer-4);
+		@include layering($background-layer-1, $background-layer-5);
 	}
 
 	&.layer2 {
-		@include layering($background-layer-4, $background-layer-5);
+		@include layering($background-layer-5, $background-layer-1);
 	}
 }
   
