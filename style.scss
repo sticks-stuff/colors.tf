@@ -216,6 +216,15 @@ main {
 	}
 }
 
+$blu-team: #395c78;
+$light-blu-team:  #5b7a8c;
+$light-blu-team-trans:  #5b7a8c90;
+
+$red-team: #9d312f;
+$light-red-team:   #bd3b3b;
+$light-red-team-trans: #bd3b3b90;
+
+
 .collapsible {
 	width: 100%;
 	button {
@@ -237,12 +246,51 @@ main {
 	}
 	
 	.content {
-		padding: 0 3vw;
+		padding-left: 3vw;
+		padding-right: 3vw;
 		box-sizing: border-box;
 		max-height: 0;
 		width: 100%;
 		overflow: hidden;
 		transition: max-height 0.2s ease-out;
+		.collapsible {
+			margin-top: 3vh;
+			margin-bottom: 3vh;
+		}
+		.red-particle, .blue-particle {
+			margin-top: 3vh;
+			margin-bottom: 3vh;
+			padding-top: 3vh;
+			padding-bottom: 3vh;
+
+			
+			display: flex;
+			justify-content: space-evenly;
+			div {
+				display: flex;
+				flex-direction: column;
+				h3 {
+					margin: 0;
+					font-size: 30px;
+				}
+				.colour-display {
+					height: 15vh;
+					aspect-ratio: 1;
+					border: solid rgba(0, 0, 0, 0.5);
+					border-radius: 10px;
+				}
+			}
+		}
+		.blue-particle {
+			background-color: $light-blu-team-trans;
+			border: solid $blu-team;
+			border-radius: 10px;
+		}
+		.red-particle {
+			background-color: $light-red-team-trans;
+			border: solid darken($red-team, 10);
+			border-radius: 10px;
+		}
 	}
 
 	&.layer0 {

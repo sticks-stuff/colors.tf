@@ -317,7 +317,8 @@ main #preview-box #preview-tv #team-select {
 }
 
 .collapsible .content {
-  padding: 0 3vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-height: 0;
@@ -325,6 +326,58 @@ main #preview-box #preview-tv #team-select {
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
+}
+
+.collapsible .content .collapsible {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.collapsible .content .red-particle, .collapsible .content .blue-particle {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.collapsible .content .red-particle div, .collapsible .content .blue-particle div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.collapsible .content .red-particle div h3, .collapsible .content .blue-particle div h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.collapsible .content .red-particle div .colour-display, .collapsible .content .blue-particle div .colour-display {
+  height: 15vh;
+  aspect-ratio: 1;
+  border: solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.collapsible .content .blue-particle {
+  background-color: #5b7a8c90;
+  border: solid #395c78;
+  border-radius: 10px;
+}
+
+.collapsible .content .red-particle {
+  background-color: #bd3b3b90;
+  border: solid #762523;
+  border-radius: 10px;
 }
 
 .collapsible.layer0 {
