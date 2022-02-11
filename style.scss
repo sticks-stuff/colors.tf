@@ -121,7 +121,7 @@ main {
 			height: 90%;
 			position: relative;
 			background-color: $background-layer-2;
-			border-radius: 50px;
+			border-radius: calc(10px + 1vw); //for lower widths lol
 			box-sizing: border-box;
 			padding-left: 2.5%;
 			padding-right: 2.5%;
@@ -276,7 +276,7 @@ $light-red-team-trans: #bd3b3b90;
 				.colour-display {
 					height: 15vh;
 					aspect-ratio: 1;
-					border: solid rgba(0, 0, 0, 0.5);
+					border: solid rgb(0, 0, 0);
 					border-radius: 10px;
 				}
 			}

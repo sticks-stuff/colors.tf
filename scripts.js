@@ -219,6 +219,9 @@ Array.from(document.getElementsByClassName('colour-display')).forEach(element =>
     });
     picker.on('drag', function(r, g, b, a) {
         this.source.style.backgroundColor = this.color(r, g, b, a);
+    });    
+    picker.on('start', function(r, g, b, a) {
+        this.source.style.backgroundColor = this.color(r, g, b, a);
     });
     picker.on('exit', function(r, g, b, a) {
         this.set(this.color(r, g, b, a))
@@ -228,9 +231,17 @@ Array.from(document.getElementsByClassName('colour-display')).forEach(element =>
             this.source.style.backgroundColor = this.color(r, g, b, a);
             watchColorPicker(CP.HEX([r, g, b]), 'red') //yes i turn RGB into a hex color only to turn it back into RGB stop asking so many questions
         });
+        picker.on('start', function(r, g, b, a) {
+            this.source.style.backgroundColor = this.color(r, g, b, a);
+            watchColorPicker(CP.HEX([r, g, b]), 'red') //yes i turn RGB into a hex color only to turn it back into RGB stop asking so many questions
+        });
     }
     if(element.attributes.jsonpath.value == "material,blue_crit,color") {
         picker.on('drag', function(r, g, b, a) {
+            this.source.style.backgroundColor = this.color(r, g, b, a);
+            watchColorPicker(CP.HEX([r, g, b]), 'blue')
+        });
+        picker.on('start', function(r, g, b, a) {
             this.source.style.backgroundColor = this.color(r, g, b, a);
             watchColorPicker(CP.HEX([r, g, b]), 'blue')
         });

@@ -4,12 +4,31 @@
 		<meta charset="utf-8">
 		<title>My Page Title</title>
 		<meta name="description" content="My Page Description">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="style.css">
 		<link href="color-picker.min.css" rel="stylesheet">
 		<style>
 			.color-picker.no-alpha .color-picker\:a {
 			  display: none;
 			}
+
+			.color-picker input {
+				box-sizing: border-box;
+				display: block;
+				width: 100%;
+				height: 2em;
+				margin: 0;
+				padding: 0 .5em;
+				background: #ffa;
+				border: 1px solid #000;
+				border-top-width: 0;
+				font: normal normal 10px/2em sans-serif;
+				color: #000;
+			  }
+		
+			  .color-picker input:invalid {
+				color: #f00;
+			  }
 		</style>
 	</head>
 	<body>

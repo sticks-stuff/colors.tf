@@ -192,7 +192,7 @@ main #preview-box #preview-tv {
   height: 90%;
   position: relative;
   background-color: #6b625c;
-  border-radius: 50px;
+  border-radius: calc(10px + 1vw);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 2.5%;
@@ -364,7 +364,7 @@ main #preview-box #preview-tv #team-select {
 .collapsible .content .red-particle div .colour-display, .collapsible .content .blue-particle div .colour-display {
   height: 15vh;
   aspect-ratio: 1;
-  border: solid rgba(0, 0, 0, 0.5);
+  border: solid black;
   border-radius: 10px;
 }
 
