@@ -212,7 +212,38 @@ function previewSelect(team) {
 Array.from(document.getElementsByClassName('colour-display')).forEach(element => {
     picker = new CP(element);
     disableAlphaControl(picker);
+
+    let code = document.createElement('input');
+    code.pattern = '^#([a-fA-F\\d]{3}){1,2}$';
+    code.type = 'text';
+    code.picker = picker;
+    picker.self.appendChild(code);
+    // picker.source.addEventListener('click', e => e.preventDefault());
+
+    ['cut', 'input', 'keyup', 'paste'].forEach(e => {
+        // all of this garbage is for the inputting code and making it work and shit
+        code.addEventListener(e, function () {
+            if (this.value.length) {
+                let color = CP.HEX(this.value);
+                this.picker._set.apply(this.picker, color);
+                this.picker.source.value = CP.HEX(color);
+                this.picker.source.style.backgroundColor = CP.HEX(color);
+                if(this.picker.source.attributes.jsonpath.value == "material,red_crit,color") {
+                    watchColorPicker(CP.HEX(color), 'red')
+                }
+                if(this.picker.source.attributes.jsonpath.value == "material,blue_crit,color") {
+                    watchColorPicker(CP.HEX(color), 'blue')
+                }
+            }
+        });
+    });
+    
     // console.log({rgbColorofEl});
+
+    picker.on('change', function(r, g, b) {
+        code.value = this.color(r, g, b, 1);
+    });
+
     picker.on('enter', function(r, g, b, a) {
         rgbColorofEl = this.source.style.backgroundColor.slice(4, -1).split(', ');
         this.set(parseInt(rgbColorofEl[0]), parseInt(rgbColorofEl[1]), parseInt(rgbColorofEl[2]), 1);
