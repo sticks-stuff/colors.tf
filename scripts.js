@@ -198,6 +198,9 @@ function previewSelect(team) {
         
         document.getElementById('red-preview-colors').style.display = 'flex';
         document.getElementById('blue-preview-colors').style.display = 'none';
+
+        document.querySelector('nav').classList.add('red');
+        document.querySelector('nav').classList.remove('blu');
     } else {
         document.getElementById('preview-color-red').style.display = 'none';
         document.getElementById('preview-color-blue').style.display = 'revert';
@@ -206,6 +209,9 @@ function previewSelect(team) {
 
         document.getElementById('red-preview-colors').style.display = 'none';
         document.getElementById('blue-preview-colors').style.display = 'flex';
+
+        document.querySelector('nav').classList.add('blu');
+        document.querySelector('nav').classList.remove('red');
     }
 }
 

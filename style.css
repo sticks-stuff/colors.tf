@@ -81,8 +81,16 @@ main {
 main nav {
   width: 100vw;
   height: 10vh;
+}
+
+main nav.red {
   background-color: #6a4535;
-  color: #C65032;
+  color: #bd3b3b;
+}
+
+main nav.blu {
+  background-color: #395c78;
+  color: #768A88;
 }
 
 main #preview-box {
