@@ -63,13 +63,7 @@ function watchColorPicker(hex, team) {
 
     // console.log({critColorHSL})
 
-    if(team == "red") {
-        document.getElementById('preview-color-red').style.backgroundColor = critColor.style.backgroundColor;
-        // document.getElementById('preview-color-red').style.backgroundColor = 'rgb(' + critColorHSL.join(', ') + ')';
-    } else {
-        document.getElementById('preview-color-blu').style.backgroundColor = critColor.style.backgroundColor;
-        // document.getElementById('preview-color-blu').style.backgroundColor = 'rgb(' + critColorHSL.join(', ') + ')';
-    }
+    document.getElementById(`preview-color-${team}`).style.backgroundColor = critColor.style.backgroundColor;
 }
 
 function hexToRgb(hex) {
@@ -197,17 +191,19 @@ xhr.onreadystatechange = function() {
 
 function previewSelect(team) {
     if(team == 'red') {
-        document.getElementById('preview-color-blu').style.display = 'none';
+        document.getElementById('preview-color-blue').style.display = 'none';
         document.getElementById('preview-color-red').style.display = 'revert';
         document.getElementById('preview-hand-blu').style.display = 'none';
         document.getElementById('preview-hand-red').style.display = 'revert';
     } else {
         document.getElementById('preview-color-red').style.display = 'none';
-        document.getElementById('preview-color-blu').style.display = 'revert';
+        document.getElementById('preview-color-blue').style.display = 'revert';
         document.getElementById('preview-hand-red').style.display = 'none';
         document.getElementById('preview-hand-blu').style.display = 'revert';
     }
 }
+
+const previewColors = ["material,blue_crit,color", "material,red_crit,color", "material,red_minicrit,color", "material,blue_minicrit,color"];
 
 Array.from(document.getElementsByClassName('colour-display')).forEach(element => {
     picker = new CP(element);
@@ -228,12 +224,14 @@ Array.from(document.getElementsByClassName('colour-display')).forEach(element =>
                 this.picker._set.apply(this.picker, color);
                 this.picker.source.value = CP.HEX(color);
                 this.picker.source.style.backgroundColor = CP.HEX(color);
-                if(this.picker.source.attributes.jsonpath.value == "material,red_crit,color") {
-                    watchColorPicker(CP.HEX(color), 'red')
-                }
-                if(this.picker.source.attributes.jsonpath.value == "material,blue_crit,color") {
-                    watchColorPicker(CP.HEX(color), 'blue')
-                }
+                if(previewColors.includes(element.attributes.jsonpath.value)) {
+                    var team = (element.attributes.jsonpath.value.includes("red")) ? "red" : "blue";
+                    if(!element.attributes.jsonpath.value.includes("minicrit")) {
+                        watchColorPicker(CP.HEX(color), team) 
+                    } else {
+                        document.getElementById(`preview-color-${team}`).style.backgroundColor = element.style.backgroundColor;
+                    }
+                }                        
             }
         });
     });
@@ -257,25 +255,24 @@ Array.from(document.getElementsByClassName('colour-display')).forEach(element =>
     picker.on('exit', function(r, g, b, a) {
         this.set(this.color(r, g, b, a))
     });
-    if(element.attributes.jsonpath.value == "material,red_crit,color") {
-        picker.on('drag', function(r, g, b, a) {
-            this.source.style.backgroundColor = this.color(r, g, b, a);
-            watchColorPicker(CP.HEX([r, g, b]), 'red') //yes i turn RGB into a hex color only to turn it back into RGB stop asking so many questions
-        });
-        picker.on('start', function(r, g, b, a) {
-            this.source.style.backgroundColor = this.color(r, g, b, a);
-            watchColorPicker(CP.HEX([r, g, b]), 'red') //yes i turn RGB into a hex color only to turn it back into RGB stop asking so many questions
-        });
-    }
-    if(element.attributes.jsonpath.value == "material,blue_crit,color") {
-        picker.on('drag', function(r, g, b, a) {
-            this.source.style.backgroundColor = this.color(r, g, b, a);
-            watchColorPicker(CP.HEX([r, g, b]), 'blue')
-        });
-        picker.on('start', function(r, g, b, a) {
-            this.source.style.backgroundColor = this.color(r, g, b, a);
-            watchColorPicker(CP.HEX([r, g, b]), 'blue')
-        });
+    if(previewColors.includes(element.attributes.jsonpath.value)) {
+        var team = (element.attributes.jsonpath.value.includes("red")) ? "red" : "blue";
+        console.log(team);
+        if(!element.attributes.jsonpath.value.includes("minicrit")) {
+            picker.on('drag', function(r, g, b, a) {
+                watchColorPicker(CP.HEX([r, g, b]), team) //yes i turn RGB into a hex color only to turn it back into RGB stop asking so many questions
+            });
+            picker.on('start', function(r, g, b, a) {
+                watchColorPicker(CP.HEX([r, g, b]), team) 
+            });    
+        } else {
+            picker.on('start', function(r, g, b, a) {
+                document.getElementById(`preview-color-${team}`).style.backgroundColor = element.style.backgroundColor;
+            });
+            picker.on('drag', function(r, g, b, a) {
+                document.getElementById(`preview-color-${team}`).style.backgroundColor = element.style.backgroundColor;
+            });
+        }
     }
 });
 
