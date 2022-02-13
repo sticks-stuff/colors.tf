@@ -239,8 +239,8 @@ main #preview-box #preview-tv #preview-image #preview-color-blu {
   background-color: #215fcc;
   -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
           mask-image: url("assets/preview/rocketlauncher/mask.png");
-  -webkit-mask-position: center;
-          mask-position: center;
+  -webkit-mask-position: bottom;
+          mask-position: bottom;
   -webkit-mask-size: cover;
           mask-size: cover;
   display: none;
