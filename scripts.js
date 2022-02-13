@@ -195,11 +195,17 @@ function previewSelect(team) {
         document.getElementById('preview-color-red').style.display = 'revert';
         document.getElementById('preview-hand-blu').style.display = 'none';
         document.getElementById('preview-hand-red').style.display = 'revert';
+        
+        document.getElementById('red-preview-colors').style.display = 'flex';
+        document.getElementById('blue-preview-colors').style.display = 'none';
     } else {
         document.getElementById('preview-color-red').style.display = 'none';
         document.getElementById('preview-color-blue').style.display = 'revert';
         document.getElementById('preview-hand-red').style.display = 'none';
         document.getElementById('preview-hand-blu').style.display = 'revert';
+
+        document.getElementById('red-preview-colors').style.display = 'none';
+        document.getElementById('blue-preview-colors').style.display = 'flex';
     }
 }
 

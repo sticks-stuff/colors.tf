@@ -109,7 +109,7 @@ main #preview-box #preview-color-pane {
 }
 
 main #preview-box #preview-color-pane #blue-preview-colors {
-  display: none !important;
+  display: none;
 }
 
 main #preview-box #preview-color-pane .preview-colors {
@@ -235,7 +235,7 @@ main #preview-box #preview-tv #preview-image #preview-template {
   mix-blend-mode: luminosity;
 }
 
-main #preview-box #preview-tv #preview-image #preview-color-blu {
+main #preview-box #preview-tv #preview-image #preview-color-blue {
   background-color: #215fcc;
   -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
           mask-image: url("assets/preview/rocketlauncher/mask.png");
