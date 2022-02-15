@@ -16,6 +16,10 @@ function getJSON(path) {
 
 function watchColorPicker(hex, team) {
 	color = hexToRgb(hex);
+
+    if(!document.getElementById('colorLock').checked) {
+        return;
+    }
 	
     if(team == "red") {
         originalHSL = rgbToHsl(204, 20, 13); //god i love hard coding vars
