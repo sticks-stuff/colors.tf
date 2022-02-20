@@ -181,6 +181,7 @@ main #preview-box #preview-color-pane .preview-colors .crits .colour-display, ma
   aspect-ratio: 1;
   width: 100%;
   border-radius: 10px;
+  border: solid black;
 }
 
 main #preview-box #preview-color-pane .preview-colors .crits {
