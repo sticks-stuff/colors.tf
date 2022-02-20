@@ -16,10 +16,6 @@ function getJSON(path) {
 
 function watchColorPicker(hex, team) {
 	color = hexToRgb(hex);
-
-    if(!document.getElementById('colorLock').checked) {
-        return;
-    }
 	
     if(team == "red") {
         originalHSL = rgbToHsl(204, 20, 13); //god i love hard coding vars
@@ -27,6 +23,12 @@ function watchColorPicker(hex, team) {
     } else {
         originalHSL = rgbToHsl(13, 51, 204);
         critColor = document.querySelectorAll('[jsonpath="material,blue_crit,color"]')[0]
+    }
+
+    document.getElementById(`preview-color-${team}`).style.backgroundColor = critColor.style.backgroundColor;
+
+    if(!document.getElementById('colorLock').checked) {
+        return;
     }
 
 	colorHSL = rgbToHsl(color[0], color[1], color[2])
@@ -66,8 +68,6 @@ function watchColorPicker(hex, team) {
     // critColorHSL = hslToRgb(critColorHSL[0], critColorHSL[1], critColorHSL[2]);
 
     // console.log({critColorHSL})
-
-    document.getElementById(`preview-color-${team}`).style.backgroundColor = critColor.style.backgroundColor;
 }
 
 function hexToRgb(hex) {

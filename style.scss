@@ -318,6 +318,11 @@ $light-red-team-trans: #bd3b3b90;
 		width: 100%;
 		overflow: hidden;
 		transition: max-height 0.2s ease-out;
+		.color-lock-container {
+			height: 2.5vh;
+			margin-bottom: -2.5vh;
+			color: #292526;
+		}
 		.collapsible {
 			margin-top: 3vh;
 			margin-bottom: 3vh;

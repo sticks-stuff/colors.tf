@@ -392,6 +392,12 @@ main #generate-button-container #generate-button.active, main #generate-button-c
   transition: max-height 0.2s ease-out;
 }
 
+.collapsible .content .color-lock-container {
+  height: 2.5vh;
+  margin-bottom: -2.5vh;
+  color: #292526;
+}
+
 .collapsible .content .collapsible {
   margin-top: 3vh;
   margin-bottom: 3vh;
