@@ -90,7 +90,7 @@ main nav.red {
 
 main nav.blu {
   background-color: #395c78;
-  color: #768A88;
+  color: #42c4c4;
 }
 
 main #preview-box {
@@ -111,7 +111,6 @@ main #preview-box {
 main #preview-box #preview-color-pane {
   width: 15%;
   height: 75%;
-  color: #C65032;
   background-color: #34302d;
   border-radius: 50px;
 }
@@ -167,6 +166,15 @@ main #preview-box #preview-color-pane .preview-colors .crits h2, main #preview-b
   text-align: center;
   margin: 0;
   margin-bottom: 10px;
+  color: #C65032;
+}
+
+main #preview-box #preview-color-pane .preview-colors .crits.red h2, main #preview-box #preview-color-pane .preview-colors .minicrits.red h2 {
+  color: #C65032;
+}
+
+main #preview-box #preview-color-pane .preview-colors .crits.blue h2, main #preview-box #preview-color-pane .preview-colors .minicrits.blue h2 {
+  color: #39afcd;
 }
 
 main #preview-box #preview-color-pane .preview-colors .crits .colour-display, main #preview-box #preview-color-pane .preview-colors .minicrits .colour-display {

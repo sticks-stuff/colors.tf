@@ -40,10 +40,14 @@ $background-layer-5: lighten($background-layer-4, 10);
 $background-layer-6: lighten($background-layer-5, 10);
 $background-layer-7: lighten($background-layer-6, 10);
 
-$blu-text: #768A88;
-$blu-background: #395c78;
 $red-text: #bd3b3b;
 $red-background: #6a4535;
+// $blu-text: #768A88; //this was originally from the tf2 color pallet
+$blu-text: invert($red-text); //but i thought it looked bad so now i use inverted red text instead
+$blu-background: #395c78;
+
+$red-preview-text: #C65032;
+$blu-preview-text: invert($red-preview-text); //listen its hard to find blu text colors in the tf2 color pallet
 
 main {
 	background-color: $background-layer-0;
@@ -73,7 +77,6 @@ main {
 		#preview-color-pane {
 			width: 15%;
 			height: 75%;
-			color: #C65032;
 			background-color: darken($background-layer-2, 20);
 			border-radius: 50px;
 			
@@ -102,6 +105,19 @@ main {
 						text-align: center;
 						margin: 0;
 						margin-bottom: 10px;
+						color: #C65032;
+					}
+
+					&.red {
+						h2 {
+							color: $red-preview-text;
+						}	
+					}
+
+					&.blue {
+						h2 {
+							color: $blu-preview-text;
+						}	
 					}
 	
 					.colour-display {
