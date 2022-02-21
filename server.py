@@ -1,7 +1,7 @@
 import json_to_color_patch
 import patch_vmts
 from flask import Flask, request, send_file, after_this_request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import shutil
 import time
 import vpk
