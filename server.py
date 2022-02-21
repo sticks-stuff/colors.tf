@@ -11,9 +11,11 @@ from multiprocessing import Process
 import glob
 
 app = Flask(__name__)
-CORS(app, expose_headers=["Content-Disposition"])
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/generate', methods=['POST'])
+@cross_origin()
 def generate():
     if request.method == 'POST':
         requestTime = str(int(time.time()))
