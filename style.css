@@ -498,4 +498,32 @@ main #generate-button-container #generate-button.active, main #generate-button-c
 .collapsible.layer2 content {
   background-color: #4f4945;
 }
+
+.content-particles::before {
+  content: '?';
+  left: 100%;
+  position: relative;
+  height: 2.5vw;
+  width: 2.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #C9BFA8;
+  margin-bottom: -2.8vw;
+  font-size: 40px;
+  margin-left: 0.2vw;
+  margin-top: 0.3vw;
+  border-radius: 100%;
+}
+
+.content-particles::before.active, .content-particles::before:hover {
+  background-color: #924738;
+  color: #ECE3CB;
+}
 /*# sourceMappingURL=style.css.map */

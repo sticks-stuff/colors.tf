@@ -376,4 +376,24 @@ $light-red-team-trans: #bd3b3b90;
 		@include layering($background-layer-5, $background-layer-1);
 	}
 }
-  
+
+.content-particles::before {
+	content: '?';
+	left: 100%;
+	position: relative;
+	height: 2.5vw;
+	width: 2.5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #C9BFA8;
+	margin-bottom: -2.8vw;
+	&.active, &:hover {
+		background-color: #924738;
+		color: #ECE3CB;
+	}
+	font-size: 40px;
+	margin-left: 0.2vw;
+	margin-top: 0.3vw;
+	border-radius: 100%;
+}
