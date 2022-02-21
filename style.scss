@@ -227,6 +227,19 @@ main {
 				border-bottom-right-radius: 10px;
 				border-bottom-left-radius: 10px;
 				z-index: 99;
+				input[type="radio"] {
+					display: none;
+				}
+				label {
+					background: url('/assets/radio_button.png') no-repeat;
+					background-size: contain;
+					padding-left: 2ch;
+					margin-left: -2ch;
+				}
+				input[type="radio"]:checked + label {
+					background: url('/assets/radio_button_select.png')  no-repeat;
+					background-size: contain;
+				}
 			}
 		}
 	}	

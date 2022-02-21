@@ -315,6 +315,22 @@ main #preview-box #preview-tv #team-select {
   z-index: 99;
 }
 
+main #preview-box #preview-tv #team-select input[type="radio"] {
+  display: none;
+}
+
+main #preview-box #preview-tv #team-select label {
+  background: url("/assets/radio_button.png") no-repeat;
+  background-size: contain;
+  padding-left: 2ch;
+  margin-left: -2ch;
+}
+
+main #preview-box #preview-tv #team-select input[type="radio"]:checked + label {
+  background: url("/assets/radio_button_select.png") no-repeat;
+  background-size: contain;
+}
+
 main #generate-button-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -547,7 +563,7 @@ main #generate-button-container #generate-button.active, main #generate-button-c
 
 #tooltip {
   font-family: 'TF2 Secondary', sans-serif;
-  display: none;
+  opacity: 0;
   position: absolute;
   background-color: black;
   color: white;
@@ -565,9 +581,10 @@ main #generate-button-container #generate-button.active, main #generate-button-c
   border: 2px outset ThreeDLightShadow;
   border-color: #726657;
   z-index: 99;
+  pointer-events: none;
 }
 
 #tooltip.active {
-  display: block;
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

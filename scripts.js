@@ -205,6 +205,9 @@ function previewSelect(team) {
 
         document.querySelector('nav').classList.add('red');
         document.querySelector('nav').classList.remove('blu');
+
+        document.getElementById('red_preview_radio').checked = true;
+        document.getElementById('blu_preview_radio').checked = false;
     } else {
         document.getElementById('preview-color-red').style.display = 'none';
         document.getElementById('preview-color-blue').style.display = 'revert';
@@ -216,6 +219,9 @@ function previewSelect(team) {
 
         document.querySelector('nav').classList.add('blu');
         document.querySelector('nav').classList.remove('red');
+
+        document.getElementById('red_preview_radio').checked = false;
+        document.getElementById('blu_preview_radio').checked = true;
     }
 }
 
@@ -346,3 +352,6 @@ function showToolTip(e) {
 function hideToolTip() {
     document.getElementById("tooltip").classList.remove("active");
 }
+
+document.getElementById('red_preview_radio').checked = true;
+document.getElementById('blu_preview_radio').checked = false;
