@@ -1,5 +1,5 @@
-@import url("http://fonts.cdnfonts.com/css/tf2-build");
-@import url("http://fonts.cdnfonts.com/css/tf2-secondary");
+@import url("https://fonts.cdnfonts.com/css/tf2-build");
+@import url("https://fonts.cdnfonts.com/css/tf2-secondary");
 .both-class-colours {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,14 +257,14 @@ main #preview-box #preview-tv #preview-image * {
 }
 
 main #preview-box #preview-tv #preview-image #preview-template {
-  background-image: url("assets/preview/rocketlauncher/template.png");
+  background-image: url("./assets/preview/rocketlauncher/template.png");
   mix-blend-mode: luminosity;
 }
 
 main #preview-box #preview-tv #preview-image #preview-color-blue {
   background-color: #215fcc;
-  -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
-          mask-image: url("assets/preview/rocketlauncher/mask.png");
+  -webkit-mask-image: url("./assets/preview/rocketlauncher/mask.png");
+          mask-image: url("./assets/preview/rocketlauncher/mask.png");
   -webkit-mask-position: bottom;
           mask-position: bottom;
   -webkit-mask-size: cover;
@@ -274,8 +274,8 @@ main #preview-box #preview-tv #preview-image #preview-color-blue {
 
 main #preview-box #preview-tv #preview-image #preview-color-red {
   background-color: #cc140d;
-  -webkit-mask-image: url("assets/preview/rocketlauncher/mask.png");
-          mask-image: url("assets/preview/rocketlauncher/mask.png");
+  -webkit-mask-image: url("./assets/preview/rocketlauncher/mask.png");
+          mask-image: url("./assets/preview/rocketlauncher/mask.png");
   -webkit-mask-position: bottom;
           mask-position: bottom;
   -webkit-mask-size: cover;
@@ -283,16 +283,16 @@ main #preview-box #preview-tv #preview-image #preview-color-red {
 }
 
 main #preview-box #preview-tv #preview-image #preview-hand-blu {
-  background-image: url("assets/preview/rocketlauncher/blu_hand.png");
+  background-image: url("./assets/preview/rocketlauncher/blu_hand.png");
   display: none;
 }
 
 main #preview-box #preview-tv #preview-image #preview-hand-red {
-  background-image: url("assets/preview/rocketlauncher/red_hand.png");
+  background-image: url("./assets/preview/rocketlauncher/red_hand.png");
 }
 
 main #preview-box #preview-tv #preview-image #preview-background {
-  background-image: url("assets/preview/rocketlauncher/background.png");
+  background-image: url("./assets/preview/rocketlauncher/background.png");
 }
 
 main #preview-box #preview-tv #preview-image #preview-crits {

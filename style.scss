@@ -1,5 +1,5 @@
-@import url('http://fonts.cdnfonts.com/css/tf2-build');
-@import url('http://fonts.cdnfonts.com/css/tf2-secondary');
+@import url('https://fonts.cdnfonts.com/css/tf2-build');
+@import url('https://fonts.cdnfonts.com/css/tf2-secondary');
 
 .both-class-colours {
 	display: flex;
@@ -179,12 +179,12 @@ main {
 					border-top-right-radius: 10px;		
 				}
 				#preview-template {
-					background-image: url('assets/preview/rocketlauncher/template.png');
+					background-image: url('./assets/preview/rocketlauncher/template.png');
 					mix-blend-mode: luminosity;
 				}
 				#preview-color-blue {
 					background-color: rgb(33, 95, 204);
-					mask-image: url('assets/preview/rocketlauncher/mask.png');
+					mask-image: url('./assets/preview/rocketlauncher/mask.png');
 					mask-position: bottom;
 					mask-size: cover;
 					display: none;
@@ -192,22 +192,22 @@ main {
 			
 				#preview-color-red {
 					background-color: rgb(204, 20, 13);
-					mask-image: url('assets/preview/rocketlauncher/mask.png');
+					mask-image: url('./assets/preview/rocketlauncher/mask.png');
 					mask-position: bottom;
 					mask-size: cover;
 				}
 			
 				#preview-hand-blu {
-					background-image: url('assets/preview/rocketlauncher/blu_hand.png');
+					background-image: url('./assets/preview/rocketlauncher/blu_hand.png');
 					display: none;
 				}
 			
 				#preview-hand-red {
-					background-image: url('assets/preview/rocketlauncher/red_hand.png');
+					background-image: url('./assets/preview/rocketlauncher/red_hand.png');
 				}
 			
 				#preview-background {
-					background-image: url('assets/preview/rocketlauncher/background.png');
+					background-image: url('./assets/preview/rocketlauncher/background.png');
 				}
 			
 				#preview-crits {
