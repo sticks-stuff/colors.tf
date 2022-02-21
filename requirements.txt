@@ -8,3 +8,5 @@ Flask_Cors == 3.0.10
 
 # L:\colours.tf\server.py: 7
 vpk == 1.4.0
+
+itsdangerous==2.0.1
