@@ -65,4 +65,6 @@ def rm(path):
 if __name__ == "__main__":
 #   app.run(port=3000)
   # if you need to make it live debuging add 'debug=True'
-  app.run(port=3000, debug=True)
+#   app.run(port=3000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
