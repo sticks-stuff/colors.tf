@@ -1,851 +1,1353 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>My Page Title</title>
-		<meta name="description" content="My Page Description">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" href="style.css">
-		<link href="color-picker.min.css" rel="stylesheet">
+
+<head>
+	<meta charset="utf-8">
+	<title>My Page Title</title>
+	<meta name="description" content="My Page Description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="style.css">
+	<link href="color-picker.min.css" rel="stylesheet">
+	<style>
+		.color-picker.no-alpha .color-picker\:a {
+			display: none;
+		}
+
+		.color-picker input {
+			box-sizing: border-box;
+			display: block;
+			width: 100%;
+			height: 2em;
+			margin: 0;
+			padding: 0 .5em;
+			background: white;
+			border: 1px solid #000;
+			border-top-width: 0;
+			font-family: 'TF2 Build', sans-serif;
+			font-size: 20px;
+			color: #000;
+			text-transform: uppercase;
+			max-width: 9.5em;
+		}
+
+		.color-picker input:invalid {
+			color: #f00;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="color-picker.min.js"></script>
+	<main>
+		<nav class="red">Colors.TF</nav>
+		<a href="https://github.com/sticks-stuff/colours.tf/" class="github-corner"
+			aria-label="View source on GitHub"><svg width="10vh" height="10vh" viewBox="0 0 250 250"
+				style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+				<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+				<path
+					d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+					fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+				<path
+					d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+					fill="currentColor" class="octo-body"></path>
+			</svg></a>
 		<style>
-			.color-picker.no-alpha .color-picker\:a {
-			  display: none;
+			.github-corner:hover .octo-arm {
+				animation: octocat-wave 560ms ease-in-out
 			}
 
-			.color-picker input {
-				box-sizing: border-box;
-				display: block;
-				width: 100%;
-				height: 2em;
-				margin: 0;
-				padding: 0 .5em;
-				background: white;
-				border: 1px solid #000;
-				border-top-width: 0;
-				font-family: 'TF2 Build', sans-serif;
-				font-size: 20px;
-				color: #000;
-				text-transform: uppercase;
-				max-width: 9.5em;
-			  }
-		
-			  .color-picker input:invalid {
-				color: #f00;
-			  }
+			@keyframes octocat-wave {
+
+				0%,
+				100% {
+					transform: rotate(0)
+				}
+
+				20%,
+				60% {
+					transform: rotate(-25deg)
+				}
+
+				40%,
+				80% {
+					transform: rotate(10deg)
+				}
+			}
+
+			@media (max-width:500px) {
+				.github-corner:hover .octo-arm {
+					animation: none
+				}
+
+				.github-corner .octo-arm {
+					animation: octocat-wave 560ms ease-in-out
+				}
+			}
 		</style>
-	</head>
-	<body>
-		<script src="color-picker.min.js"></script>
-		<main>
-			<nav class="red">Colors.TF</nav>
-			<a href="https://github.com/sticks-stuff/colours.tf/" class="github-corner" aria-label="View source on GitHub"><svg width="10vh" height="10vh" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-			<div id="preview-box">
-				<div id="preview-color-pane">
-					<div id="red-preview-colors" class="preview-colors">
-						<div class="red crits">
-							<h2>crits</h2>
-							<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='204 20 13' style="background-color: rgb(204, 20, 13);"></div>
-						</div>
-						<div class="red minicrits">
-							<h2>mini-crits</h2>
-							<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62' style="background-color: rgb(226, 150, 62);"></div>
-						</div>
-						
+		<div id="preview-box">
+			<div id="preview-color-pane">
+				<div id="red-preview-colors" class="preview-colors">
+					<div class="red crits">
+						<h2>crits</h2>
+						<div class='colour-display' jsonpath='material,red_crit,color' ogcolour='204 20 13'
+							style="background-color: rgb(204, 20, 13);"></div>
 					</div>
-					<div id="blue-preview-colors" class="preview-colors">
-						<div class="blue crits">
-							<h2>crits</h2>
-							<div class='colour-display' jsonpath='material,blue_crit,color' ogcolour='13 51 204' style="background-color: rgb(13, 51, 204);"></div>
+					<div class="red minicrits">
+						<h2>mini-crits</h2>
+						<div class='colour-display' jsonpath='material,red_minicrit,color' ogcolour='226 150 62'
+							style="background-color: rgb(226, 150, 62);"></div>
+					</div>
+
+				</div>
+				<div id="blue-preview-colors" class="preview-colors">
+					<div class="blue crits">
+						<h2>crits</h2>
+						<div class='colour-display' jsonpath='material,blue_crit,color' ogcolour='13 51 204'
+							style="background-color: rgb(13, 51, 204);"></div>
+					</div>
+					<div class="blue minicrits">
+						<h2>mini-crits</h2>
+						<div class='colour-display' jsonpath='material,blue_minicrit,color' ogcolour='29 202 135'
+							style="background-color: rgb(29, 202, 135);"></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="preview-tv">
+				<div id="preview-image">
+					<div id="preview-background"></div>
+					<div id="preview-hand-red"></div>
+					<div id="preview-hand-blu"></div>
+					<div id="preview-color-red"></div>
+					<div id="preview-color-blue"></div>
+					<div id="preview-template"></div>
+				</div>
+
+				<div id="team-select">
+					<div onclick="previewSelect('red');">
+						<input id="red_preview_radio" type="radio" checked="checked" name="team" value="red_preview">
+						<label for="red_preview">red</label>
+					</div>
+					<div onclick="previewSelect('blu');">
+						<input id="blu_preview_radio" type="radio" name="team" value="blu_preview">
+						<label for="blu_preview">blu</label><br>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tooltip">
+			The game will choose a random color between Color1 and Color2 when spawning the particle.
+			The particle will fade to the color in Fade by the end of its life.
+		</div>
+		<div class="collapsible layer0">
+			<button type="button">particles</button>
+			<div class="content">
+				<div class="color-lock-container">
+					<input type="checkbox" id="colorLock" name="colorLock" checked>
+					<label for="colorLock">Adjust particle colors relative to crit colors?</label>
+				</div>
+				<div class="collapsible layer1">
+					<button type="button">Bullets</button>
+					<div class="content">
+						<div class="collapsible layer2">
+							<button type="button">Big Tracer</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_red_crit,color1'
+											ogcolour='255.0 0.0 24.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 24.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_red_crit,color2'
+											ogcolour='255.0 2.0 2.0 255.0'
+											style="background-color: rgb(255.0, 2.0, 2.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_blue_crit,color1'
+											ogcolour='0.0 30.0 255.0 255.0'
+											style="background-color: rgb(0.0, 30.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_blue_crit,color2'
+											ogcolour='2.0 38.0 255.0 255.0'
+											style="background-color: rgb(2.0, 38.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
 						</div>
-						<div class="blue minicrits">
-							<h2>mini-crits</h2>
-							<div class='colour-display' jsonpath='material,blue_minicrit,color' ogcolour='29 202 135' style="background-color: rgb(29, 202, 135);"></div>
+						<div class="collapsible layer2">
+							<button type="button">Impact 1</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_crit,color1'
+											ogcolour='253.0 126.0 1.0 255.0'
+											style="background-color: rgb(253.0, 126.0, 1.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_crit,color2'
+											ogcolour='176.0 65.0 5.0 255.0'
+											style="background-color: rgb(176.0, 65.0, 5.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_crit,color1'
+											ogcolour='253.0 126.0 1.0 255.0'
+											style="background-color: rgb(253.0, 126.0, 1.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_crit,color2'
+											ogcolour='176.0 65.0 5.0 255.0'
+											style="background-color: rgb(176.0, 65.0, 5.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Impact 2</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_critglow,color1'
+											ogcolour='253.0 126.0 1.0 255.0'
+											style="background-color: rgb(253.0, 126.0, 1.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_critglow,color2'
+											ogcolour='176.0 65.0 5.0 255.0'
+											style="background-color: rgb(176.0, 65.0, 5.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color_fade'
+											ogcolour='0.0 198.0 255.0 255.0'
+											style="background-color: rgb(0.0, 198.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color1'
+											ogcolour='1.0 114.0 253.0 255.0'
+											style="background-color: rgb(1.0, 114.0, 253.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color2'
+											ogcolour='5.0 69.0 176.0 255.0'
+											style="background-color: rgb(5.0, 69.0, 176.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Tracer 1</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_red_crit,color1'
+											ogcolour='255.0 0.0 24.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 24.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_red_crit,color2'
+											ogcolour='255.0 2.0 2.0 255.0'
+											style="background-color: rgb(255.0, 2.0, 2.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_blue_crit,color1'
+											ogcolour='0.0 30.0 255.0 255.0'
+											style="background-color: rgb(0.0, 30.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_blue_crit,color2'
+											ogcolour='2.0 38.0 255.0 255.0'
+											style="background-color: rgb(2.0, 38.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Tracer 2</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_red_crit,color1'
+											ogcolour='255.0 0.0 24.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 24.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_red_crit,color2'
+											ogcolour='255.0 2.0 2.0 255.0'
+											style="background-color: rgb(255.0, 2.0, 2.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_blue_crit,color1'
+											ogcolour='0.0 30.0 255.0 255.0'
+											style="background-color: rgb(0.0, 30.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_blue_crit,color2'
+											ogcolour='2.0 38.0 255.0 255.0'
+											style="background-color: rgb(2.0, 38.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Scattergun Tracer</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_red_crit,color1'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_red_crit,color2'
+											ogcolour='255.0 102.0 0.0 255.0'
+											style="background-color: rgb(255.0, 102.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_blue_crit,color1'
+											ogcolour='0.0 46.0 246.0 255.0'
+											style="background-color: rgb(0.0, 46.0, 246.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_blue_crit,color2'
+											ogcolour='0.0 90.0 255.0 255.0'
+											style="background-color: rgb(0.0, 90.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Pistol Tracer</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_red_crit,color1'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_red_crit,color2'
+											ogcolour='247.0 114.0 6.0 255.0'
+											style="background-color: rgb(247.0, 114.0, 6.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_blue_crit,color1'
+											ogcolour='0.0 96.0 255.0 255.0'
+											style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_blue_crit,color2'
+											ogcolour='2.0 60.0 250.0 255.0'
+											style="background-color: rgb(2.0, 60.0, 250.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Shotgun Tracer</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_red_crit,color1'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_red_crit,color2'
+											ogcolour='255.0 102.0 0.0 255.0'
+											style="background-color: rgb(255.0, 102.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_blue_crit,color1'
+											ogcolour='0.0 46.0 246.0 255.0'
+											style="background-color: rgb(0.0, 46.0, 246.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_blue_crit,color2'
+											ogcolour='0.0 90.0 255.0 255.0'
+											style="background-color: rgb(0.0, 90.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
-				
-				<div id="preview-tv">
-					<div id="preview-image">
-						<div id="preview-background"></div>
-						<div id="preview-hand-red"></div>
-						<div id="preview-hand-blu"></div>
-						<div id="preview-color-red"></div>
-						<div id="preview-color-blue"></div>
-						<div id="preview-template"></div>
-					</div>
-					
-					<div id="team-select">
-						<div onclick="previewSelect('red');" >
-							<input id="red_preview_radio" type="radio" checked="checked" name="team" value="red_preview">
-							<label for="red_preview">red</label>	
+				<div class="collapsible layer1">
+					<button type="button">Viewmodel FX</button>
+					<div class="content">
+						<div class="collapsible layer2">
+							<button type="button">Viewmodel Lightning</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color_fade'
+											ogcolour='176.0 0.0 0.0 255.0'
+											style="background-color: rgb(176.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color1'
+											ogcolour='255.0 148.0 70.0 255.0'
+											style="background-color: rgb(255.0, 148.0, 70.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color2'
+											ogcolour='255.0 108.0 0.0 255.0'
+											style="background-color: rgb(255.0, 108.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color_fade'
+											ogcolour='0.0 100.0 249.0 255.0'
+											style="background-color: rgb(0.0, 100.0, 249.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color1'
+											ogcolour='125.0 125.0 255.0 255.0'
+											style="background-color: rgb(125.0, 125.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color2'
+											ogcolour='116.0 162.0 255.0 255.0'
+											style="background-color: rgb(116.0, 162.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
 						</div>
-						<div onclick="previewSelect('blu');" >
-							<input id="blu_preview_radio" type="radio" name="team" value="blu_preview">
-							<label for="blu_preview">blu</label><br>		
+						<div class="collapsible layer2">
+							<button type="button">Viewmodel Glow</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color_fade'
+											ogcolour='249.0 53.0 0.0 255.0'
+											style="background-color: rgb(249.0, 53.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color1'
+											ogcolour='255.0 31.0 31.0 255.0'
+											style="background-color: rgb(255.0, 31.0, 31.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color2'
+											ogcolour='255.0 108.0 0.0 255.0'
+											style="background-color: rgb(255.0, 108.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color_fade'
+											ogcolour='0.0 100.0 249.0 255.0'
+											style="background-color: rgb(0.0, 100.0, 249.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color1'
+											ogcolour='125.0 125.0 255.0 255.0'
+											style="background-color: rgb(125.0, 125.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color2'
+											ogcolour='116.0 162.0 255.0 255.0'
+											style="background-color: rgb(116.0, 162.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapsible layer1">
+					<button type="button">Flamethrower</button>
+					<div class="content">
+						<div class="collapsible layer2">
+							<button type="button">Flame</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color_fade'
+											ogcolour='255.0 66.0 0.0 255.0'
+											style="background-color: rgb(255.0, 66.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color1'
+											ogcolour='255.0 161.0 161.0 255.0'
+											style="background-color: rgb(255.0, 161.0, 161.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color2'
+											ogcolour='246.0 214.0 164.0 255.0'
+											style="background-color: rgb(246.0, 214.0, 164.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color_fade'
+											ogcolour='73.0 60.0 97.0 255.0'
+											style="background-color: rgb(73.0, 60.0, 97.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color1'
+											ogcolour='5.0 46.0 255.0 255.0'
+											style="background-color: rgb(5.0, 46.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color2'
+											ogcolour='56.0 168.0 255.0 255.0'
+											style="background-color: rgb(56.0, 168.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Flame Drips</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_drips_b,color1'
+											ogcolour='197.0 29.0 120.0 255.0'
+											style="background-color: rgb(197.0, 29.0, 120.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_drips_b,color2'
+											ogcolour='243.0 30.0 50.0 255.0'
+											style="background-color: rgb(243.0, 30.0, 50.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_drips_b,color1'
+											ogcolour='53.0 29.0 197.0 255.0'
+											style="background-color: rgb(53.0, 29.0, 197.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_drips_b,color2'
+											ogcolour='0.0 198.0 255.0 255.0'
+											style="background-color: rgb(0.0, 198.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Flame Sparks</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color_fade'
+											ogcolour='255.0 240.0 0.0 255.0'
+											style="background-color: rgb(255.0, 240.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color1'
+											ogcolour='255.0 33.0 75.0 255.0'
+											style="background-color: rgb(255.0, 33.0, 75.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color2'
+											ogcolour='255.0 33.0 75.0 255.0'
+											style="background-color: rgb(255.0, 33.0, 75.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color_fade'
+											ogcolour='174.0 210.0 255.0 255.0'
+											style="background-color: rgb(174.0, 210.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color1'
+											ogcolour='0.0 126.0 255.0 255.0'
+											style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color2'
+											ogcolour='0.0 126.0 255.0 255.0'
+											style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Dragon's Fury Trail</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color_fade'
+											ogcolour='255.0 72.0 0.0 255.0'
+											style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color1'
+											ogcolour='255.0 180.0 0.0 255.0'
+											style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color2'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color_fade'
+											ogcolour='31.0 59.0 138.0 255.0'
+											style="background-color: rgb(31.0, 59.0, 138.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color1'
+											ogcolour='0.0 126.0 255.0 255.0'
+											style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color2'
+											ogcolour='0.0 72.0 255.0 255.0'
+											style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Dragon's Fury Sparks</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color_fade'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color1'
+											ogcolour='255.0 180.0 0.0 255.0'
+											style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color2'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color_fade'
+											ogcolour='0.0 66.0 255.0 255.0'
+											style="background-color: rgb(0.0, 66.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color1'
+											ogcolour='0.0 126.0 255.0 255.0'
+											style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color2'
+											ogcolour='0.0 72.0 255.0 255.0'
+											style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapsible layer1">
+					<button type="button">Syringe Gun</button>
+					<div class="content">
+						<div class="collapsible layer2">
+							<button type="button">Syringe Gun Trail</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_red_crit,color1'
+											ogcolour='196.0 111.0 43.0 255.0'
+											style="background-color: rgb(196.0, 111.0, 43.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_red_crit,color2'
+											ogcolour='239.0 38.0 38.0 255.0'
+											style="background-color: rgb(239.0, 38.0, 38.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_blue_crit,color1'
+											ogcolour='32.0 22.0 252.0 255.0'
+											style="background-color: rgb(32.0, 22.0, 252.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_blue_crit,color2'
+											ogcolour='110.0 156.0 232.0 255.0'
+											style="background-color: rgb(110.0, 156.0, 232.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapsible layer1">
+					<button type="button">Rockets and Flares</button>
+					<div class="content">
+						<div class="collapsible layer2">
+							<button type="button">Flaregun</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color_fade'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color1'
+											ogcolour='255.0 180.0 0.0 255.0'
+											style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color2'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color_fade'
+											ogcolour='0.0 96.0 255.0 255.0'
+											style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color1'
+											ogcolour='0.0 228.0 255.0 255.0'
+											style="background-color: rgb(0.0, 228.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color2'
+											ogcolour='0.0 84.0 255.0 255.0'
+											style="background-color: rgb(0.0, 84.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Rocket Sparks</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color_fade'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color1'
+											ogcolour='255.0 180.0 0.0 255.0'
+											style="background-color: rgb(255.0, 180.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color2'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color_fade'
+											ogcolour='0.0 66.0 255.0 255.0'
+											style="background-color: rgb(0.0, 66.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color1'
+											ogcolour='0.0 126.0 255.0 255.0'
+											style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color2'
+											ogcolour='0.0 72.0 255.0 255.0'
+											style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Rocket</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color_fade'
+											ogcolour='72.0 0.0 0.0 255.0'
+											style="background-color: rgb(72.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color1'
+											ogcolour='255.0 72.0 0.0 255.0'
+											style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color2'
+											ogcolour='106.0 0.0 0.0 255.0'
+											style="background-color: rgb(106.0, 0.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color_fade'
+											ogcolour='0.0 28.0 110.0 255.0'
+											style="background-color: rgb(0.0, 28.0, 110.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color1'
+											ogcolour='0.0 126.0 255.0 255.0'
+											style="background-color: rgb(0.0, 126.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color2'
+											ogcolour='0.0 72.0 255.0 255.0'
+											style="background-color: rgb(0.0, 72.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collapsible layer1">
+					<button type="button">Stickybombs, Pipes, and Sandman Balls</button>
+					<div class="content">
+						<div class="collapsible layer2">
+							<button type="button">Sandman Ball Trail</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color_fade'
+											ogcolour='93.0 65.0 65.0 255.0'
+											style="background-color: rgb(93.0, 65.0, 65.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color1'
+											ogcolour='255.0 96.0 0.0 255.0'
+											style="background-color: rgb(255.0, 96.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color2'
+											ogcolour='255.0 72.0 0.0 255.0'
+											style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color_fade'
+											ogcolour='65.0 75.0 93.0 255.0'
+											style="background-color: rgb(65.0, 75.0, 93.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color1'
+											ogcolour='0.0 150.0 255.0 255.0'
+											style="background-color: rgb(0.0, 150.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color2'
+											ogcolour='0.0 150.0 255.0 255.0'
+											style="background-color: rgb(0.0, 150.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Stickybomb 1</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color_fade'
+											ogcolour='205.0 87.0 0.0 255.0'
+											style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color1'
+											ogcolour='185.0 77.0 77.0 255.0'
+											style="background-color: rgb(185.0, 77.0, 77.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color2'
+											ogcolour='255.0 30.0 0.0 255.0'
+											style="background-color: rgb(255.0, 30.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color_fade'
+											ogcolour='205.0 87.0 0.0 255.0'
+											style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color1'
+											ogcolour='18.0 0.0 255.0 255.0'
+											style="background-color: rgb(18.0, 0.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color2'
+											ogcolour='0.0 96.0 255.0 255.0'
+											style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Stickybomb 2</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color_fade'
+											ogcolour='255.0 72.0 0.0 255.0'
+											style="background-color: rgb(255.0, 72.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color1'
+											ogcolour='255.0 181.0 115.0 255.0'
+											style="background-color: rgb(255.0, 181.0, 115.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color2'
+											ogcolour='255.0 0.0 0.0 255.0'
+											style="background-color: rgb(255.0, 0.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color_fade'
+											ogcolour='0.0 90.0 255.0 255.0'
+											style="background-color: rgb(0.0, 90.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color1'
+											ogcolour='115.0 158.0 255.0 255.0'
+											style="background-color: rgb(115.0, 158.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color2'
+											ogcolour='0.0 108.0 255.0 255.0'
+											style="background-color: rgb(0.0, 108.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Stickybomb Glow</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color_fade'
+											ogcolour='199.0 0.0 0.0 255.0'
+											style="background-color: rgb(199.0, 0.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color1'
+											ogcolour='180.0 25.0 0.0 255.0'
+											style="background-color: rgb(180.0, 25.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color2'
+											ogcolour='255.0 96.0 0.0 255.0'
+											style="background-color: rgb(255.0, 96.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color_fade'
+											ogcolour='0.0 48.0 255.0 255.0'
+											style="background-color: rgb(0.0, 48.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color1'
+											ogcolour='115.0 158.0 255.0 255.0'
+											style="background-color: rgb(115.0, 158.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color2'
+											ogcolour='115.0 158.0 255.0 255.0'
+											style="background-color: rgb(115.0, 158.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="collapsible layer2">
+							<button type="button">Pipe</button>
+							<div class="content">
+								<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
+								<div class="red-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color_fade'
+											ogcolour='205.0 87.0 0.0 255.0'
+											style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color1'
+											ogcolour='185.0 77.0 77.0 255.0'
+											style="background-color: rgb(185.0, 77.0, 77.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color2'
+											ogcolour='255.0 30.0 0.0 255.0'
+											style="background-color: rgb(255.0, 30.0, 0.0);"></div>
+									</div>
+								</div>
+
+								<div class="blue-particle">
+									<div>
+										<h3> fade </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color_fade'
+											ogcolour='205.0 87.0 0.0 255.0'
+											style="background-color: rgb(205.0, 87.0, 0.0);"></div>
+									</div>
+									<div>
+										<h3> color1 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color1'
+											ogcolour='18.0 0.0 255.0 255.0'
+											style="background-color: rgb(18.0, 0.0, 255.0);"></div>
+									</div>
+									<div>
+										<h3> color2 </h3>
+										<div class='colour-display'
+											jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color2'
+											ogcolour='0.0 96.0 255.0 255.0'
+											style="background-color: rgb(0.0, 96.0, 255.0);"></div>
+									</div>
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="tooltip">
-				The game will choose a random color between Color1 and Color2 when spawning the particle.
-				The particle will fade to the color in Fade by the end of its life.
-			</div>
-			<div class="collapsible layer0">
-				<button type="button">particles</button>
-				<div class="content">
-					<div class="color-lock-container">
-						<input type="checkbox" id="colorLock" name="colorLock" checked>
-						<label for="colorLock">Adjust particle colors relative to crit colors?</label>   
-					</div>
-<div class="collapsible layer1">
-<button type="button">bullet_tracers_onlycrits.pcf</button>
-<div class="content">
-<div class="collapsible layer2">
-<button type="button">bullet_bignasty_tracer01_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_red_crit,color1' ogcolour='255.0 0.0 24.0 255.0' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_red_crit,color2' ogcolour='255.0 2.0 2.0 255.0' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_blue_crit,color1' ogcolour='0.0 30.0 255.0 255.0' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_bignasty_tracer01_blue_crit,color2' ogcolour='2.0 38.0 255.0 255.0' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_impact1_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_crit,color1' ogcolour='253.0 126.0 1.0 255.0' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_crit,color2' ogcolour='176.0 65.0 5.0 255.0' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_crit,color1' ogcolour='253.0 126.0 1.0 255.0' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_crit,color2' ogcolour='176.0 65.0 5.0 255.0' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_impact1_critglow</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_critglow,color1' ogcolour='253.0 126.0 1.0 255.0' style="background-color: rgb(253.0, 126.0, 1.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_red_critglow,color2' ogcolour='176.0 65.0 5.0 255.0' style="background-color: rgb(176.0, 65.0, 5.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color_fade' ogcolour='0.0 198.0 255.0 255.0' style="background-color: rgb(0.0, 198.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color1' ogcolour='1.0 114.0 253.0 255.0' style="background-color: rgb(1.0, 114.0, 253.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_impact1_blue_critglow,color2' ogcolour='5.0 69.0 176.0 255.0' style="background-color: rgb(5.0, 69.0, 176.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_tracer02_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_red_crit,color1' ogcolour='255.0 0.0 24.0 255.0' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_red_crit,color2' ogcolour='255.0 2.0 2.0 255.0' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_blue_crit,color1' ogcolour='0.0 30.0 255.0 255.0' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer02_blue_crit,color2' ogcolour='2.0 38.0 255.0 255.0' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_tracer01_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_red_crit,color1' ogcolour='255.0 0.0 24.0 255.0' style="background-color: rgb(255.0, 0.0, 24.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_red_crit,color2' ogcolour='255.0 2.0 2.0 255.0' style="background-color: rgb(255.0, 2.0, 2.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_blue_crit,color1' ogcolour='0.0 30.0 255.0 255.0' style="background-color: rgb(0.0, 30.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_tracer01_blue_crit,color2' ogcolour='2.0 38.0 255.0 255.0' style="background-color: rgb(2.0, 38.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_scattergun_tracer01_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_red_crit,color1' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_red_crit,color2' ogcolour='255.0 102.0 0.0 255.0' style="background-color: rgb(255.0, 102.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_blue_crit,color1' ogcolour='0.0 46.0 246.0 255.0' style="background-color: rgb(0.0, 46.0, 246.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_scattergun_tracer01_blue_crit,color2' ogcolour='0.0 90.0 255.0 255.0' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_pistol_tracer01_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_red_crit,color1' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_red_crit,color2' ogcolour='247.0 114.0 6.0 255.0' style="background-color: rgb(247.0, 114.0, 6.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_blue_crit,color1' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_pistol_tracer01_blue_crit,color2' ogcolour='2.0 60.0 250.0 255.0' style="background-color: rgb(2.0, 60.0, 250.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">bullet_shotgun_tracer01_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_red_crit,color1' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_red_crit,color2' ogcolour='255.0 102.0 0.0 255.0' style="background-color: rgb(255.0, 102.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_blue_crit,color1' ogcolour='0.0 46.0 246.0 255.0' style="background-color: rgb(0.0, 46.0, 246.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='bullet_tracers_onlycrits.pcf,bullet_shotgun_tracer01_blue_crit,color2' ogcolour='0.0 90.0 255.0 255.0' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="collapsible layer1">
-<button type="button">firstperson_weapon_fx.pcf</button>
-<div class="content">
-<div class="collapsible layer2">
-<button type="button">critgun_weaponmodel_</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color_fade' ogcolour='176.0 0.0 0.0 255.0' style="background-color: rgb(176.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color1' ogcolour='255.0 148.0 70.0 255.0' style="background-color: rgb(255.0, 148.0, 70.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red,color2' ogcolour='255.0 108.0 0.0 255.0' style="background-color: rgb(255.0, 108.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color_fade' ogcolour='0.0 100.0 249.0 255.0' style="background-color: rgb(0.0, 100.0, 249.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color1' ogcolour='125.0 125.0 255.0 255.0' style="background-color: rgb(125.0, 125.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu,color2' ogcolour='116.0 162.0 255.0 255.0' style="background-color: rgb(116.0, 162.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critgun_weaponmodel_glow</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color_fade' ogcolour='249.0 53.0 0.0 255.0' style="background-color: rgb(249.0, 53.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color1' ogcolour='255.0 31.0 31.0 255.0' style="background-color: rgb(255.0, 31.0, 31.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_red_glow,color2' ogcolour='255.0 108.0 0.0 255.0' style="background-color: rgb(255.0, 108.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color_fade' ogcolour='0.0 100.0 249.0 255.0' style="background-color: rgb(0.0, 100.0, 249.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color1' ogcolour='125.0 125.0 255.0 255.0' style="background-color: rgb(125.0, 125.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='firstperson_weapon_fx.pcf,critgun_weaponmodel_blu_glow,color2' ogcolour='116.0 162.0 255.0 255.0' style="background-color: rgb(116.0, 162.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="collapsible layer1">
-<button type="button">flamethrower_onlycrits.pcf</button>
-<div class="content">
-<div class="collapsible layer2">
-<button type="button">new_flame_crit_glow</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color_fade' ogcolour='255.0 66.0 0.0 255.0' style="background-color: rgb(255.0, 66.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color1' ogcolour='255.0 161.0 161.0 255.0' style="background-color: rgb(255.0, 161.0, 161.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_glow,color2' ogcolour='246.0 214.0 164.0 255.0' style="background-color: rgb(246.0, 214.0, 164.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color_fade' ogcolour='73.0 60.0 97.0 255.0' style="background-color: rgb(73.0, 60.0, 97.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color1' ogcolour='5.0 46.0 255.0 255.0' style="background-color: rgb(5.0, 46.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_glow,color2' ogcolour='56.0 168.0 255.0 255.0' style="background-color: rgb(56.0, 168.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">new_flame_crit_drips_b</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_drips_b,color1' ogcolour='197.0 29.0 120.0 255.0' style="background-color: rgb(197.0, 29.0, 120.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_drips_b,color2' ogcolour='243.0 30.0 50.0 255.0' style="background-color: rgb(243.0, 30.0, 50.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_drips_b,color1' ogcolour='53.0 29.0 197.0 255.0' style="background-color: rgb(53.0, 29.0, 197.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_drips_b,color2' ogcolour='0.0 198.0 255.0 255.0' style="background-color: rgb(0.0, 198.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">new_flame_crit_sparks</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color_fade' ogcolour='255.0 240.0 0.0 255.0' style="background-color: rgb(255.0, 240.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color1' ogcolour='255.0 33.0 75.0 255.0' style="background-color: rgb(255.0, 33.0, 75.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_red_sparks,color2' ogcolour='255.0 33.0 75.0 255.0' style="background-color: rgb(255.0, 33.0, 75.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color_fade' ogcolour='174.0 210.0 255.0 255.0' style="background-color: rgb(174.0, 210.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,new_flame_crit_blue_sparks,color2' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">projectile_fireball_crit_trail</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color_fade' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_trail,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color_fade' ogcolour='31.0 59.0 138.0 255.0' style="background-color: rgb(31.0, 59.0, 138.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_trail,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">projectile_fireball_crit_sparks</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color_fade' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_red_sparks,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color_fade' ogcolour='0.0 66.0 255.0 255.0' style="background-color: rgb(0.0, 66.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='flamethrower_onlycrits.pcf,projectile_fireball_crit_blue_sparks,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="collapsible layer1">
-<button type="button">nailtrails_onlycrits.pcf</button>
-<div class="content">
-<div class="collapsible layer2">
-<button type="button">nailtrails_medic_crit</button>
-<div class="content"><div class="red-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_red_crit,color1' ogcolour='196.0 111.0 43.0 255.0' style="background-color: rgb(196.0, 111.0, 43.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_red_crit,color2' ogcolour='239.0 38.0 38.0 255.0' style="background-color: rgb(239.0, 38.0, 38.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_blue_crit,color1' ogcolour='32.0 22.0 252.0 255.0' style="background-color: rgb(32.0, 22.0, 252.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='nailtrails_onlycrits.pcf,nailtrails_medic_blue_crit,color2' ogcolour='110.0 156.0 232.0 255.0' style="background-color: rgb(110.0, 156.0, 232.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="collapsible layer1">
-<button type="button">rockettrail_onlycrits.pcf</button>
-<div class="content">
-<div class="collapsible layer2">
-<button type="button">flaregun_crit_</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color_fade' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_red,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color_fade' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color1' ogcolour='0.0 228.0 255.0 255.0' style="background-color: rgb(0.0, 228.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,flaregun_crit_blue,color2' ogcolour='0.0 84.0 255.0 255.0' style="background-color: rgb(0.0, 84.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critical_rocket_sparks</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color_fade' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color1' ogcolour='255.0 180.0 0.0 255.0' style="background-color: rgb(255.0, 180.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_redsparks,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color_fade' ogcolour='0.0 66.0 255.0 255.0' style="background-color: rgb(0.0, 66.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_bluesparks,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critical_rocket_</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color_fade' ogcolour='72.0 0.0 0.0 255.0' style="background-color: rgb(72.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color1' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_red,color2' ogcolour='106.0 0.0 0.0 255.0' style="background-color: rgb(106.0, 0.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color_fade' ogcolour='0.0 28.0 110.0 255.0' style="background-color: rgb(0.0, 28.0, 110.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color1' ogcolour='0.0 126.0 255.0 255.0' style="background-color: rgb(0.0, 126.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='rockettrail_onlycrits.pcf,critical_rocket_blue,color2' ogcolour='0.0 72.0 255.0 255.0' style="background-color: rgb(0.0, 72.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="collapsible layer1">
-<button type="button">stickybomb_onlycrits.pcf</button>
-<div class="content">
-<div class="collapsible layer2">
-<button type="button">stunballtrail_crit</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color_fade' ogcolour='93.0 65.0 65.0 255.0' style="background-color: rgb(93.0, 65.0, 65.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color1' ogcolour='255.0 96.0 0.0 255.0' style="background-color: rgb(255.0, 96.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_red_crit,color2' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color_fade' ogcolour='65.0 75.0 93.0 255.0' style="background-color: rgb(65.0, 75.0, 93.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color1' ogcolour='0.0 150.0 255.0 255.0' style="background-color: rgb(0.0, 150.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,stunballtrail_blue_crit,color2' ogcolour='0.0 150.0 255.0 255.0' style="background-color: rgb(0.0, 150.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critical_grenade_</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color1' ogcolour='185.0 77.0 77.0 255.0' style="background-color: rgb(185.0, 77.0, 77.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red,color2' ogcolour='255.0 30.0 0.0 255.0' style="background-color: rgb(255.0, 30.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color1' ogcolour='18.0 0.0 255.0 255.0' style="background-color: rgb(18.0, 0.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue,color2' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critical_grenade_extra</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color_fade' ogcolour='255.0 72.0 0.0 255.0' style="background-color: rgb(255.0, 72.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color1' ogcolour='255.0 181.0 115.0 255.0' style="background-color: rgb(255.0, 181.0, 115.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_extra,color2' ogcolour='255.0 0.0 0.0 255.0' style="background-color: rgb(255.0, 0.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color_fade' ogcolour='0.0 90.0 255.0 255.0' style="background-color: rgb(0.0, 90.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color1' ogcolour='115.0 158.0 255.0 255.0' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_extra,color2' ogcolour='0.0 108.0 255.0 255.0' style="background-color: rgb(0.0, 108.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critical_grenade_glow</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color_fade' ogcolour='199.0 0.0 0.0 255.0' style="background-color: rgb(199.0, 0.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color1' ogcolour='180.0 25.0 0.0 255.0' style="background-color: rgb(180.0, 25.0, 0.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_red_glow,color2' ogcolour='255.0 96.0 0.0 255.0' style="background-color: rgb(255.0, 96.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color_fade' ogcolour='0.0 48.0 255.0 255.0' style="background-color: rgb(0.0, 48.0, 255.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color1' ogcolour='115.0 158.0 255.0 255.0' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_grenade_blue_glow,color2' ogcolour='115.0 158.0 255.0 255.0' style="background-color: rgb(115.0, 158.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-<div class="collapsible layer2">
-<button type="button">critical_pipe_</button>
-<div class="content"><div class="red-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color1' ogcolour='185.0 77.0 77.0 255.0' style="background-color: rgb(185.0, 77.0, 77.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_red,color2' ogcolour='255.0 30.0 0.0 255.0' style="background-color: rgb(255.0, 30.0, 0.0);"></div>
-</div>
-</div>
-
-<div class="blue-particle">
-<div><h3> fade </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color_fade' ogcolour='205.0 87.0 0.0 255.0' style="background-color: rgb(205.0, 87.0, 0.0);"></div>
-</div>
-<div>
-<h3> color1 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color1' ogcolour='18.0 0.0 255.0 255.0' style="background-color: rgb(18.0, 0.0, 255.0);"></div>
-</div>
-<div>
-<h3> color2 </h3>
-<div class='colour-display' jsonpath='stickybomb_onlycrits.pcf,critical_pipe_blue,color2' ogcolour='0.0 96.0 255.0 255.0' style="background-color: rgb(0.0, 96.0, 255.0);"></div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-	</div>
-	</div>
-	<div id="generate-button-container">
-		<button id="generate-button" onclick="modifyJSON()">
-			Generate!
-		</button>	
-	</div>
+		</div>
+		<div id="generate-button-container">
+			<button id="generate-button" onclick="modifyJSON()">
+				Generate!
+			</button>
+		</div>
 	</main>
 	<script src="scripts.js"></script>
-	</body>
+</body>
+
 </html>
