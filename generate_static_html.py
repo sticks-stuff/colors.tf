@@ -10,8 +10,11 @@ for filename in os.listdir('template/particles'):
     if filename == 'particles_manifest.txt': #hardcoding shit fuck you
         continue;
     particle = datamodel.load('template/particles/' + filename)
-    print('<div>')
-    print('<h1>' + filename + '</h1>')
+    # print('<div>')
+    print('<div class="collapsible layer1">')
+    # print('<h1>' + filename + '</h1>')
+    print('<button type="button">' + filename + '</button>')
+    print('<div class="content">')
     particles = {}
     for ele in particle.find_elements(elemtype="DmeParticleSystemDefinition"):
         # print(ele.name)
@@ -68,15 +71,16 @@ for filename in os.listdir('template/particles'):
         thisParticle += '</div>\n'
                 
         if 'red' in ele.name:
-            thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle 
+            # thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle 
+            thisParticle = '<div class="red-particle">\n' + thisParticle
+            thisParticle = '<button type="button">' + ele.name.replace('red', '').replace('__', '_') + '</button>' + '\n<div class="content">' + thisParticle 
             # this sucks but we used to do it at the creation of the string
             # which made more sense but then we cant check if nothing usefuls been added
-            thisParticle = '<div class="red-particle">\n' + thisParticle
             if ele.name.replace('red', 'team') not in particles:
                 particles[ele.name.replace('red', 'team')] = {}
             particles[ele.name.replace('red', 'team')]['red'] = thisParticle
         else:
-            thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle
+            # thisParticle = '<h2>' + ele.name + '</h2>\n' + thisParticle
             thisParticle = '<div class="blue-particle">\n' + thisParticle
             if 'blu_' in ele.name or ele.name.endswith('_blu'):
                 #awful hack because sometimes its 'blue' and sometimes its 'blu'
@@ -89,10 +93,13 @@ for filename in os.listdir('template/particles'):
                 particles[ele.name.replace('blue', 'team')]['blue'] = thisParticle
     for key, value in particles.items():
         if len(value.items()) > 1: #exclude objects that dont have team colours
-            print('<div class="both-class-colours">')
+            # print('<div class="both-class-colours">')
+            print('<div class="collapsible layer2">')
             print(value['red'])
             print(value['blue'])
             print('</div>')
+            print('</div>')
+    print('</div>')
     print('</div>')
     
 f = open("outro.html", "r")
