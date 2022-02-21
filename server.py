@@ -1,7 +1,7 @@
 import json_to_color_patch
 import patch_vmts
 from flask import Flask, request, send_file, after_this_request
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 import shutil
 import time
 import vpk
@@ -11,11 +11,9 @@ from multiprocessing import Process
 import glob
 
 app = Flask(__name__)
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, expose_headers=["Content-Disposition"])
 
 @app.route('/generate', methods=['POST'])
-@cross_origin()
 def generate():
     if request.method == 'POST':
         requestTime = str(int(time.time()))
