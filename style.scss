@@ -56,6 +56,7 @@ main {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	position: relative;
 	nav {
 		width: 100vw;
 		height: 10vh;
@@ -467,7 +468,7 @@ $light-red-team-trans: #bd3b3b90;
 #stick {
 	position: absolute;
 	bottom: 10px;
-	left: 10px;
+	left: 30px;
 	font-size: 22px;
 	color: #55CDFC;
 	text-decoration: none;

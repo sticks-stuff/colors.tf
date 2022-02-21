@@ -77,6 +77,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 main nav {
@@ -608,7 +609,7 @@ main #generate-button-container #generate-button.generating {
 #stick {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 30px;
   font-size: 22px;
   color: #55CDFC;
   text-decoration: none;
