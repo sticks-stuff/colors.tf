@@ -82,6 +82,14 @@ main {
 main nav {
   width: 100vw;
   height: 10vh;
+  font-size: 8.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 25px;
 }
 
 main nav.red {
@@ -324,6 +332,7 @@ main #preview-box #preview-tv #team-select label {
   background-size: contain;
   padding-left: 2ch;
   margin-left: -2ch;
+  cursor: pointer;
 }
 
 main #preview-box #preview-tv #team-select input[type="radio"]:checked + label {
@@ -425,6 +434,7 @@ main #generate-button-container #generate-button.active, main #generate-button-c
   background-size: contain;
   padding-left: 2ch;
   margin-left: -2ch;
+  cursor: pointer;
 }
 
 .collapsible .content .color-lock-container input[type="checkbox"]:checked + label {
@@ -564,6 +574,7 @@ main #generate-button-container #generate-button.active, main #generate-button-c
 #tooltip {
   font-family: 'TF2 Secondary', sans-serif;
   opacity: 0;
+  display: none;
   position: absolute;
   background-color: black;
   color: white;
@@ -586,5 +597,6 @@ main #generate-button-container #generate-button.active, main #generate-button-c
 
 #tooltip.active {
   opacity: 1;
+  display: revert;
 }
 /*# sourceMappingURL=style.css.map */

@@ -322,10 +322,7 @@ Array.from(document.getElementsByClassName('collapsible')).forEach(element => { 
     });
 })
 
-function reflow(element, add = 0) { //this ugly function makes collapseables within collapseables work
-    
-    console.log("how inefficent is this function?");
-    
+function reflow(element, add = 0) { //this ugly function makes collapseables within collapseables work    
     var content = element.getElementsByTagName("div")[0];
     height = element.scrollHeight;
     height += add;
@@ -341,7 +338,6 @@ function reflow(element, add = 0) { //this ugly function makes collapseables wit
 }
 
 function showToolTip(e) {
-    console.log(e);
     document.getElementById("tooltip").classList.add("active");
     var x = e.pageX - 500;
     var y = e.pageY;

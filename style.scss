@@ -59,6 +59,10 @@ main {
 	nav {
 		width: 100vw;
 		height: 10vh;
+		font-size: 8.5vh;
+		display: flex;
+		align-items: center;
+		padding-left: 25px;
 		&.red {
 			background-color: $red-background;
 			color: $red-text;	
@@ -235,6 +239,7 @@ main {
 					background-size: contain;
 					padding-left: 2ch;
 					margin-left: -2ch;
+					cursor: pointer;
 				}
 				input[type="radio"]:checked + label {
 					background: url('/assets/radio_button_select.png')  no-repeat;
@@ -345,6 +350,7 @@ $light-red-team-trans: #bd3b3b90;
 				background-size: contain;
 				padding-left: 2ch;
 				margin-left: -2ch;
+				cursor: pointer;
 			}
 			input[type="checkbox"]:checked + label {
 				background: url('/assets/checked.png')  no-repeat;
@@ -429,6 +435,7 @@ $light-red-team-trans: #bd3b3b90;
 #tooltip {
 	font-family: 'TF2 Secondary', sans-serif;
 	opacity: 0;
+	display: none;
 	position: absolute;
 	background-color: black;
 	color: white;
@@ -448,5 +455,6 @@ $light-red-team-trans: #bd3b3b90;
 	pointer-events: none;
 	&.active {
 		opacity: 1;
+		display: revert;
 	}
 }
