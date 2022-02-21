@@ -1,4 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/tf2-build');
+@import url('http://fonts.cdnfonts.com/css/tf2-secondary');
 
 .both-class-colours {
 	display: flex;
@@ -377,8 +378,7 @@ $light-red-team-trans: #bd3b3b90;
 	}
 }
 
-.content-particles::before {
-	content: '?';
+.help {
 	left: 100%;
 	position: relative;
 	height: 2.5vw;
@@ -386,14 +386,40 @@ $light-red-team-trans: #bd3b3b90;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #C9BFA8;
 	margin-bottom: -2.8vw;
-	&.active, &:hover {
-		background-color: #924738;
-		color: #ECE3CB;
-	}
 	font-size: 40px;
 	margin-left: 0.2vw;
 	margin-top: 0.3vw;
 	border-radius: 100%;
+	color: #ECE3CB;
+	background-color: #766B5E;
+	cursor: pointer;
+	&:hover {
+		background-color: #924738;
+		color: #ECE3CB;
+	}
+}
+
+#tooltip {
+	font-family: 'TF2 Secondary', sans-serif;
+	display: none;
+	position: absolute;
+	background-color: black;
+	color: white;
+	top: 0;
+	left: 0;
+	width: 400px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 18px;
+	border-radius: 10px;
+	background: linear-gradient(to top, #211D19 0%, #38332D 100%);
+	border: 2px outset ThreeDLightShadow;
+	border-color: #726657;
+	z-index: 99;
+	&.active {
+		display: block;
+	}
 }

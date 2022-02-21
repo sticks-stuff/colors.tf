@@ -87,6 +87,10 @@
 					</div>
 				</div>
 			</div>
+			<div id="tooltip">
+				The game will choose a random color between Color1 and Color2 when spawning the particle.
+				The particle will fade to the color in Fade by the end of its life.
+			</div>
 			<div class="collapsible layer0">
 				<button type="button">particles</button>
 				<div class="content">
@@ -99,7 +103,8 @@
 						<div class="content">
 							<div class="collapsible layer2">
 								<button type="button">bullet_bignasty_tracer01</button>
-								<div class="content content-particles">
+								<div class="content">
+									<div class="help" onmouseleave="hideToolTip()" onmousemove="showToolTip(event)">?</div>
 									<div class="red-particle">
 										<div>
 											<h3> color1 </h3>
@@ -124,7 +129,7 @@
 							</div>
 							<div class="collapsible layer2">
 								<button type="button">critgun_weaponmodel</button>
-								<div class="content content-particles">
+								<div class="content">
 									<div class="red-particle">
 										<div>
 											<h3> fade </h3>

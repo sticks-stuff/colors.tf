@@ -333,3 +333,16 @@ function reflow(element, add = 0) { //this ugly function makes collapseables wit
         reflow(element.parentElement.parentElement, height);
     }
 }
+
+function showToolTip(e) {
+    console.log(e);
+    document.getElementById("tooltip").classList.add("active");
+    var x = e.pageX - 500;
+    var y = e.pageY;
+    document.getElementById("tooltip").style.left = x + "px";
+    document.getElementById("tooltip").style.top = y + "px";
+}
+
+function hideToolTip() {
+    document.getElementById("tooltip").classList.remove("active");
+}
