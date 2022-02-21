@@ -155,6 +155,8 @@ function mod (n, m) {
 }
 
 function modifyJSON() {
+    document.getElementById('generate-button').classList.add('generating');
+    document.getElementById('generate-button').innerText = 'Generating...';
     getJSON('output.json').then(data => {
         Array.from(document.getElementsByClassName('colour-display')).forEach(element => {
             jsonPath = element.attributes.jsonpath.value;
@@ -190,6 +192,8 @@ xhr.onreadystatechange = function() {
         link.href=window.URL.createObjectURL(blob);
         link.download=fileName;
         link.click();
+        document.getElementById('generate-button').classList.remove('generating');
+        document.getElementById('generate-button').innerText = 'Generate!';    
     }
 }  
 

@@ -27,7 +27,7 @@ for filename in os.listdir('template/particles'):
                 thisParticle += '<div>'
                 # print("color_fade")
                 # print("operator.get("color_fade")")
-                thisParticle += '<h3> color_fade </h3>\n'
+                thisParticle += '<h3> fade </h3>\n'
                 ogcolor = str(operator.get('color_fade'))
                 thisParticle += f"<div class='colour-display' jsonpath='{filename},{ele.name},color_fade' ogcolour='{ogcolor}' style=\"background-color: rgb("
                 thisParticle += str(operator.get("color_fade")[0])

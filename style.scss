@@ -266,6 +266,11 @@ main {
 				color: #ECE3CB;
 			}	
 
+			&.generating {
+				cursor: not-allowed;
+				pointer-events: none;
+			}
+
 			// padding-block: 0;
 			// padding-inline: 2px;
 			// border: 1px dotted transparent;

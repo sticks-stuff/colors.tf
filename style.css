@@ -388,6 +388,11 @@ main #generate-button-container #generate-button.active, main #generate-button-c
   color: #ECE3CB;
 }
 
+main #generate-button-container #generate-button.generating {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .collapsible {
   width: 100%;
 }
