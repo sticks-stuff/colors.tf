@@ -324,6 +324,19 @@ $light-red-team-trans: #bd3b3b90;
 			height: 2.5vh;
 			margin-bottom: -2.5vh;
 			color: #292526;
+			input[type="checkbox"] {
+				opacity: 0;
+			}
+			label {
+				background: url('/assets/unchecked.png') no-repeat;
+				background-size: contain;
+				padding-left: 2ch;
+				margin-left: -2ch;
+			}
+			input[type="checkbox"]:checked + label {
+				background: url('/assets/checked.png')  no-repeat;
+				background-size: contain;
+			}
 		}
 		.collapsible {
 			margin-top: 3vh;

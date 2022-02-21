@@ -400,6 +400,22 @@ main #generate-button-container #generate-button.active, main #generate-button-c
   color: #292526;
 }
 
+.collapsible .content .color-lock-container input[type="checkbox"] {
+  opacity: 0;
+}
+
+.collapsible .content .color-lock-container label {
+  background: url("/assets/unchecked.png") no-repeat;
+  background-size: contain;
+  padding-left: 2ch;
+  margin-left: -2ch;
+}
+
+.collapsible .content .color-lock-container input[type="checkbox"]:checked + label {
+  background: url("/assets/checked.png") no-repeat;
+  background-size: contain;
+}
+
 .collapsible .content .collapsible {
   margin-top: 3vh;
   margin-bottom: 3vh;
