@@ -179,7 +179,7 @@ function modifyJSON() {
 }
 
 var xhr = new XMLHttpRequest();
-var url = "http://127.0.0.1:3000/generate";
+var url = "https://colorstf.herokuapp.com/generate";
 xhr.responseType = "blob";
 
 xhr.onreadystatechange = function() {
