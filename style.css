@@ -328,7 +328,7 @@ main #preview-box #preview-tv #team-select input[type="radio"] {
 }
 
 main #preview-box #preview-tv #team-select label {
-  background: url("/assets/radio_button.png") no-repeat;
+  background: url(".assets/radio_button.png") no-repeat;
   background-size: contain;
   padding-left: 2ch;
   margin-left: -2ch;
@@ -336,7 +336,7 @@ main #preview-box #preview-tv #team-select label {
 }
 
 main #preview-box #preview-tv #team-select input[type="radio"]:checked + label {
-  background: url("/assets/radio_button_select.png") no-repeat;
+  background: url(".assets/radio_button_select.png") no-repeat;
   background-size: contain;
 }
 
@@ -435,7 +435,7 @@ main #generate-button-container #generate-button.generating {
 }
 
 .collapsible .content .color-lock-container label {
-  background: url("/assets/unchecked.png") no-repeat;
+  background: url(".assets/unchecked.png") no-repeat;
   background-size: contain;
   padding-left: 2ch;
   margin-left: -2ch;
@@ -443,7 +443,7 @@ main #generate-button-container #generate-button.generating {
 }
 
 .collapsible .content .color-lock-container input[type="checkbox"]:checked + label {
-  background: url("/assets/checked.png") no-repeat;
+  background: url(".assets/checked.png") no-repeat;
   background-size: contain;
 }
 

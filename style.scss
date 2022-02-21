@@ -235,14 +235,14 @@ main {
 					display: none;
 				}
 				label {
-					background: url('/assets/radio_button.png') no-repeat;
+					background: url('.assets/radio_button.png') no-repeat;
 					background-size: contain;
 					padding-left: 2ch;
 					margin-left: -2ch;
 					cursor: pointer;
 				}
 				input[type="radio"]:checked + label {
-					background: url('/assets/radio_button_select.png')  no-repeat;
+					background: url('.assets/radio_button_select.png')  no-repeat;
 					background-size: contain;
 				}
 			}
@@ -351,14 +351,14 @@ $light-red-team-trans: #bd3b3b90;
 				opacity: 0;
 			}
 			label {
-				background: url('/assets/unchecked.png') no-repeat;
+				background: url('.assets/unchecked.png') no-repeat;
 				background-size: contain;
 				padding-left: 2ch;
 				margin-left: -2ch;
 				cursor: pointer;
 			}
 			input[type="checkbox"]:checked + label {
-				background: url('/assets/checked.png')  no-repeat;
+				background: url('.assets/checked.png')  no-repeat;
 				background-size: contain;
 			}
 		}
