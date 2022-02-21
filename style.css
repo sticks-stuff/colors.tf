@@ -348,7 +348,7 @@ main #generate-button-container {
       -ms-flex: 1;
           flex: 1;
   height: 100%;
-  min-height: calc(14vh - 40px);
+  min-height: calc(14vh - 41px);
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -603,5 +603,24 @@ main #generate-button-container #generate-button.generating {
 #tooltip.active {
   opacity: 1;
   display: revert;
+}
+
+#stick {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 22px;
+  color: #55CDFC;
+  text-decoration: none;
+}
+
+#stick a:link {
+  color: #55CDFC;
+  text-decoration: none;
+}
+
+#stick a:visited {
+  color: #F7A8B8;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
