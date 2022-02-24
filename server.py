@@ -36,12 +36,25 @@ def generate():
         json_to_color_patch.patchPCFWithJson(data, "work/" + requestTime + "/particles/")
         print("Patched particles!");
         
+        # this stuff keeps particle_manifest up to date
+        # the version in template should always be up to date
+        # cuz github actions
+        # or at least, i hope so lol
+        original_file = open("work/" + requestTime + "/particles/" + "particles_manifest.txt", "r")
+        lines_og = original_file.readlines()[:-1]
+        lines_og = lines_og
+
+        add_file = open("particles_add_to_manifest.txt", "r")
+
+        og_file_write = open("work/" + requestTime + "/particles/" + "particles_manifest.txt", "w")
+        og_file_write.writelines(lines_og)
+        og_file_write.writelines(add_file.readlines())
+        
         newpak = vpk.new("work/" + requestTime)
         newpak.save("colors.tf_" + requestTime + ".vpk")
         print("Packed files!");
 
         filename = "colors.tf_" + requestTime + ".vpk"
-        
         
         return_data = io.BytesIO() #all this shit is literally just to remove the vpk after its sent
         with open(filename, 'rb') as fo:

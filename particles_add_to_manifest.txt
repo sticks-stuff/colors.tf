@@ -1,0 +1,5 @@
+		"file"		"!particles/flamethrower_onlycrits.pcf"
+		"file"		"!particles/rockettrail_onlycrits.pcf"
+		"file"		"!particles/stickybomb_onlycrits.pcf"
+		"file"		"!particles/bullet_tracers_onlycrits.pcf"
+}

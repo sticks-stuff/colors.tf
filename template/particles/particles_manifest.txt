@@ -91,9 +91,6 @@ particles_manifest
 		"file"		"!particles/halloween2020_unusuals.pcf"
 		"file"		"!particles/smissmas2020_unusuals.pcf"
 		"file"		"!particles/summer2021_unusuals.pcf"
-		"file"		"!particles/flamethrower_onlycrits.pcf"
-		"file"		"!particles/rockettrail_onlycrits.pcf"
-		"file"		"!particles/stickybomb_onlycrits.pcf"
-		"file"		"!particles/nailtrails_onlycrits.pcf"
-		"file"		"!particles/bullet_tracers_onlycrits.pcf"
+		"file"		"!particles/halloween2021_unusuals.pcf"
+		"file"		"!particles/smissmas2021_unusuals.pcf"
 }
