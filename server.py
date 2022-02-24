@@ -49,6 +49,7 @@ def generate():
         og_file_write = open("work/" + requestTime + "/particles/" + "particles_manifest.txt", "w")
         og_file_write.writelines(lines_og)
         og_file_write.writelines(add_file.readlines())
+        og_file_write.close()
         
         newpak = vpk.new("work/" + requestTime)
         newpak.save("colors.tf_" + requestTime + ".vpk")
