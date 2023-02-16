@@ -179,7 +179,7 @@ function modifyJSON() {
 }
 
 var xhr = new XMLHttpRequest();
-var url = "https://stick.pythonanywhere.com/generate";
+var url = "https://colorstf.herokuapp.com/generate";
 xhr.responseType = "blob";
 
 xhr.onreadystatechange = function() {
