@@ -10,7 +10,7 @@ jobs:
       id: update_file
       uses: TheLastProject/keep-remote-file-locally-up-to-date-action@v1
       with:
-        url: https://raw.githubusercontent.com/SteamDatabase/GameTracking-TF2/master/tf/tf2_misc_dir/particles/particles_manifest.txt
+        url: https://raw.githubusercontent.com/ReplayCoding/gametracking-tf2/main/Content/tf/tf2_misc_dir/particles/particles_manifest.txt
         file_in_repo: template/particles/particles_manifest.txt
 on:
   schedule:
