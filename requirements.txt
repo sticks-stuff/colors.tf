@@ -2,6 +2,7 @@
 
 # L:\colours.tf\server.py: 3
 Flask == 2.1.0
+Werkzeug==2.2.2 
 
 # L:\colours.tf\server.py: 4
 Flask_Cors == 3.0.10
