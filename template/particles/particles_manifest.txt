@@ -100,4 +100,5 @@ particles_manifest
 		"file"		"!particles/halloween2023_unusuals.pcf"
 		"file"		"!particles/smissmas2023_unusuals.pcf"
 		"file"		"!particles/summer2024_unusuals.pcf"
+		"file"		"!particles/halloween2024_unusuals.pcf"
 }
